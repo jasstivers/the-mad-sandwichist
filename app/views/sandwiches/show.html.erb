@@ -1,0 +1,10 @@
+<h1><%= @sandwich.name %></h1>
+
+<h2>Ingredients:</h2>
+<ul>
+  <% @sandwich.ingredients.each do |ingredient| %>
+    <li><%= ingredient.name %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Back", new_sandwich_path, class: "btn btn-secondary" %>
