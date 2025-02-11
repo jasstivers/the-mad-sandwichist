@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   resources :sandwiches, only: [:show]
   # Defines the root path route ("/")
   # root "posts#index"
+
+  resources :sandwiches, only: [:index, :new, :create, :show]
 end

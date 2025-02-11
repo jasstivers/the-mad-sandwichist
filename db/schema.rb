@@ -10,9 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_02_08_020138) do
+ActiveRecord::Schema[7.1].define(version: 2025_02_08_025340) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "ingredient_traits", force: :cascade do |t|
+    t.bigint "ingredient_id", null: false
+    t.bigint "trait_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ingredient_id"], name: "index_ingredient_traits_on_ingredient_id"
+    t.index ["trait_id"], name: "index_ingredient_traits_on_trait_id"
+  end
+
+  create_table "ingredients", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sandwich_ingredients", force: :cascade do |t|
+    t.bigint "sandwich_id", null: false
+    t.bigint "ingredient_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ingredient_id"], name: "index_sandwich_ingredients_on_ingredient_id"
+    t.index ["sandwich_id"], name: "index_sandwich_ingredients_on_sandwich_id"
+  end
 
   create_table "sandwiches", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -21,6 +46,12 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_08_020138) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_sandwiches_on_user_id"
+  end
+
+  create_table "traits", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -35,5 +66,9 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_08_020138) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "ingredient_traits", "ingredients"
+  add_foreign_key "ingredient_traits", "traits"
+  add_foreign_key "sandwich_ingredients", "ingredients"
+  add_foreign_key "sandwich_ingredients", "sandwiches"
   add_foreign_key "sandwiches", "users"
 end
