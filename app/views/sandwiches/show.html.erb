@@ -1,11 +1,32 @@
-<div class="sandwich-container">
+
+<div class="card p-3 mb-3 text-center">
+  <img src="" alt="Sandwich Image" class="img-fluid rounded sandwich-image">
   <h1 class="sandwich-title"><%= @sandwich.name %></h1>
+  <p class="text-muted">Rating: <span class="fw-bold"></span></p>
+  <p class="description"><%= @sandwich.description %></p>
+</div>
 
-  <div class="sandwich-details">
-    <p><strong>Rating:</strong> <%= @sandwich.rating %>/10</p>
-    <p><strong>Ingredients:</strong> <%= @sandwich.ingredients %></p>
-    <p><strong>Description:</strong> <%= @sandwich.description %></p>
+
+<div class="card p-3 mb-3">
+  <div class="d-flex justify-content-between text-center">
+    <div class="category">
+      <h2>Flavor</h2>
+    </div>
+    <div class="category">
+      <h2>Tasting Notes Texture</h2>
+    </div>
+    <div class="category">
+      <h2>Cuisine</h2>
+    </div>
   </div>
+</div>
 
-  <a href="#" class="btn btn-primary">Back to all sandwiches</a>
+
+<div class="card p-3 mb-3">
+  <h2>Ingredients:</h2>
+  <ul class="list-group">
+    <% @sandwich.ingredients.each do |ingredient| %>
+      <li class="list-group-item"><%= ingredient.name %></li>
+    <% end %>
+  </ul>
 </div>
