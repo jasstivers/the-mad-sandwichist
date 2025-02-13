@@ -6,20 +6,19 @@
 </div>
 
 <div class="card p-3 mb-3 sandwich-card">
+  <h2 class="notes-header">Tasting Notes</h2>
   <div class="d-flex justify-content-between text-center category-container">
     <div class="category">
       <h2>Flavor</h2>
-      <ul>
-        <% @flavors.each do |flavor| %>
-          <li><%= flavor.name %></li>
-        <% end %>
-      </ul>
+      <p><%= @flavors.uniq.any? ? @flavors.uniq.join(", ") : "None" %></p>
     </div>
     <div class="category">
       <h2>Texture</h2>
+      <p><%= @textures.uniq.any? ? @textures.uniq.join(", ") : "None" %></p>
     </div>
     <div class="category">
       <h2>Cuisine</h2>
+      <p><%= @cuisines.any? ? @cuisines.join(", ") : "None" %></p>
     </div>
   </div>
 </div>
@@ -27,8 +26,15 @@
 <div class="card p-3 mb-3 sandwich-card">
   <h2>Ingredients:</h2>
   <ul class="list-group">
-    <% @sandwich.ingredients.each do |ingredient| %>
-      <li class="list-group-item"><%= ingredient.name %></li>
+    <% @sandwich_ingredients.each do |sandwich_ingredient| %>
+      <li class="list-group-item">
+        <strong><%= sandwich_ingredient.ingredient.name %></strong>
+        <% if sandwich_ingredient.ingredient.description.present? %>
+          - <em><%= sandwich_ingredient.ingredient.description %></em>
+        <% end %>
+      </li>
     <% end %>
   </ul>
 </div>
+
+<div class="p-3 mb-3 empty-card"></div>
