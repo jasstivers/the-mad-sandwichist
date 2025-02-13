@@ -24,9 +24,13 @@ class SandwichesController < ApplicationController
     end
   end
 
-  def show
-    @sandwich = Sandwich.find(params[:id])
-  end
+    def show
+      @sandwich = Sandwich.find(params[:id])
+      @ingredients = @sandwich.ingredients
+      @flavors = @ingredients.flat_map { |ingredient| ingredient.traits.where(trait_type: 'flavor') }
+      @textures = @ingredients.flat_map { |ingredient| ingredient.traits.where(trait_type: 'texture') }
+      @cuisines = @ingredients.flat_map { |ingredient| ingredient.traits.where(trait_type: 'country') }
+    end
 
   private
 

@@ -9,9 +9,14 @@
   <div class="d-flex justify-content-between text-center category-container">
     <div class="category">
       <h2>Flavor</h2>
+      <ul>
+        <% @flavors.each do |flavor| %>
+          <li><%= flavor.name %></li>
+        <% end %>
+      </ul>
     </div>
     <div class="category">
-      <h2>Tasting Notes Texture</h2>
+      <h2>Texture</h2>
     </div>
     <div class="category">
       <h2>Cuisine</h2>
