@@ -9,12 +9,12 @@
 #   end
 
 puts "Cleaning database..."
-User.destroy_all
-Sandwich.destroy_all
-Ingredient.destroy_all
-Trait.destroy_all
 IngredientTrait.destroy_all
 SandwichIngredient.destroy_all
+Trait.destroy_all
+Ingredient.destroy_all
+Sandwich.destroy_all
+User.destroy_all
 
 puts "Creating users..."
 users = [
