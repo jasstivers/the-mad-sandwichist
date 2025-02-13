@@ -1,14 +1,12 @@
-
-<div class="card p-3 mb-3 text-center">
-  <img src="" alt="Sandwich Image" class="img-fluid rounded sandwich-image">
+<div class="card p-3 mb-3 text-center sandwich-card">
+  <img src="" alt="Sandwich Image" class="img-fluid sandwich-image">
   <h1 class="sandwich-title"><%= @sandwich.name %></h1>
   <p class="text-muted">Rating: <span class="fw-bold"></span></p>
   <p class="description"><%= @sandwich.description %></p>
 </div>
 
-
-<div class="card p-3 mb-3">
-  <div class="d-flex justify-content-between text-center">
+<div class="card p-3 mb-3 sandwich-card">
+  <div class="d-flex justify-content-between text-center category-container">
     <div class="category">
       <h2>Flavor</h2>
     </div>
@@ -21,8 +19,7 @@
   </div>
 </div>
 
-
-<div class="card p-3 mb-3">
+<div class="card p-3 mb-3 sandwich-card">
   <h2>Ingredients:</h2>
   <ul class="list-group">
     <% @sandwich.ingredients.each do |ingredient| %>

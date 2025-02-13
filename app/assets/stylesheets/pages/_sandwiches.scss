@@ -1,25 +1,37 @@
 .sandwich-container {
-  padding: 15px; // Adds space around the whole page content
+  padding: 15px;
 }
 
 .card {
-  margin: 10px 15px; // Adds spacing from sides and between boxes
-  border-radius: 12px; // Makes the corners rounded
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); // Soft shadow for depth
-  padding: 20px; // Adds padding inside the boxes
+  margin: 10px 15px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
 }
 
 .sandwich-image {
   width: 100%;
-  max-height: 250px;
+  height: auto;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
   object-fit: cover;
-  border-radius: 12px; // Makes the image rounded too
 }
 
 .sandwich-title {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: bold;
   margin-top: 10px;
+  text-align: center;
+}
+
+.category-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
 }
 
 .category {
@@ -27,18 +39,23 @@
   padding: 15px;
   border-right: 1px solid #ddd;
   text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .category:last-child {
   border-right: none;
 }
 
-.d-flex {
-  display: flex;
-  flex-wrap: wrap;
+@media (max-width: 768px) {
+  .category-container {
+    flex-wrap: nowrap;
+  }
 }
 
 .description {
   text-align: justify;
   padding: 0 10px;
+  font-size: 1rem;
+  line-height: 1.5;
 }
