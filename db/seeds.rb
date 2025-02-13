@@ -198,5 +198,3 @@ sandwich_ingr.each do |sandwich_ingr_data|
   sandwich_ingr = SandwichIngredient.create!(sandwich_ingr_data)
   puts "Applied ingredients to sandwich: #{sandwich_ingr.id}" # Confirm user creation
 end
-
-puts "Finished!"
