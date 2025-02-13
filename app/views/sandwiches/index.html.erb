@@ -1,0 +1,51 @@
+<div class="container">
+  <!-- Search box -->
+  <div class="row my-4">
+    <div class="col-12 d-flex justify-content-between align-items-center">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <button class="btn btn-outline-secondary" type="button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+
+        <input type="text" class="form-control" placeholder="Search for sandwiches" />
+
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card display area -->
+  <div class="row">
+  <% 15.times do |i| %>
+    <div class="col-6 col-md-4 mb-4">
+      <div class="card" style="height: 100%; display: flex; flex-direction: column;">
+        <!-- Image Section -->
+        <div class="card-image" style="flex-shrink: 0;">
+          <img src="sandwich_image.jpg" alt="Sandwich" class="card-img-top" style="width: 100%; height: 200px; object-fit: cover;">
+        </div>
+
+        <!-- Content Section -->
+        <div class="card-body" style="flex-grow: 1;">
+          <h5 class="card-title">Sandwich <%= i + 1 %></h5>
+          <p class="card-text">Description of your totally awesome, original sandwich.</p>
+
+          <!-- Favorite Button -->
+          <button
+  class="btn favorite-button">
+  <i class="fa-regular fa-heart"></i>
+</button>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+<!-- Bottom navigation bar -->
+<%# <%= render 'shared/bottom_navigation' %>
