@@ -62,16 +62,35 @@ end
 
 puts "Creating Ingredients..."
 ingredients = [
-  { name: "Pretzel Bun", description: "Placeholder....", ingr_type: "bread", unit_of_measure: "slice" },
-  { name: "Kaiser Roll", description: "Placeholder....", ingr_type: "bread", unit_of_measure: "slice" },
-  { name: "Sliced Cheddar Cheese", description: "Placeholder....", ingr_type: "topping", unit_of_measure: "slice" },
-  { name: "Lettuce", description: "Placeholder....", ingr_type: "topping", unit_of_measure: "leaf" },
-  { name: "Sliced Tomato", description: "Placeholder....", ingr_type: "topping", unit_of_measure: "slice" },
-  { name: "Diced Onion", description: "Placeholder....", ingr_type: "topping", unit_of_measure: "cup" },
-  { name: "Bacon", description: "Placeholder....", ingr_type: "topping", unit_of_measure: "strip" },
-  { name: "Mustard", description: "Placeholder....", ingr_type: "sauce", unit_of_measure: "tablespoon" },
-  { name: "Beef Patty", description: "Placeholder....", ingr_type: "patty", unit_of_measure: "patty" },
-  { name: "Fried Chicken Patty", description: "Placeholder....", ingr_type: "patty", unit_of_measure: "patty" },
+  { name: "Pretzel Bun", description: "A soft, chewy bun with a dark crust and a hint of salt.",
+  ingr_type: "bread", unit_of_measure: "slice", image_url: "wire_bun_top_am_gw1yd9" },
+
+  { name: "Kaiser Roll", description: "Placeholder....",
+  ingr_type: "bread", unit_of_measure: "slice", image_url: "wire_puddle_am_xbganb" },
+
+  { name: "Sliced Cheddar Cheese", description: "Placeholder....",
+  ingr_type: "topping", unit_of_measure: "slice", image_url: "wire_slice_am_yeoosm" },
+
+  { name: "Lettuce", description: "Placeholder....",
+  ingr_type: "topping", unit_of_measure: "leaf", image_url: "wire_puddle_am_xbganb" },
+  { name: "Sliced Tomato", description: "Placeholder....",
+  ingr_type: "topping", unit_of_measure: "slice", image_url: "wire_puddle_am_xbganb" },
+  { name: "Diced Onion", description: "Placeholder....",
+  ingr_type: "topping", unit_of_measure: "cup", image_url: "wire_puddle_am_xbganb" },
+  { name: "Bacon", description: "Placeholder....",
+  ingr_type: "topping", unit_of_measure: "strip", image_url: "wire_puddle_am_xbganb" },
+
+  { name: "Mustard", description: "Placeholder....",
+  ingr_type: "sauce", unit_of_measure: "tablespoon", image_url: "wire_puddle_am_xbganb" },
+
+  { name: "Beef Patty", description: "Placeholder....",
+  ingr_type: "patty", unit_of_measure: "patty" , image_url: "wire_patty_am_drtzlf" },
+
+  { name: "Fried Chicken Patty", description: "Placeholder....",
+  ingr_type: "patty", unit_of_measure: "patty", image_url: "wire_puddle_am_xbganb" },
+
+  { name: "Pretzel Bun (bottom)", description: "A soft, chewy bun with a dark crust and a hint of salt.",
+  ingr_type: "bread", unit_of_measure: "slice", image_url: "wire_patty_am_drtzlf" },
 ]
 
 ingredients.each do |ingredient_data|
