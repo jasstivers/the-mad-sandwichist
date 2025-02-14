@@ -1,0 +1,24 @@
+<% if country == 'pirate' %>
+  <!-- Pirate flag emoji -->
+  <span class="pirate-flag">🏴‍☠️</span>
+<% else %>
+  <!-- Flag emoji for country -->
+  <span class="flag-icon">
+    <%
+      # Country flag emojis (ISO 3166-1 alpha-2 country code)
+      country_flags = {
+        'us' => '🇺🇸',
+        'fr' => '🇫🇷',
+        'de' => '🇩🇪',
+        'it' => '🇮🇹',
+        'es' => '🇪🇸',
+        'br' => '🇧🇷',
+        'jp' => '🇯🇵',
+        'cn' => '🇨🇳',
+        'in' => '🇮🇳'
+        # Add more country codes as needed
+      }
+    %>
+    <%= country_flags[country.downcase] || '🏴‍☠️' %> <!-- Default to pirate flag if no match -->
+  </span>
+<% end %>
