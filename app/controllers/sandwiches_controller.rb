@@ -41,6 +41,6 @@ class SandwichesController < ApplicationController
 
   # Define permitted parameters for the sandwich form
   def sandwich_params
-    params.require(:sandwich).permit(:name, ingredient_ids: [])
+    params.require(:sandwich).permit(:name, ingredient_ids: [], ingredient_quantities: {})
   end
 end

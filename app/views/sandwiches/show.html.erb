@@ -1,10 +1,13 @@
 <h1><%= @sandwich.name %></h1>
 
-<h2>Ingredients:</h2>
-<ul>
-  <% @sandwich.ingredients.each do |ingredient| %>
-    <li><%= ingredient.name %></li>
-  <% end %>
-</ul>
+<h3>Ingredients:</h3>
+<% @sandwich.ingredients.each do |ingredient| %>
+  <div>
+    <%= ingredient.name %> -
+    <%= @sandwich.ingredient_quantities[ingredient.id.to_s] || 1 %>
+    <%= ingredient.unit_of_measure %>
+  </div>
+<% end %>
+
 
 <%= link_to "Back", new_sandwich_path, class: "btn btn-secondary" %>
