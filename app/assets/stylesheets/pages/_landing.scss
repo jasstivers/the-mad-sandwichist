@@ -1,8 +1,21 @@
-.landing-page {
-  height: calc(100vh - 60px);
-  background: url('landing-page-image.png') no-repeat;
+.landing-container {
+  position: relative;
+  height: 100vh;
+  background: url('landing-page-image3.png') no-repeat;
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  padding-top: 60px;
+}
+
+.image-container {
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.landing-image {
+  height: auto;
+  width: auto;
+  cursor: pointer;
 }

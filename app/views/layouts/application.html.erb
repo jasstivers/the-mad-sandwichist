@@ -10,9 +10,13 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body><%= render "shared/navbar" %>
-<%= render "shared/flashes" %>
-<%= render "shared/bottom_navbar" %>
+  <body>
+    <% unless controller_name == "landing" && action_name == "home" %>
+      <%= render "shared/navbar" %>
+      <%= render "shared/bottom_navbar" %>
+    <% end %>
+
+    <%= render "shared/flashes" %>
     <%= yield %>
 
   </body>
