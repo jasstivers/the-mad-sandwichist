@@ -20,7 +20,7 @@
 
     <div class="mb-3">
       <h3>Select Ingredients:</h3>
-      <% @ingredients.each do |ingredient| %>
+      <% @visible_ingredients.each do |ingredient| %>
         <div class="ingredient-container mb-2">
           <% if ingredient.image_url.present? %>
             <%= image_tag(Cloudinary::Utils.cloudinary_url(ingredient.image_url), alt: ingredient.name, width: "100", height: "100") %>
