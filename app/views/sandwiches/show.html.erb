@@ -2,6 +2,22 @@
   <img src="#" alt="Sandwich Image" class="img-fluid sandwich-image">
   <h1 class="sandwich-title"><%= @sandwich.name %></h1>
 
+<h3>Ingredients:</h3>
+<% @sandwich.ingredients.each do |ingredient| %>
+  <div>
+    <%= ingredient.name %> -
+    <%= @sandwich.ingredient_quantities[ingredient.id.to_s] || 1 %>
+    <%= ingredient.unit_of_measure %>
+  </div>
+<% end %>
+
+
+  <% if @sandwich.photo.attached? %>
+    <%= cl_image_tag @sandwich.photo.key, height: 300, width: 400, crop: :fill %>
+  <% else %>
+  <img src="#" alt="Sandwich Image" class="img-fluid sandwich-image">
+  <% end %>
+
 
 <div class="rating">
   <span class="stars">⭐⭐⭐⭐⭐</span>
