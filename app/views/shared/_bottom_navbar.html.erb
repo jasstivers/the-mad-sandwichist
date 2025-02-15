@@ -17,9 +17,9 @@
 
       <!-- Circular button in the middle -->
       <li class="nav-item w-20 text-center">
-        <a class="nav-link btn btn-primary rounded-circle w-75" href="#">
+        <%= link_to new_sandwich_path, class: "nav-link btn btn-primary rounded-circle w-75" do %>
           <i class="fas fa-plus"></i>
-        </a>
+        <% end %>
       </li>
 
       <li class="nav-item w-20 text-center">
