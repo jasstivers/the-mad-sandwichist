@@ -85,8 +85,9 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_15_022841) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "ingredient_qty"
-    t.integer "ingredient_position"
+    t.integer "position"
     t.string "unit_of_measure"
+    t.boolean "visible"
     t.index ["ingredient_id"], name: "index_sandwich_ingredients_on_ingredient_id"
     t.index ["sandwich_id"], name: "index_sandwich_ingredients_on_sandwich_id"
   end

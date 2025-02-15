@@ -28,7 +28,8 @@
           <% end %>
 
           <%= label_tag "ingredient_#{ingredient.id}", class: "ingredient-label" do %>
-            <%= check_box_tag "sandwich[ingredient_ids][]", ingredient.id, @sandwich.ingredient_ids.include?(ingredient.id), id: "ingredient_#{ingredient.id}", class: 'form-check-input' %>
+            <%= check_box_tag "sandwich[ingredient_ids][]", ingredient.id,
+            @sandwich.ingredient_ids.include?(ingredient.id), id: "ingredient_#{ingredient.id}", class: 'form-check-input' %>
             <span class="ingredient-name"><%= ingredient.name %></span>
             <div>
               <%= number_field_tag "sandwich[ingredient_quantities][#{ingredient.id}]", 1, min: 1, class: 'quantity-input', size: 2 %>
