@@ -1,16 +1,16 @@
 <div data-controller="search" class="container">
 <!-- Search Bar-->
-<div class="search-bar">
-        <i class="search-icon fa-solid fa-magnifying-glass"></i>
-        <%= simple_form_for :search, url: sandwiches_path, method: :get, html: { class: "d-flex", data: { search_target: "form"} } do |f| %>
-          <%= f.input :query,
+<%# <div class="search-bar">
+        <i class="search-icon fa-solid fa-magnifying-glass"></i> %>
+        <%#= simple_form_for :search, url: sandwiches_path, method: :get, html: { class: "d-flex", data: { search_target: "form"} } do |f| %>
+          <%#= f.input :query,
                       input_html: {
                         placeholder: "Search for Sandwiches",
                         data: { action: "keyup->search#fire",
                         search_target: "input" }
                       },
                       label: false %>
-        <% end %>
+        <%# end %>
       </div>
 
 
