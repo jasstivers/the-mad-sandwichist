@@ -48,7 +48,7 @@ class SandwichesController < ApplicationController
   def show
     @sandwich = Sandwich.find(params[:id])
 
-    @sandwich_ingredients = SandwichIngredient.where(sandwich_id: @sandwich.id).order(:position)
+    @sandwich_ingredients = SandwichIngredient.where(sandwich_id: @sandwich.id).order(:ingredient_position)
 
     @flavors = @sandwich_ingredients.flat_map { |sandwich_ingredient| sandwich_ingredient.ingredient.traits.where(trait_type: "flavor").pluck(:name) }
     @textures = @sandwich_ingredients.flat_map { |sandwich_ingredient| sandwich_ingredient.ingredient.traits.where(trait_type: "texture").pluck(:name) }
@@ -69,6 +69,10 @@ class SandwichesController < ApplicationController
 
   # Define permitted parameters for the sandwich form
   def sandwich_params
-    params.require(:sandwich).permit(:name, :photo, ingredient_ids: [], ingredient_quantities: {})
+    params.require(:sandwich).permit(:name, :photo, ingredient_ids: [] )
   end
+
+  # def sandwich_params
+  #   params.require(:sandwich).permit(:name, :photo, ingredient_ids: [], ingredient_quantities: {})
+  # end
 end

@@ -2,11 +2,12 @@
   <img src="#" alt="Sandwich Image" class="img-fluid sandwich-image">
   <h1 class="sandwich-title"><%= @sandwich.name %></h1>
 
+
 <h3>Ingredients:</h3>
 <% @sandwich.ingredients.each do |ingredient| %>
   <div>
     <%= ingredient.name %> -
-    <%= @sandwich.ingredient_quantities[ingredient.id.to_s] || 1 %>
+    <%#= @sandwich.ingredient_quantities[ingredient.id.to_s] || 1 %>
     <%= ingredient.unit_of_measure %>
   </div>
 <% end %>
