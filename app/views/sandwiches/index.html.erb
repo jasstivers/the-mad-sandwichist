@@ -1,5 +1,8 @@
-<div class="container">
+<div data-controller="search" class="container">
+
+
   <!-- Search box -->
+
   <div class="row my-4">
     <div class="col-12 d-flex justify-content-between align-items-center">
       <div class="input-group">
@@ -24,25 +27,27 @@
   <div class="row">
     <% @sandwiches.each do |sandwich| %>
       <div class="col-6 col-md-4 mb-4">
-        <div class="card" style="height: 100%; display: flex; flex-direction: column;">
-          <!-- Image Section -->
-          <div class="card-image" style="flex-shrink: 0;">
-            <img src="sandwich.image_url" alt="<%= sandwich.name %>" class="card-img-top" style="width: 100%; height: 200px; object-fit: cover;">
-          </div>
+        <%= link_to sandwich_path(sandwich), class: 'card-link' do %>
+          <div class="card" style="height: 100%; display: flex; flex-direction: column;">
+            <!-- Image Section -->
+            <div class="card-image" style="flex-shrink: 0;">
+              <img src="sandwich.image_url" alt="<%= sandwich.name %>" class="card-img-top" style="width: 100%; height: 200px; object-fit: cover;">
+            </div>
 
-          <!-- Content Section -->
-          <div class="card-body" style="flex-grow: 1;">
-            <h5 class="card-title"><%= sandwich.name %></h5>
-            <p class="card-text"><%= sandwich.description %></p>
+            <!-- Content Section -->
+            <div class="card-body" style="flex-grow: 1;">
+              <h5 class="card-title"><%= sandwich.name %></h5>
+              <p class="card-text"><%= sandwich.description %></p>
 
-            <!-- Favorite Button -->
-            <%= link_to toggle_favorite_sandwich_path(sandwich), data: { turbo_method: :post } do %>
-              <%= render 'sandwiches/like_button', sandwich: sandwich %>
-            <% end %>
+              <!-- Favorite Button -->
+              <%= link_to toggle_favorite_sandwich_path(sandwich), data: { turbo_method: :post } do %>
+                <%= render 'sandwiches/like_button', sandwich: sandwich %>
+              <% end %>
+            </div>
           </div>
-        </div>
+        <% end %>
       </div>
     <% end %>
   </div>
 </div>
-toggle_favorite_sandwich_path
+<%# toggle_favorite_sandwich_path %>
