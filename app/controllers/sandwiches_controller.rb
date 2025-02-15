@@ -1,11 +1,23 @@
 class SandwichesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index]
+  # skip_before_action :authenticate_user!, only: [:index]
+  before_action :authenticate_user!, only: :toggle_favorite
+  before_action :set_sandwich, only: %i[show]
+  before_action :set_user, only: %i[create]  # Set the current user
+
+  def toggle_favorite
+    # @sandwiches = Sandwich.all
+    @sandwich = Sandwich.find_by(id: params[:id])
+    if current_user.favorited?(@sandwich)
+      current_user.unfavorite(@sandwich)
+    else
+      current_user.favorite(@sandwich)
+    end
+    redirect_to sandwiches_path
+  end
   def index
     @sandwiches = Sandwich.all
   end
 
-  before_action :set_sandwich, only: %i[show]
-  before_action :set_user, only: %i[create]  # Set the current user
 
   def new
     @sandwich = Sandwich.new
