@@ -22,30 +22,27 @@
 
   <!-- Card display area -->
   <div class="row">
-  <% 15.times do |i| %>
-    <div class="col-6 col-md-4 mb-4">
-      <div class="card" style="height: 100%; display: flex; flex-direction: column;">
-        <!-- Image Section -->
-        <div class="card-image" style="flex-shrink: 0;">
-          <img src="sandwich_image.jpg" alt="Sandwich" class="card-img-top" style="width: 100%; height: 200px; object-fit: cover;">
-        </div>
+    <% @sandwiches.each do |sandwich| %>
+      <div class="col-6 col-md-4 mb-4">
+        <div class="card" style="height: 100%; display: flex; flex-direction: column;">
+          <!-- Image Section -->
+          <div class="card-image" style="flex-shrink: 0;">
+            <img src="sandwich.image_url" alt="<%= sandwich.name %>" class="card-img-top" style="width: 100%; height: 200px; object-fit: cover;">
+          </div>
 
-        <!-- Content Section -->
-        <div class="card-body" style="flex-grow: 1;">
-          <h5 class="card-title">Sandwich <%= i + 1 %></h5>
-          <p class="card-text">Description of your totally awesome, original sandwich.</p>
+          <!-- Content Section -->
+          <div class="card-body" style="flex-grow: 1;">
+            <h5 class="card-title"><%= sandwich.name %></h5>
+            <p class="card-text"><%= sandwich.description %></p>
 
-          <!-- Favorite Button -->
-          <button
-  class="btn favorite-button">
-  <i class="fa-regular fa-heart"></i>
-</button>
+            <!-- Favorite Button -->
+            <%= link_to toggle_favorite_sandwich_path(sandwich), data: { turbo_method: :post } do %>
+              <%= render 'sandwiches/like_button', sandwich: sandwich %>
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
   </div>
 </div>
-
-<!-- Bottom navigation bar -->
-<%# <%= render 'shared/bottom_navigation' %>
+toggle_favorite_sandwich_path
