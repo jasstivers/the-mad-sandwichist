@@ -1,6 +1,7 @@
 <div class="sandwich-new-page">
   <h1>The Lab</h1>
 </div>
+
 <% if @sandwich.errors.any? %>
   <div class="alert alert-danger">
     <h4>There were some errors with your submission:</h4>
@@ -13,7 +14,7 @@
 <% end %>
 
 <div class="background">
-  <%= simple_form_for @sandwich do |f| %>
+  <%= simple_form_for @sandwich, html: { multipart: true } do |f| %>
     <div class="mb-3">
       <%= f.input :name, label: "Sandwich Name", input_html: { class: 'form-control' } %>
     </div>
@@ -39,8 +40,12 @@
     </div>
 
     <div class="mb-3">
-      <%= f.submit "Create Sandwich", class: "btn btn-primary w-100" %>
+      <h3>Upload a Sandwich Photo:</h3>
+      <%= f.input :photo, as: :file, label: "Choose an image" %>
     </div>
 
+    <div class="mb-3">
+      <%= f.submit "Create Sandwich", class: "btn btn-primary w-100" %>
+    </div>
   <% end %>
 </div>

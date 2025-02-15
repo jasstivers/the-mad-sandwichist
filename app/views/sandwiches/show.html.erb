@@ -9,5 +9,6 @@
   </div>
 <% end %>
 
+<%= cl_image_tag @sandwich.photo.key, height: 300, width: 400, crop: :fill %>
 
 <%= link_to "Back", new_sandwich_path, class: "btn btn-secondary" %>
