@@ -1,24 +1,6 @@
 <div class="card p-3 mb-3 text-center sandwich-card">
-  <img src="#" alt="Sandwich Image" class="img-fluid sandwich-image">
+  <%= image_tag 'burger.jpg', alt: 'Burger Image', class: 'img-fluid sandwich-image' %>
   <h1 class="sandwich-title"><%= @sandwich.name %></h1>
-
-
-<h3>Ingredients:</h3>
-<% @sandwich.ingredients.each do |ingredient| %>
-  <div>
-    <%= ingredient.name %> -
-    <%#= @sandwich.ingredient_quantities[ingredient.id.to_s] || 1 %>
-    <%= ingredient.unit_of_measure %>
-  </div>
-<% end %>
-
-
-  <% if @sandwich.photo.attached? %>
-    <%= cl_image_tag @sandwich.photo.key, height: 300, width: 400, crop: :fill %>
-  <% else %>
-  <img src="#" alt="Sandwich Image" class="img-fluid sandwich-image">
-  <% end %>
-
 
 <div class="rating">
   <span class="stars">⭐⭐⭐⭐⭐</span>
@@ -62,10 +44,10 @@
       <div class="cuisine-list <%= 'single-item' if @cuisines.uniq.size == 1 %>">
         <% if @cuisines.uniq.any? %>
           <% @cuisines.uniq.each do |cuisine| %>
-            <%= render 'shared/flag_icon', country: cuisine %> <!-- Updated -->
+            <%= render 'shared/flag_icon', country: cuisine %>
           <% end %>
         <% else %>
-          <%= render 'shared/flag_icon', country: 'pirate' %> <!-- Pirate flag when no cuisine -->
+          <%= render 'shared/flag_icon', country: 'pirate' %>
         <% end %>
       </div>
     </div>
@@ -75,12 +57,10 @@
 <div class="card p-3 mb-3 sandwich-card ingredients-card">
   <h2>Ingredients:</h2>
   <div class="ingredients-container">
-    <% @sandwich_ingredients.each do |sandwich_ingredient| %>
+    <% @sandwich.ingredients.each do |ingredient| %>
       <div class="ingredient-item">
-        <strong><%= sandwich_ingredient.ingredient.name %></strong>
-        <% if sandwich_ingredient.ingredient.description.present? %>
-          - <em><%= sandwich_ingredient.ingredient.description %></em>
-        <% end %>
+        <strong><%= ingredient.name %></strong>
+        (<%= ingredient.unit_of_measure %>)
       </div>
     <% end %>
   </div>
