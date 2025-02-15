@@ -1,0 +1,4 @@
+<%= simple_form_for @sandwich, html: { multipart: true } do |f| %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit "Save Sandwich" %>
+<% end %>

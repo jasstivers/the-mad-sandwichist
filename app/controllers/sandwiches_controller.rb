@@ -14,14 +14,23 @@ class SandwichesController < ApplicationController
     end
     redirect_to sandwiches_path
   end
+  
   def index
     @sandwiches = Sandwich.all
   end
 
-
   def new
     @sandwich = Sandwich.new
-    @ingredients = Ingredient.all
+    @default_ingredients = [
+      "Pretzel Bun",
+      "Beef Patty",
+      "Sliced Cheddar Cheese",
+      "Ketchup",
+      "Pretzel Bun (bottom)"
+    ]
+
+    @visible_ingredients = Ingredient.where(name: @default_ingredients)
+      .sort_by { |ing| @default_ingredients.index(ing.name) }
   end
 
   def create
@@ -37,6 +46,13 @@ class SandwichesController < ApplicationController
   end
 
   def show
+    @sandwich = Sandwich.find(params[:id])
+
+    @sandwich_ingredients = SandwichIngredient.where(sandwich_id: @sandwich.id).order(:ingredient_position)
+
+    @flavors = @sandwich_ingredients.flat_map { |sandwich_ingredient| sandwich_ingredient.ingredient.traits.where(trait_type: "flavor").pluck(:name) }
+    @textures = @sandwich_ingredients.flat_map { |sandwich_ingredient| sandwich_ingredient.ingredient.traits.where(trait_type: "texture").pluck(:name) }
+    @cuisines = @sandwich_ingredients.flat_map { |sandwich_ingredient| sandwich_ingredient.ingredient.traits.where(trait_type: "cuisine").pluck(:name) }
   end
 
   private
@@ -53,6 +69,6 @@ class SandwichesController < ApplicationController
 
   # Define permitted parameters for the sandwich form
   def sandwich_params
-    params.require(:sandwich).permit(:name, ingredient_ids: [])
+    params.require(:sandwich).permit(:name, :photo, ingredient_ids: [], ingredient_quantities: {})
   end
 end
