@@ -18,7 +18,16 @@
 
   <div class="mb-3">
     <h3>Select Ingredients:</h3>
-    <%= f.collection_check_boxes :ingredient_ids, @ingredients, :id, :name, { class: 'form-check-input' } %>
+    <% @ingredients.each do |ingredient| %>
+      <div>
+        <!-- If image_url contains the Cloudinary ID, use Cloudinary::Utils to generate the full URL -->
+        <%= image_tag(Cloudinary::Utils.cloudinary_url(ingredient.image_url), alt: ingredient.name, width: "100", height: "100") if ingredient.image_url.present? %>
+        <%= label_tag "ingredient_#{ingredient.id}" do %>
+          <%= check_box_tag "sandwich[ingredient_ids][]", ingredient.id, @sandwich.ingredient_ids.include?(ingredient.id), id: "ingredient_#{ingredient.id}", class: 'form-check-input' %>
+          <%= ingredient.name %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 
   <div class="mb-3">
