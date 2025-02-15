@@ -1,14 +1,72 @@
-<h1><%= @sandwich.name %></h1>
+<div class="card p-3 mb-3 text-center sandwich-card">
+  <img src="#" alt="Sandwich Image" class="img-fluid sandwich-image">
+  <h1 class="sandwich-title"><%= @sandwich.name %></h1>
 
-<h3>Ingredients:</h3>
-<% @sandwich.ingredients.each do |ingredient| %>
-  <div>
-    <%= ingredient.name %> -
-    <%= @sandwich.ingredient_quantities[ingredient.id.to_s] || 1 %>
-    <%= ingredient.unit_of_measure %>
+
+<div class="rating">
+  <span class="stars">⭐⭐⭐⭐⭐</span>
+</div>
+
+
+  <p class="description"><%= @sandwich.description %></p>
+</div>
+
+<div class="card p-3 mb-3 sandwich-card">
+  <h2 class="notes-header">Tasting Notes</h2>
+  <div class="d-flex justify-content-between text-center category-container">
+    <div class="category flavor">
+      <h2>Flavor</h2>
+      <div class="flavors-list">
+        <% if @flavors.uniq.any? %>
+          <% @flavors.uniq.each do |flavor| %>
+            <span class="flavor-box flavor-<%= flavor.downcase.gsub(' ', '-') %>"><%= flavor %></span>
+          <% end %>
+        <% else %>
+          <p>None</p>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="category texture">
+      <h2>Texture</h2>
+      <div class="textures-list <%= 'single-item' if @textures.uniq.size == 1 %>">
+        <% if @textures.uniq.any? %>
+          <% @textures.uniq.each do |texture| %>
+            <span class="texture-box texture-<%= texture.downcase.gsub(' ', '-') %>"><%= texture %></span>
+          <% end %>
+        <% else %>
+          <p>None</p>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="category cuisine">
+      <h2>Cuisine</h2>
+      <div class="cuisine-list <%= 'single-item' if @cuisines.uniq.size == 1 %>">
+        <% if @cuisines.uniq.any? %>
+          <% @cuisines.uniq.each do |cuisine| %>
+            <%= render 'shared/flag_icon', country: cuisine %> <!-- Updated -->
+          <% end %>
+        <% else %>
+          <%= render 'shared/flag_icon', country: 'pirate' %> <!-- Pirate flag when no cuisine -->
+        <% end %>
+      </div>
+    </div>
   </div>
-<% end %>
+</div>
 
-<%= cl_image_tag @sandwich.photo.key, height: 300, width: 400, crop: :fill %>
+<div class="card p-3 mb-3 sandwich-card ingredients-card">
+  <h2>Ingredients:</h2>
+  <div class="ingredients-container">
+    <% @sandwich_ingredients.each do |sandwich_ingredient| %>
+      <div class="ingredient-item">
+        <strong><%= sandwich_ingredient.ingredient.name %></strong>
+        <% if sandwich_ingredient.ingredient.description.present? %>
+          - <em><%= sandwich_ingredient.ingredient.description %></em>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-<%= link_to "Back", new_sandwich_path, class: "btn btn-secondary" %>
+<div class="p-3 mb-3 empty-card"></div>
