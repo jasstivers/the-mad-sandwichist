@@ -65,11 +65,20 @@ ingredients = [
   { name: "Pretzel Bun", description: "A soft, chewy bun with a dark crust and a hint of salt.",
   ingr_type: "bread", unit_of_measure: "slice", image_url: "wire_bun_top_am_gw1yd9" },
 
-  { name: "Kaiser Roll", description: "Placeholder....",
-  ingr_type: "bread", unit_of_measure: "slice", image_url: "wire_puddle_am_xbganb" },
+  { name: "Beef Patty", description: "Placeholder....",
+  ingr_type: "patty", unit_of_measure: "patty" , image_url: "wire_patty_am_drtzlf" },
 
   { name: "Sliced Cheddar Cheese", description: "Placeholder....",
   ingr_type: "topping", unit_of_measure: "slice", image_url: "wire_slice_am_yeoosm" },
+
+  { name: "Ketchup", description: "Placeholder....",
+  ingr_type: "sauce", unit_of_measure: "tablespoon", image_url: "wire_puddle_am_xbganb" },
+
+  { name: "Pretzel Bun (bottom)", description: "A soft, chewy bun with a dark crust and a hint of salt.",
+  ingr_type: "bread", unit_of_measure: "slice", image_url: "wire_patty_am_drtzlf" },
+
+  { name: "Kaiser Roll", description: "Placeholder....",
+  ingr_type: "bread", unit_of_measure: "slice", image_url: "wire_puddle_am_xbganb" },
 
   { name: "Lettuce", description: "Placeholder....",
   ingr_type: "topping", unit_of_measure: "leaf", image_url: "wire_puddle_am_xbganb" },
@@ -83,14 +92,9 @@ ingredients = [
   { name: "Mustard", description: "Placeholder....",
   ingr_type: "sauce", unit_of_measure: "tablespoon", image_url: "wire_puddle_am_xbganb" },
 
-  { name: "Beef Patty", description: "Placeholder....",
-  ingr_type: "patty", unit_of_measure: "patty" , image_url: "wire_patty_am_drtzlf" },
-
   { name: "Fried Chicken Patty", description: "Placeholder....",
   ingr_type: "patty", unit_of_measure: "patty", image_url: "wire_puddle_am_xbganb" },
 
-  { name: "Pretzel Bun (bottom)", description: "A soft, chewy bun with a dark crust and a hint of salt.",
-  ingr_type: "bread", unit_of_measure: "slice", image_url: "wire_patty_am_drtzlf" },
 ]
 
 ingredients.each do |ingredient_data|

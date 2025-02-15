@@ -1,15 +1,24 @@
 class SandwichesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
+  before_action :set_sandwich, only: %i[show]
+  before_action :set_user, only: %i[create]  # Set the current user
+
   def index
     @sandwiches = Sandwich.all
   end
 
-  before_action :set_sandwich, only: %i[show]
-  before_action :set_user, only: %i[create]  # Set the current user
-
   def new
     @sandwich = Sandwich.new
-    @ingredients = Ingredient.all
+    @default_ingredients = [
+      "Pretzel Bun",
+      "Beef Patty",
+      "Sliced Cheddar Cheese",
+      "Ketchup",
+      "Pretzel Bun (bottom)"
+    ]
+
+    @visible_ingredients = Ingredient.where(name: @default_ingredients)
+      .sort_by { |ing| @default_ingredients.index(ing.name) }
   end
 
   def create
@@ -48,6 +57,6 @@ class SandwichesController < ApplicationController
 
   # Define permitted parameters for the sandwich form
   def sandwich_params
-    params.require(:sandwich).permit(:name, ingredient_ids: [])
+    params.require(:sandwich).permit(:name, :photo, ingredient_ids: [], ingredient_quantities: {})
   end
 end

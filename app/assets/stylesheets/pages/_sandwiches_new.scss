@@ -1,0 +1,84 @@
+.sandwich-new-page h1 {
+  color: rgb(255, 191, 0);
+  text-align: center;
+}
+
+.background {
+  background-image: url("https://res.cloudinary.com/dadymzua9/image/upload/v1672532514/Background_qugogt.jpg");
+  color: rgb(255, 191, 0);
+  border-radius: 8px;
+  padding: 20px;
+  max-height: 80vh;
+  width: 100%;
+  overflow-y: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+  .sandwich-form-container {
+    padding: 15px;
+    max-height: 70vh;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .alert {
+    font-size: 14px;
+  }
+
+  .form-check-input {
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sandwich-form-container {
+    padding: 10px;
+    max-height: 60vh;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .btn {
+    font-size: 14px;
+  }
+
+  .alert {
+    font-size: 12px;
+  }
+
+  .form-check-input {
+    margin-right: 5px;
+  }
+}
+
+.quantity-input {
+  width: 17px; /* Small input box */
+  height: 17px;
+  text-align: center;
+  padding: 3px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.ingredient-container {
+  border: 2px dotted #ffbf00;
+  padding: 5px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.ingredient-container img {
+  border-radius: 5px;
+}
+
+.ingredient-name {
+  border-bottom: 1px solid #ffbf00; /* Amber underline */
+  padding-bottom: 2px; /* Adjust this value to control the space */
+}
