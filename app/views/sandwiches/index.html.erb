@@ -1,4 +1,4 @@
-<div data-controller="search" class="container">
+<div data-controller="search, favorite-toggle" data-favorite-toggle-favorites="<%= current_user.favorited_by_type('Sandwich').map(&:id).to_json %>" class="container">
 <!-- Search Bar-->
 <%# <div class="search-bar">
         <i class="search-icon fa-solid fa-magnifying-glass"></i> %>
@@ -11,7 +11,7 @@
                       },
                       label: false %>
         <%# end %>
-      </div>
+      <%# </div> %>
 
 
   <!-- Search box -->
@@ -28,14 +28,13 @@
         <input type="text" class="form-control" placeholder="Search for sandwiches" />
 
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" data-action="click->filter-toggle#toggle">
+          <button class="btn btn-outline-secondary" type="button" data-action="click->favorite-toggle#fire" data-turbo="false">
             <i class="fas fa-bars"></i>
           </button>
         </div>
       </div>
     </div>
   </div>
-
   <div id="search-results" data-search-target="results">
     <!-- Dynamic search results will be injected here -->
   </div>
