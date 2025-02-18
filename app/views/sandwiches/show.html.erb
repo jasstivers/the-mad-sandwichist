@@ -59,8 +59,7 @@
   <div class="ingredients-container">
     <% @sandwich.ingredients.each do |ingredient| %>
       <div class="ingredient-item">
-        <strong><%= ingredient.name %></strong>
-        (<%= ingredient.unit_of_measure %>)
+        <strong><%= "#{ingredient.name} - #{ingredient.unit_of_measure}" %></strong>
       </div>
     <% end %>
   </div>
