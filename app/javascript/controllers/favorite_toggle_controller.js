@@ -17,26 +17,18 @@ export default class extends Controller {
     this.showingFavorites = !this.showingFavorites;
 
     if (this.showingFavorites) {
-      // When showing only favorites, hide non-favorites
+      // When showing only favorites, remove non-favorites from the DOM
       this.unlikedTargets.forEach(target => {
         const sandwichId = target.getAttribute('data-id'); // Get sandwich ID
 
-        if (favoriteIds.includes(parseInt(sandwichId))) {
-          // If it's a favorite, unhide it
-          console.log(`Unhiding sandwich ID: ${sandwichId}`);
-          target.classList.remove("d-none");
-        } else {
-          // If it's NOT a favorite, hide it
-          console.log(`Hiding sandwich ID: ${sandwichId}`);
-          target.classList.add("d-none");
+        if (!favoriteIds.includes(parseInt(sandwichId))) {
+          console.log(`Removing sandwich ID: ${sandwichId}`);
+          target.closest(".col-6, .col-md-4").remove(); // Removes the grid column
         }
       });
     } else {
-      // When showing all sandwiches, make them all visible
-      this.unlikedTargets.forEach(target => {
-        console.log(`Showing sandwich ID: ${target.getAttribute('data-id')}`);
-        target.classList.remove("d-none");  // Remove d-none to show everything
-      });
+      // Reload the page to restore all sandwiches (simpler than manually reinserting elements)
+      location.reload();
     }
   }
 }
