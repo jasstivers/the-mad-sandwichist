@@ -1,5 +1,9 @@
 <div class="card p-3 mb-3 text-center sandwich-card">
-  <%= image_tag 'burger.jpg', alt: 'Burger Image', class: 'img-fluid sandwich-image' %>
+  <% if @sandwich.photo.attached? %>
+    <%= cl_image_tag @sandwich.photo.key, alt: 'Burger Image', class: 'img-fluid sandwich-image'  %>
+  <% else %>
+    <%= image_tag 'burger.jpg', alt: 'Burger Image', class: 'img-fluid sandwich-image'  %>
+  <% end %>
   <h1 class="sandwich-title"><%= @sandwich.name %></h1>
 
 <div class="rating">
