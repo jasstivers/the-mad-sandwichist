@@ -1,10 +1,10 @@
-<div class="card p-3 mb-3 text-center sandwich-card">
+<div class="card p-3 mb-3 sandwich-card">
   <% if @sandwich.photo.attached? %>
     <%= cl_image_tag @sandwich.photo.key, alt: 'Burger Image', class: 'img-fluid sandwich-image'  %>
   <% else %>
     <%= image_tag 'burger.jpg', alt: 'Burger Image', class: 'img-fluid sandwich-image'  %>
   <% end %>
-  <h1 class="sandwich-title"><%= @sandwich.name %></h1>
+  <h1 class="sandwich-title text-center"><%= @sandwich.name %></h1>
 
 <div class="rating">
   <span class="stars">⭐⭐⭐⭐⭐</span>
@@ -61,9 +61,9 @@
 <div class="card p-3 mb-3 sandwich-card ingredients-card">
   <h2>Ingredients:</h2>
   <div class="ingredients-container">
-    <% @sandwich.ingredients.each do |ingredient| %>
+    <% @sandwich.sandwich_ingredients.order(:ingredient_position).each do |item| %>
       <div class="ingredient-item">
-        <strong><%= "#{ingredient.name} - #{ingredient.unit_of_measure}" %></strong>
+        <strong><%= "#{item.ingredient.name} - #{item.ingredient_qty.to_i } #{item.ingredient.unit_of_measure}" %></strong>
       </div>
     <% end %>
   </div>
