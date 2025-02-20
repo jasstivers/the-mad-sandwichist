@@ -5,7 +5,7 @@
 .card {
   margin: 10px 15px;
   border-radius: 12px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1);
   padding: 20px;
 }
 
@@ -133,7 +133,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 5px;
   margin-top: 10px;
 }
 
@@ -212,12 +212,13 @@
 .sandwich-card.ingredients-card {
   background: transparent;
   color: rgb(255, 191, 0);
-  border-radius: 12px;
+  border: 3px solid #86613d;
+  border-radius: 0px;
   padding: 20px;
   width: 100%;
   max-width: 400px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 10px 15px;
+  margin: 10px auto;
 }
 
 .sandwich-card.ingredients-card h2 {
@@ -237,21 +238,54 @@
 }
 
 .ingredient-item {
-  border: 2px dotted rgb(255, 191, 0);
-  border-radius: 8px;
+  border: 2px dotted #86613d;
+  border-radius: 0px;
   padding: 10px 15px;
   font-size: 1.1rem;
   font-family: inherit;
   color: rgb(255, 191, 0);
-  text-align: center;
-  text-transform: capitalize;
-  min-width: 250px;
-  width: 300px;
-  height: 50px;
+  text-align: left;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  white-space: nowrap;
+  gap: 10px;
+  min-width: 250px;
+  width: 350px;
+  height: auto;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.ingredient-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ingredient-details {
+  flex-grow: 1;
+  font-size: 1.1rem;
+  font-family: inherit;
+}
+
+.ingredient-name {
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  border: none !important;
+  background: none !important;
+}
+
+.ingredient-divider {
+  border-top: 1px solid #86613d;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.ingredient-unit {
+  font-size: 1rem;
+  display: block;
 }
 
 .sandwich-card.empty-card {
