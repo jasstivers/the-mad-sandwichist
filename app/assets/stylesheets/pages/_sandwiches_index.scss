@@ -26,3 +26,36 @@ body {
   text-decoration: none;
   color: inherit;
 }
+
+.sandwiches.index .sandwich-card {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between image and text */
+  padding: 10px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sandwiches.index .sandwich-image {
+  width: 33vw; /* 33% of the viewport width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.sandwiches.index .sandwich-content {
+  flex: 1; /* Allow text and button to fill remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sandwiches.index .sandwich-text {
+  margin-bottom: 10px;
+  color: black;
+}
+
+.sandwiches.index .favorite-button {
+  align-self: start;
+}

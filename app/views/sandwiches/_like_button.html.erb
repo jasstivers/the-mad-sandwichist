@@ -1,3 +1,7 @@
-<div class="like-icon mx-2 <%= 'text-danger' if current_user.favorited?(sandwich) %>" data-id="<%= sandwich.id %>">
-  <i class="fas fa-heart"></i>
+<div class="favorite-button mx-2" data-controller="favorite"  data-favorite-id="<%= sandwich.id %>" data-favorite-state="<%= current_user.favorited?(sandwich) %>" data-action="click->favorite#toggle">
+  <% if current_user.favorited?(sandwich) %>
+    <i class="fa-solid fa-heart text-danger"></i> <!-- Solid red heart -->
+  <% else %>
+    <i class="fa-regular fa-heart"></i> <!-- Regular black heart -->
+  <% end %>
 </div>
