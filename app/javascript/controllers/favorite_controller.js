@@ -11,10 +11,9 @@ export default class extends Controller {
   async toggle(event) {
     event.preventDefault();
     const sandwichId = this.element.dataset.favoriteId;
-    const isFavorited = this.element.dataset.favoriteState === "true";
+    const isFavorited = this.element.dataset.favoriteState === "true"; // Ensure it's read as a boolean
 
     try {
-      // 发送 AJAX 请求
       let response;
       if (isFavorited) {
         response = await axios.delete(`/favorites/${sandwichId}`);
@@ -23,7 +22,8 @@ export default class extends Controller {
       }
 
       if (response.status === 200) {
-        this.element.dataset.favoriteState = !isFavorited;
+        // Toggle favorite state
+        this.element.dataset.favoriteState = (!isFavorited).toString();
         this.updateHeart();
       }
     } catch (error) {
@@ -32,10 +32,10 @@ export default class extends Controller {
   }
 
   updateHeart() {
-    if (this.element.dataset.favoriteState === "true") {
-      this.element.innerHTML = `<i class="fa-solid fa-heart text-danger"></i>`; // 实心
-    } else {
-      this.element.innerHTML = `<i class="fa-regular fa-heart"></i>`; // 空心
-    }
+    const isFavorited = this.element.dataset.favoriteState === "true";
+
+    this.element.innerHTML = isFavorited
+      ? `<i class="fa-solid fa-heart text-danger"></i>` // Favorited: Solid red heart
+      : `<i class="fa-regular fa-heart"></i>`; // Unfavorited: Regular black heart
   }
 }
