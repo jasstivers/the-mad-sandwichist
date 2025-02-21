@@ -1,53 +1,40 @@
-<div data-controller="search, favorite-toggle" data-favorite-toggle-favorites="<%= current_user.favorited_by_type('Sandwich').map(&:id).to_json %>" class="container">
-<!-- Search Bar-->
-<%# <div class="search-bar">
-        <i class="search-icon fa-solid fa-magnifying-glass"></i> %>
-        <%#= simple_form_for :search, url: sandwiches_path, method: :get, html: { class: "d-flex", data: { search_target: "form"} } do |f| %>
-          <%#= f.input :query,
-                      input_html: {
-                        placeholder: "Search for Sandwiches",
-                        data: { action: "keyup->search#fire",
-                        search_target: "input" }
-                      },
-                      label: false %>
-        <%# end %>
-      <%# </div> %>
+<body class="sandwiches index">
+  <div data-controller="search favorite-toggle" data-favorite-toggle-favorites="<%= current_user.favorited_by_type('Sandwich').map(&:id).to_json %>" class="container">
+    <!-- Search Bar -->
+    <div class="row my-4">
+      <div class="col-12 d-flex justify-content-between align-items-center">
+        <div class="input-group" data-search-target="form">
+          <div class="input-group-prepend">
+            <button class="btn btn-outline-secondary" type="button">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
 
+          <input type="text" class="form-control" placeholder="Search for sandwiches" data-action="keyup->search#fire" data-search-target="input" />
 
-  <!-- Search box -->
-
-  <div class="row my-4">
-    <div class="col-12 d-flex justify-content-between align-items-center">
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <button class="btn btn-outline-secondary" type="button">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </div>
-
-        <input type="text" class="form-control" placeholder="Search for sandwiches" />
-
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button"  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-turbo="false">
-            <i class="fas fa-bars"></i>
-          </button>
-                  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <button class="btn btn-outline-secondary dropdown-item" type="button" data-action="click->favorite-toggle#fire" data-turbo="false">
-                      favorites
-                  </button>
-                  </div>
-
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button"
+                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-turbo="false">
+              <i class="fas fa-bars"></i>
+            </button>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <button class="btn btn-outline-secondary dropdown-item" type="button"
+                      data-action="click->favorite-toggle#fire" data-turbo="false">
+                favorites
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div id="search-results" data-search-target="results">
-    <!-- Dynamic search results will be injected here -->
-  </div>
+    <div id="search-results" data-search-target="results">
+      <!-- Dynamic search results will be injected here -->
+    </div>
 
-  <!-- Initial Sandwich Cards (renders all sandwiches if no search) -->
-  <div class="row">
-    <%= render 'sandwiches/sandwich_cards', sandwiches: @sandwiches %>
+    <!-- Initial Sandwich Cards (renders all sandwiches if no search) -->
+    <div class="row">
+      <%= render 'sandwiches/sandwich_cards', sandwiches: @sandwiches %>
+    </div>
   </div>
-</div>
-<%# toggle_favorite_sandwich_path %>
+  <%# toggle_favorite_sandwich_path %>
+</body>

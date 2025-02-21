@@ -15,23 +15,18 @@ class SandwichesController < ApplicationController
     redirect_to sandwiches_path
   end
 
-  def index
-    @sandwiches = Sandwich.all
-    if params[:query].present?
-      puts "Search query: #{params[:query]}"
-      @sandwiches = @sandwiches.where("name LIKE ?", "%#{params[:query]}%")
-    end
-
-    # Respond to both HTML and JSON formats
-    respond_to do |format|
-      format.text do
-        render partial: 'sandwiches/sandwich_cards', locals: { sandwiches: @sandwiches }, formats: [:html]
+    def index
+      if params[:query].present?
+        @sandwiches = Sandwich.where("name ILIKE ?", "%#{params[:query]}%")
+      else
+        @sandwiches = Sandwich.all
       end
-      format.html # For standard HTML response (renders index.html.erb)
-      format.json { render json: @sandwiches } # For JSON response (e.g., AJAX)
-      format.js   { render 'sandwiches/search_results' } # Respond with the rendered HTML for AJAX
+
+      respond_to do |format|
+        format.html
+        format.text { render partial: "sandwiches/sandwich_cards", locals: { sandwiches: @sandwiches }, formats: [:html] }
+      end
     end
-  end
 
   def new
     @sandwich = Sandwich.new
