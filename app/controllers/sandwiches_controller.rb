@@ -48,7 +48,7 @@ class SandwichesController < ApplicationController
   end
 
   def create
-    @sandwich = Sandwich.new(sandwich_params.slice(:name, :photo))
+    @sandwich = Sandwich.new(sandwich_params.slice(:name, :description, :photo))
     @sandwich.user = @user  # Ensure the sandwich is associated with the current user
     if @sandwich.save
       sandwich_params[:ingredient_ids].each_with_index do |ingredient_id, index|
@@ -89,6 +89,6 @@ class SandwichesController < ApplicationController
 
   # Define permitted parameters for the sandwich form
   def sandwich_params
-    params.require(:sandwich).permit(:name, :photo, ingredient_ids: [], ingredient_quantities: {})
+    params.require(:sandwich).permit(:name, :description, :photo, ingredient_ids: [], ingredient_quantities: {})
   end
 end
