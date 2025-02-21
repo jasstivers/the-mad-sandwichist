@@ -43,13 +43,19 @@ class SandwichesController < ApplicationController
   end
 
   def create
-    @sandwich = Sandwich.new(sandwich_params)
+    @sandwich = Sandwich.new(sandwich_params.slice(:name, :description, :photo))
     @sandwich.user = @user  # Ensure the sandwich is associated with the current user
-
     if @sandwich.save
+      sandwich_params[:ingredient_ids].each_with_index do |ingredient_id, index|
+        @ingredient = Ingredient.find(ingredient_id)
+        @ingredient_quantities = sandwich_params[:ingredient_quantities]
+        SandwichIngredient.create(sandwich: @sandwich, ingredient: @ingredient, ingredient_position: index, ingredient_qty: @ingredient_quantities[ingredient_id])
+      end
       redirect_to @sandwich, notice: "Sandwich created successfully!"
     else
       @ingredients = Ingredient.all
+      @visible_ingredients = Ingredient.where(name: @default_ingredients)
+      .sort_by { |ing| @default_ingredients.index(ing.name) }
       render :new, status: :unprocessable_entity
     end
   end
@@ -78,10 +84,6 @@ class SandwichesController < ApplicationController
 
   # Define permitted parameters for the sandwich form
   def sandwich_params
-    params.require(:sandwich).permit(:name, :photo, ingredient_ids: [] )
+    params.require(:sandwich).permit(:name, :description, :photo, ingredient_ids: [], ingredient_quantities: {})
   end
-
-  # def sandwich_params
-  #   params.require(:sandwich).permit(:name, :photo, ingredient_ids: [], ingredient_quantities: {})
-  # end
 end

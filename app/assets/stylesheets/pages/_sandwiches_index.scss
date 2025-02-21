@@ -1,22 +1,25 @@
 body {
-  background-color: black;
-  color: white;
+  background-image: url('https://res.cloudinary.com/dadymzua9/image/upload/v1672532514/bg_amber_scan_qhsj1a.jpg');
+  background-repeat: repeat;
+  background-position: top left;
+  background-size: auto;
 }
+
 .input-group {
-  background-color:white;
+  background-color: white;
 }
 
 .btn-outline-secondary {
-border-color:white
+  border-color: white;
 }
 
 .form-control {
-background-color: white;
+  background-color: white;
 }
 
 .card-link {
-text-decoration: none;
-color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 .card-link:hover {
