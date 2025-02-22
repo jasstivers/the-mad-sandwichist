@@ -105,11 +105,12 @@
   padding: 15px 20px;
 }
 
-.growing-footer:hover {
+.growing-footer.active {
   height: 465px;
-}
 
-.growing-footer:hover .hidden-content {
+
+  .hidden-content {
   opacity: 1;
   max-height: 100%;
+  }
 }

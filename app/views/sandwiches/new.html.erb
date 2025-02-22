@@ -37,7 +37,7 @@
   </div>
 </div>
 
-<div class="growing-footer">
+<div class="growing-footer" data-controller=panel-pop-up data-action = "click->panel-pop-up#popup">
   <p class="hover-text">Sandwich Patent</p>
   <div class="hidden-content">
     <%= simple_form_for @sandwich, html: { multipart: true } do |f| %>
