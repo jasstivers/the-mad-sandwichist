@@ -30,6 +30,7 @@ class SandwichesController < ApplicationController
 
   def new
     @sandwich = Sandwich.new
+    @ingredients = Ingredient.all
     @default_ingredients = [
       "Pretzel Bun",
       "Beef Patty",
