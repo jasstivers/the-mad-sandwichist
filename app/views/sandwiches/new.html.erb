@@ -44,7 +44,7 @@
         <% end %>
       </ul>
       <%= form_with do |f| %>
-        <%= f.collection_select(:ingredient_id, @ingredients, :id, :name,{}, {data: {ingredients_target: "select"}}) %>
+        <%= f.collection_select(:ingredient_id, @ingredients, :id, :name, {prompt: "Select an ingredient"}, {data: {ingredients_target: "select", controller: "tom-select", tom_select_options_value: {tags: true}}}) %>
         <%= f.submit "add", data: { action: "click->ingredients#add" } %>
       <% end %>
 
