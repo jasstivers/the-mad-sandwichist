@@ -13,52 +13,11 @@
   overflow-y: auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   margin: 10px 0px;
-}
-
-@media (max-width: 768px) {
-  .sandwich-form-container {
-    padding: 15px;
-    max-height: 70vh;
-  }
-
-  h1 {
-    font-size: 24px;
-  }
-
-  .alert {
-    font-size: 14px;
-  }
-
-  .form-check-input {
-    margin-right: 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  .sandwich-form-container {
-    padding: 10px;
-    max-height: 60vh;
-  }
-
-  h1 {
-    font-size: 20px;
-  }
-
-  .btn {
-    font-size: 14px;
-  }
-
-  .alert {
-    font-size: 12px;
-  }
-
-  .form-check-input {
-    margin-right: 5px;
-  }
+  margin-bottom: 45px;
 }
 
 .quantity-input {
-  width: 17px; /* Small input box */
+  width: 17px;
   height: 17px;
   text-align: center;
   padding: 3px;
@@ -99,8 +58,8 @@
 }
 
 .ingredient-name {
-  border-bottom: 2px solid #86613d; /* Amber underline */
-  padding-bottom: 2px; /* Adjust this value to control the space */
+  border-bottom: 2px solid #86613d;
+  padding-bottom: 2px;
 }
 
 .description-box {
@@ -117,4 +76,40 @@
 .description-box:focus {
   border-color: #ffbf00;
   outline: none;
+}
+
+.growing-footer {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  bottom: 65px;
+  background: #c9af94;
+  text-align: center;
+  color: white;
+  transition: height 0.5s ease-in-out;
+  overflow: hidden;
+  z-index: 1000;
+  padding: 10px 0;
+}
+
+.growing-footer .hover-text {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.growing-footer .hidden-content {
+  opacity: 0;
+  max-height: 0;
+  transition: opacity 0.3s ease-in-out, max-height 0.5s ease-in-out;
+  padding: 15px 20px;
+}
+
+.growing-footer:hover {
+  height: 465px;
+}
+
+.growing-footer:hover .hidden-content {
+  opacity: 1;
+  max-height: 100%;
 }

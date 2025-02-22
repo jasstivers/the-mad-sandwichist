@@ -1,5 +1,5 @@
 <div class="sandwich-new-page">
-  <h1>The Lab</h1>
+  <h1 class="mb-0 mt-2">The Lab</h1>
 </div>
 
 <% if @sandwich.errors.any? %>
@@ -13,50 +13,52 @@
   </div>
 <% end %>
 
-<div class="background">
-  <%= simple_form_for @sandwich, html: { multipart: true } do |f| %>
-    <div class="mb-3">
-      <%= f.input :name, label: "Sandwich Name", input_html: { class: 'form-control' } %>
-    </div>
+<div class="mb-0 background">
+  <div class="mb-5 ingredient-container">
+    <h3>Select Ingredients:</h3>
+    <ul data-controller="sortable">
+      <% @visible_ingredients.each do |ingredient| %>
+        <li>
+          <% if ingredient.image_url.present? %>
+            <%= image_tag(Cloudinary::Utils.cloudinary_url(ingredient.image_url), alt: ingredient.name, width: "100", height: "100") %>
+          <% end %>
 
-    <div class="mb-3 ingredient-container mb-2">
-      <h3>Select Ingredients:</h3>
-      <!-- Sortable Ingredient List -->
-      <ul data-controller="sortable">
-        <% @visible_ingredients.each_with_index do |ingredient, index| %>
-          <li>
-            <% if ingredient.image_url.present? %>
-              <%= image_tag(Cloudinary::Utils.cloudinary_url(ingredient.image_url), alt: ingredient.name, width: "100", height: "100") %>
-            <% end %>
+          <%= label_tag "ingredient_#{ingredient.id}", class: "ingredient-label" do %>
+            <%= check_box_tag "sandwich[ingredient_ids][]", ingredient.id, @sandwich.ingredient_ids.include?(ingredient.id), id: "ingredient_#{ingredient.id}", class: 'form-check-input' %>
+            <span class="ingredient-name"><%= ingredient.name %></span>
+            <div>
+              <%= number_field_tag "sandwich[ingredient_quantities][#{ingredient.id}]", 1, min: 1, class: 'quantity-input', size: 2 %>
+              <span class="ingredient-unit"><%= ingredient.unit_of_measure %></span>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
 
-            <%= label_tag "ingredient_#{ingredient.id}", class: "ingredient-label" do %>
-              <%= check_box_tag "sandwich[ingredient_ids][]", ingredient.id,
-                @sandwich.ingredient_ids.include?(ingredient.id),
-                id: "ingredient_#{ingredient.id}", class: 'form-check-input' %>
-              <span class="ingredient-name"><%= ingredient.name %></span>
-              <div>
-                <%= number_field_tag "sandwich[ingredient_quantities][#{ingredient.id}]", 1, min: 1, class: 'quantity-input', size: 2 %>
-                <span class="ingredient-unit"><%= ingredient.unit_of_measure %></span>
-              </div>
-            <% end %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+<div class="growing-footer">
+  <p class="hover-text">Sandwich Patent</p>
+  <div class="hidden-content">
+    <%= simple_form_for @sandwich, html: { multipart: true } do |f| %>
+      <div class="mb-3">
+        <%= f.input :name, label: "Sandwich Name", input_html: { class: 'form-control' } %>
+      </div>
 
-    <div class="mb-3">
-      <%= f.input :description, as: :text, label: "Sandwich Description:", input_html: { class: 'form-control', rows: 4 } %>
-    </div>
+      <div class="mb-3">
+        <%= f.input :description, as: :text, label: "Sandwich Description:", input_html: { class: 'form-control', rows: 4 } %>
+      </div>
 
-    <div class="mb-3">
-      <h3>Upload a Sandwich Photo:</h3>
-      <%= f.input :photo, as: :file, label: "Choose an image" %>
-    </div>
+      <div class="mb-3">
+        <h3>Upload a Sandwich Photo:</h3>
+        <%= f.input :photo, as: :file, label: "Choose an image" %>
+      </div>
 
-    <div class="mb-3">
-      <%= f.submit "Create Sandwich", class: "btn btn-primary w-100" %>
-    </div>
-  <% end %>
+      <div class="mb-3">
+        <%= f.submit "Create Sandwich", class: "btn btn-primary w-100" %>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <div class="p-3 mb-3 empty-card-create"></div>
