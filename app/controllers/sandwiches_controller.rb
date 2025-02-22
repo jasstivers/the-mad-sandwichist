@@ -5,14 +5,24 @@ class SandwichesController < ApplicationController
   before_action :set_user, only: %i[create]  # Set the current user
 
   def toggle_favorite
-    # @sandwiches = Sandwich.all
-    @sandwich = Sandwich.find_by(id: params[:id])
+    @sandwich = Sandwich.find(params[:id])
+
     if current_user.favorited?(@sandwich)
       current_user.unfavorite(@sandwich)
     else
       current_user.favorite(@sandwich)
     end
-    redirect_to sandwiches_path
+
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace(
+          "sandwich_#{@sandwich.id}",
+          partial: "sandwiches/sandwich_card",
+          locals: { sandwich: @sandwich }
+        )
+      end
+      format.html { redirect_to sandwiches_path }
+    end
   end
 
     def index
