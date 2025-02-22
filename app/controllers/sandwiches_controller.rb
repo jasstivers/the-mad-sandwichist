@@ -15,28 +15,33 @@ class SandwichesController < ApplicationController
 
     respond_to do |format|
       format.turbo_stream do
-        render turbo_stream: turbo_stream.replace(
-          "sandwich_#{@sandwich.id}",
-          partial: "sandwiches/sandwich_card",
-          locals: { sandwich: @sandwich }
-        )
+        turbo_streams = [
+          turbo_stream.replace("sandwich_#{@sandwich.id}", partial: "sandwiches/sandwich_card", locals: { sandwich: @sandwich })
+        ]
+
+        # Conditionally update the sandwich list only if filtering is active
+        if params[:filter] == "favorites"
+          turbo_streams << turbo_stream.replace("sandwiches_list", partial: "sandwiches/list", locals: { sandwiches: current_user.favorited_sandwiches })
+        end
+
+        render turbo_stream: turbo_streams
       end
       format.html { redirect_to sandwiches_path }
     end
   end
 
-    def index
-      if params[:query].present?
-        @sandwiches = Sandwich.where("name ILIKE ?", "%#{params[:query]}%")
-      else
-        @sandwiches = Sandwich.all
-      end
-
-      respond_to do |format|
-        format.html
-        format.text { render partial: "sandwiches/sandwich_cards", locals: { sandwiches: @sandwiches }, formats: [:html] }
-      end
+  def index
+    if params[:filter] == "favorites"
+      @sandwiches = current_user.favorited_sandwiches
+    else
+      @sandwiches = Sandwich.all
     end
+
+    respond_to do |format|
+      format.html # Normal HTML request
+      format.turbo_stream # Turbo Frame update
+    end
+  end
 
   def new
     @sandwich = Sandwich.new
