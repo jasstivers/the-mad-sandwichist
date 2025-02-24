@@ -11,3 +11,6 @@ eagerLoadControllersFrom("controllers", application)
 
 import SortableController from "controllers/sortable_controller"
 application.register("sortable", SortableController)
+
+import PopupMenuController from "controllers/popup_menu_controller"
+application.register("popup_menu", PopupMenuController)
