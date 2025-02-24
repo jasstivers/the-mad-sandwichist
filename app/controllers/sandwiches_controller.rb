@@ -31,15 +31,19 @@ class SandwichesController < ApplicationController
   end
 
   def index
-    if params[:filter] == "favorites"
-      @sandwiches = current_user.favorited_sandwiches
-    else
-      @sandwiches = Sandwich.all
-    end
+    @sandwiches = if params[:filter] == "favorites"
+                    current_user.favorited_sandwiches
+                  else
+                    Sandwich.all
+                  end
+
+    @sandwiches = @sandwiches.where("name ILIKE ?", "%#{params[:query]}%") if params[:query].present?
 
     respond_to do |format|
-      format.html # Normal HTML request
-      format.turbo_stream # Turbo Frame update
+      format.html
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace("search-results", partial: "sandwiches/sandwich_cards", locals: { sandwiches: @sandwiches })
+      end
     end
   end
 

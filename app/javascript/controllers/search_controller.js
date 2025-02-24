@@ -7,20 +7,25 @@ export default class extends Controller {
   fire(event) {
     event.preventDefault();
 
-    const query = encodeURIComponent(this.inputTarget.value.trim());  // Encode search query
-    if (query === "") return; // Prevent empty searches
+    const query = this.inputTarget.value.trim();
+    const url = query === "" ? "/sandwiches" : `/sandwiches?query=${encodeURIComponent(query)}`;
 
-    const url = "/sandwiches?query=" + query; // Update with correct endpoint if necessary
     console.log("Fetching:", url);
 
     fetch(url, {
       method: "GET",
-      headers: { "Accept": "text/plain" }
+      headers: { "Accept": "text/vnd.turbo-stream.html" } // Turbo Stream format
     })
     .then(response => response.text())
     .then((data) => {
       console.log("Search results updated");
-      this.resultsTarget.innerHTML = data;
+
+      // Ensure resultsTarget is found before updating
+      if (this.resultsTarget) {
+        this.resultsTarget.innerHTML = data; // Ensure correct replacement
+      } else {
+        console.error("Results target not found!");
+      }
     })
     .catch(error => console.error("Search error:", error));
   }

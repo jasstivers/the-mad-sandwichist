@@ -26,14 +26,9 @@
       </div>
     </div>
     <div id="search-results" data-search-target="results">
-      <!-- Dynamic search results will be injected here -->
-    </div>
-
-    <!-- Initial Sandwich Cards (renders all sandwiches if no search) -->
-    <div class="row">
       <turbo-frame id="sandwiches_list">
         <div id="sandwiches-container">
-          <%= render 'sandwiches/sandwich_cards', sandwiches: @sandwiches %>
+          <%= render partial: "sandwiches/sandwich_cards", locals: { sandwiches: @sandwiches } %>
         </div>
       </turbo-frame>
     </div>

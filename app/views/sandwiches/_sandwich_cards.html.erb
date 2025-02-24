@@ -1,3 +1,7 @@
-<% sandwiches.each do |sandwich| %>
-  <%= render 'sandwiches/sandwich_card', sandwich: sandwich %>
-<% end %>
+<div id="search-results" data-search-target="results">
+  <div class="row">
+    <% @sandwiches.each do |sandwich| %>
+      <%= render partial: "sandwiches/sandwich_card", locals: { sandwich: sandwich } %>
+    <% end %>
+  </div>
+</div>
