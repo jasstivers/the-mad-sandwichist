@@ -1,0 +1,176 @@
+Name,Flavors,Texture,Origin
+Roast Chicken,Savory|Herby,Tender,Global
+Fried Chicken,Savory|Crispy|Salty,Crispy,United States
+Grilled Chicken Breast,Smoky|Savory|Herby,Juicy,Global
+Chicken Nuggets,Savory|Salty|Crispy,Crispy,United States
+Chicken Wings,Spicy|Savory|Tangy,Juicy,United States
+Chicken Tenders,Savory|Crispy,Crispy,United States
+Rotisserie Chicken,Savory|Herby,Tender,Global
+Chicken Parmesan,Savory|Cheesy|Tomatoey,Crispy|Tender,Italy|United States
+Buffalo Chicken,Spicy|Tangy,Tender,United States
+Chicken Satay,Savory|Nutty|Sweet,Tender,Indonesia|Thailand
+Chicken Katsu,Savory|Crispy|Umami,Crispy,Japan
+Chicken Shawarma,Spiced|Savory|Garlicky,Tender,Middle East
+BBQ Chicken,Smoky|Sweet|Savory,Tender,United States
+Chicken Curry,Spiced|Savory,Tender,India|Thailand
+Chicken Stir Fry,Savory|Umami|Sweet,Tender,China
+Chicken Cordon Bleu,Cheesy|Savory|Crispy,Crispy|Tender,France|Switzerland
+Smoked Chicken,Smoky|Savory,Tender,Global
+Chicken Schnitzel,Savory|Crispy,Crispy,Germany|Austria
+Tandoori Chicken,Spicy|Smoky|Tangy,Tender,India
+Chicken Fajitas,Savory|Spicy|Smoky,Juicy,Mexico
+Chicken Mole,Spiced|Chocolatey|Savory,Tender,Mexico
+Chicken Biryani,Spiced|Savory|Aromatic,Tender,India
+Chicken Pot Pie,Comforting|Savory|Buttery,Creamy|Tender,United States|United Kingdom
+Chicken Gumbo,Spiced|Savory|Umami,Thick|Tender,United States (Louisiana)
+Chicken Marsala,Savory|Earthy|Winey,Tender,Italy
+Chicken Fricassee,Herby|Savory|Creamy,Tender,France
+Chicken Piccata,Tangy|Savory|Buttery,Tender,Italy
+Beef Steak,Meaty|Umami|Juicy,Juicy,Global
+Ground Beef Patty,Savory|Umami,Juicy,Global
+Meatballs,Savory|Herby|Umami,Tender,Italy|Sweden
+Beef Stir Fry,Savory|Umami|Sweet,Tender,China
+Beef Wellington,Rich|Savory|Buttery,Tender,United Kingdom
+Beef Brisket,Smoky|Savory|Meaty,Tender,United States|Jewish Cuisine
+Corned Beef,Savory|Salty|Spiced,Tender,Ireland|United States
+Roast Beef,Meaty|Savory|Juicy,Tender,Global
+Beef Bulgogi,Sweet|Savory|Garlicky,Tender,South Korea
+Beef Jerky,Salty|Smoky|Umami,Chewy,Global
+Beef Kabobs,Spiced|Savory|Smoky,Juicy,Middle East|Turkey
+Beef Ribs,Smoky|Savory|Meaty,Tender,United States
+Beef Stroganoff,Rich|Savory|Creamy,Tender,Russia
+Beef Curry,Spiced|Savory|Aromatic,Tender,India|Japan
+Beef Fajitas,Savory|Spicy|Smoky,Juicy,Mexico
+Beef Tartare,Umami|Savory|Rich,Tender,France
+Pulled Pork,Smoky|Savory|Sweet,Tender,United States
+Pork Chops,Savory|Herby|Juicy,Juicy,Global
+Roast Pork,Savory|Smoky|Herby,Tender,Global
+BBQ Pork Ribs,Smoky|Sweet|Savory,Tender,United States
+Pork Belly,Savory|Fatty|Crispy,Crispy,China|Korea
+Pork Schnitzel,Savory|Crispy,Crispy,Germany|Austria
+Pork Tenderloin,Savory|Juicy|Herby,Juicy,Global
+Pork Sausage,Savory|Spiced|Juicy,Juicy,Global
+Pork Carnitas,Savory|Spiced|Juicy,Tender,Mexico
+Ham,Savory|Salty|Smoky,Tender,Global
+Prosciutto,Savory|Salty,Chewy,Italy
+Bacon,Smoky|Salty|Savory,Crispy,Global
+Pancetta,Savory|Salty|Fatty,Chewy,Italy
+Chorizo,Spicy|Smoky|Savory,Chewy,Spain|Mexico
+Hot Dog,Savory|Salty|Smoky,Juicy,United States|Germany
+Bratwurst,Savory|Spiced|Juicy,Juicy,Germany
+Kielbasa,Savory|Garlicky|Spiced,Chewy,Poland
+Salami,Salty|Spiced|Savory,Chewy,Italy
+Pepperoni,Spiced|Savory|Umami,Chewy,Italy|United States
+Mortadella,Savory|Fatty|Herby,Chewy,Italy
+Scrapple,Savory|Herby|Salty,Soft,United States
+Spam,Salty|Savory|Umami,Soft,United States
+Liverwurst,Rich|Savory|Irony,Soft,Germany
+Duck Confit,Savory|Fatty|Rich,Tender,France
+Roast Duck,Savory|Fatty|Juicy,Tender,Global
+Peking Duck,Savory|Crispy|Sweet,Crispy,China
+Duck Prosciutto,Savory|Salty|Fatty,Chewy,Italy
+Goose Rillettes,Savory|Fatty|Rich,Soft,France
+Roast Goose,Savory|Fatty|Juicy,Tender,Europe
+Grilled Lamb Chops,Savory|Herby|Smoky,Juicy,Global
+Roast Lamb,Savory|Herby|Juicy,Tender,Global
+Lamb Kebabs,Spiced|Savory|Smoky,Juicy,Middle East
+Lamb Curry,Spiced|Savory|Aromatic,Tender,India
+Lamb Shawarma,Spiced|Garlicky|Savory,Tender,Middle East
+Lamb Stew,Rich|Savory|Herby,Tender,Global
+Lamb Kofta,Spiced|Savory|Herby,Juicy,Middle East
+Venison Steak,Gamey|Savory|Juicy,Juicy,Global
+Venison Jerky,Gamey|Savory|Salty,Chewy,Global
+Venison Sausage,Gamey|Spiced|Savory,Chewy,Global
+Venison Stew,Gamey|Savory|Rich,Tender,Global
+Rabbit Stew,Savory|Herby|Rich,Tender,France
+Rabbit Fricassee,Herby|Savory|Creamy,Tender,France
+Rabbit Terrine,Rich|Savory|Herby,Soft,France
+Roast Turkey,Savory|Juicy|Herby,Tender,Global
+Smoked Turkey,Smoky|Savory|Salty,Tender,Global
+Turkey Bacon,Smoky|Savory|Salty,Crispy,United States
+Turkey Sausage,Savory|Spiced|Juicy,Juicy,Global
+Turkey Burger,Savory|Juicy|Herby,Juicy,United States
+Turkey Meatballs,Savory|Herby|Juicy,Tender,Global
+Turkey Jerky,Smoky|Salty|Savory,Chewy,Global
+Turkey Pot Pie,Comforting|Savory|Buttery,Creamy,United States|United Kingdom
+Alligator Sausage,Spiced|Savory|Gamey,Chewy,United States
+Alligator Tail,Savory|Gamey|Juicy,Juicy,United States
+Kangaroo Steak,Gamey|Savory|Juicy,Juicy,Australia
+Kangaroo Jerky,Gamey|Savory|Salty,Chewy,Australia
+Bison Burger,Gamey|Savory|Juicy,Juicy,United States
+Bison Steak,Gamey|Savory|Juicy,Juicy,United States
+Elk Jerky,Gamey|Savory|Salty,Chewy,North America
+Elk Steak,Gamey|Savory|Juicy,Juicy,North America
+Veggie Burger Patty,Herby|Savory|Umami,Soft,Global
+Fish Fillet,Salty|Savory|Crispy,Flaky,Global
+Grilled Chicken Patty,Savory|Herby|Smoky,Juicy,Global
+Chicken Filet,Salty|Savory|Juicy,Juicy,Global
+Spicy Chicken Patty,Spicy|Savory|Crispy,Juicy,United States
+Chicken Tender Patty,Salty|Savory|Crispy,Crispy,United States
+Chicken Caesar Patty,Savory|Herby|Creamy,Tender,United States
+Spicy Fish Fillet,Spicy|Savory|Crispy,Flaky,Global
+Grilled Chicken Breast Patty,Savory|Herby|Smoky,Juicy,Global
+Fish Cake,Salty|Savory|Firm,Chewy,Japan
+Falafel Patty,Spiced|Savory|Herby,Crunchy,Middle East
+Pulled Jackfruit,Spicy|Smoky|Savory,Tender,Global
+Beyond Burger Patty,Umami|Savory|Herby,Soft,Global
+Chickpea Patty,Spicy|Savory|Earthy,Soft,Global
+Lentil Patty,Herby|Savory|Earthy,Soft,Global
+Vegan Sausage Patty,Spiced|Savory|Herby,Juicy,Global
+Grilled Tempeh Patty,Nutty|Savory|Umami,Chewy,Indonesia
+Seitan Patty,Umami|Savory|Meaty,Chewy,Global
+Impossible Burger Patty,Umami|Savory|Juicy,Soft,Global
+Portobello Mushroom Patty,Earthy|Savory|Umami,Chewy,Global
+Chicken Schnitzel Patty,Savory|Crispy,Crispy,Germany|Austria
+Pulled Pork Patty,Smoky|Savory|Sweet,Tender,United States
+Vegan Chicken Patty,Herby|Savory|Crispy,Juicy,Global
+Spicy Tofu Patty,Spicy|Savory|Chewy,Soft,Global
+Sweet Potato Patty,Savory|Sweet|Earthy,Soft,Global
+Eggplant Patty,Earthy|Savory|Soft,Chewy,Global
+Beetroot Patty,Earthy|Savory|Sweet,Soft,Global
+Grilled Turkey Patty,Savory|Herby|Juicy,Juicy,Global
+Turkey Bacon Patty,Smoky|Savory|Salty,Crispy,United States
+Pulled Beef Patty,Meaty|Savory|Sweet,Tender,Global
+Vegan Fish Patty,Salty|Umami|Crispy,Flaky,Global
+Egg Salad Patty,Savory|Eggy|Creamy,Soft,United States
+Bacon Lettuce Tomato (BLT) Patty,Smoky|Savory|Crispy,Crispy,United States
+Vegan Pulled Pork Patty,Smoky|Sweet|Savory,Tender,Global
+Grilled Shrimp Patty,Salty|Savory|Tender,Juicy,Global
+Beef Bacon Patty,Smoky|Salty|Meaty,Crispy,Global
+Mushroom Swiss Patty,Earthy|Savory|Umami,Juicy,Global
+Cheese Veggie Patty,Cheesy|Savory|Herby,Soft,Global
+Crab Cake Patty,Salty|Savory|Crispy,Flaky,United States
+Lamb Patty,Herby|Savory|Juicy,Juicy,Global
+Roast Beef Patty,Meaty|Savory|Juicy,Juicy,Global
+Roast Lamb Patty,Herby|Savory|Juicy,Juicy,Global
+Steak Patty,Meaty|Savory|Juicy,Juicy,Global
+Fried Tofu Patty,Spicy|Savory|Chewy,Soft,Global
+Grilled Tempeh Bacon Patty,Smoky|Savory|Meaty,Chewy,Global
+Bison Patty,Gamey|Savory|Juicy,Juicy,North America
+Pork Belly Patty,Smoky|Savory|Fatty,Chewy,Global
+Spicy Veggie Burger Patty,Spicy|Herby|Savory,Soft,Global
+Tofu Bacon Patty,Smoky|Savory|Chewy,Soft,Global
+Vegan Sausage,Spicy|Herby|Savory,Juicy,Global
+Sweetcorn Fritter Patty,Savory|Sweet|Crispy,Crunchy,Global
+Vegan Chicken Nugget,Herby|Savory|Crispy,Crispy,Global
+BBQ Jackfruit Patty,Smoky|Sweet|Savory,Tender,Global
+Quinoa Patty,Earthy|Savory|Nutty,Soft,Global
+Bulgur Wheat Patty,Earthy|Herby|Savory,Soft,Middle East
+Shredded Mushroom Patty,Earthy|Savory|Umami,Chewy,Global
+Pork Sausage Patty,Herby|Spicy|Savory,Juicy,Global
+Vegan Sausage Roll,Spicy|Herby|Savory,Flaky,Global
+Tempeh Bacon Patty,Smoky|Savory|Chewy,Chewy,Indonesia
+Cauliflower Patty,Herby|Savory|Earthy,Soft,Global
+Veggie Sausage Patty,Spicy|Herby|Savory,Juicy,Global
+Almond Patty,Earthy|Savory|Nutty,Soft,Global
+Cabbage Patty,Herby|Savory|Crunchy,Chewy,Global
+Zucchini Patty,Herby|Savory|Earthy,Soft,Global
+Fried Seitan Patty,Spicy|Savory|Chewy,Crunchy,Global
+Spinach Patty,Herby|Earthy|Savory,Soft,Global
+Okra Patty,Spicy|Savory|Crunchy,Chewy,South Asia|Africa
+Chia Patty,Earthy|Savory|Nutty,Soft,Global
+Rice Patty,Earthy|Savory|Sticky,Soft,Asia
+Fried Rice Patty,Earthy|Savory|Crispy,Crunchy,Asia
+Vegan BBQ Patty,Smoky|Sweet|Savory,Tender,Global
+Pea Protein Patty,Earthy|Savory|Umami,Soft,Global
+Mung Bean Patty,Earthy|Savory|Nutty,Soft,Asia

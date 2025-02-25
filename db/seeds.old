@@ -12,45 +12,62 @@ csv_text = File.read(Rails.root.join('db', 'Data', 'breads.csv'))
 csv = CSV.parse(csv_text, headers: true, encoding: 'ISO-8859-1')
 csv.each do |row|
   ### Init Ingredient
-  ingredient = Ingredient.create!(name: row['name'], description: "placeholder",
-                                  ingr_type: "test", unit_of_measure: "test", image_url: "wire_bun_top_am_gw1yd9")
+  i = Ingredient.new
+  i.name = row['name']
+  i.description = "placeholder"
+  i.ingr_type = "test"
+  i.unit_of_measure = "test"
 
   ### Parse Flavors
   flavor = row['flavor'].split('|')
   flavor.each do |f|
     if Trait.find_by(name: f) == nil
-      # puts "Not found"
-      trait = Trait.create!(name: f, trait_type: "flavor")
-      puts "Created flavor: #{trait.name}"
+      t = Trait.new
+      t.name = f
+      t.trait_type = "flavor"
     else
-      # puts "Found"
-      trait = Trait.find_by(name: f)
+      t = Trait.find_by(name: f)
     end
-    IngredientTrait.create!(ingredient_id: ingredient.id, trait_id: trait.id)
+    IngredientTrait.create!(ingredient_id: i.id, trait_id: t.id)
   end
 
   ### Parse Textures
   texture = row['texture'].split('|')
   texture.each do |f|
     if Trait.find_by(name: f) == nil
-      trait = Trait.create!(name: f, trait_type: "texture")
-      puts "Created texture: #{trait.name}"
+      t = Trait.new
+      t.name = f
+      t.trait_type = "texture"
     else
-      trait = Trait.find_by(name: f)
+      t = Trait.find_by(name: f)
     end
-    IngredientTrait.create!(ingredient_id: ingredient.id, trait_id: trait.id)
+    IngredientTrait.create!(ingredient_id: i.id, trait_id: t.id)
   end
 
-  ### Parse Origin
-  country = row['origin'].split('|')
+  ### Parse Origin - Country
+  country = row['country'].split('|')
   country.each do |f|
     if Trait.find_by(name: f) == nil
-      trait = Trait.create!(name: f, trait_type: "origin")
-      puts "Created origin: #{trait.name}"
+      t = Trait.new
+      t.name = f
+      t.trait_type = "country"
     else
-      trait = Trait.find_by(name: f)
+      t = Trait.find_by(name: f)
     end
-    IngredientTrait.create!(ingredient_id: ingredient.id, trait_id: trait.id)
+    IngredientTrait.create!(ingredient_id: i.id, trait_id: t.id)
+  end
+
+  ### Parse Origin - Region
+  region = row['region'].split('|')
+  region.each do |f|
+    if Trait.find_by(name: f) == nil
+      t = Trait.new
+      t.name = f
+      t.trait_type = "region"
+    else
+      t = Trait.find_by(name: f)
+    end
+    IngredientTrait.create!(ingredient_id: i.id, trait_id: t.id)
   end
 end
 

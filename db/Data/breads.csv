@@ -1,0 +1,101 @@
+name,flavor,texture,origin
+Baguette,Neutral|Yeasty,Crusty,France
+Ciabatta,Neutral|Yeasty,Chewy,Italy
+Sourdough,Tangy|Yeasty,Chewy,Global
+Rye Bread,Earthy|Slightly-Sour,Dense,Northern Europe
+Pumpernickel,Malty|Earthy,Dense,Germany
+Focaccia,Herbaceous|Olive-oil,Soft,Italy
+Brioche,Buttery|Slightly-Sweet,Soft,France
+Challah,Slightly-Sweet|Eggy,Soft,Isreal
+Naan,Buttery|Yeasty,Soft,India|Pakistan
+Pita,Neutral|Yeasty,Soft,Mediterranean|Middle East
+Lavash,Neutral|Slightly-Sweet,Thin,Caucasus|Middle East
+Matzo,Bland|Neutral,Crispy,Isreal
+Pretzel,Slightly-Salty|Toasty,Chewy,Germany
+Bagel,Malty|Slightly-Salty,Chewy,Isreal
+English Muffin,Neutral|Slightly-Sour,Spongy,England
+Crumpet,Slightly-Sweet|Buttery,Spongy,United Kingdom
+Whole Wheat Bread,Earthy|Nutty,Dense,Global
+Multigrain Bread,Nutty|Earthy,Dense,Global
+White Bread,Neutral|Slightly-Sweet,Soft,Global
+Brown Bread,Earthy|Slightly-Sweet,Dense,Global
+Flatbread,Neutral|Yeasty,Soft,Global
+Cornbread,Sweet|Buttery,Crumby,United States|Mexico,
+Banana Bread,Sweet|Fruity,Moist,United States
+Zucchini Bread,Slightly-Sweet|Nutty,Moist,United States
+Ezekiel Bread,Earthy|Nutty,Dense,Global
+Potato Bread,Slightly-Sweet|Earthy,Soft,Global
+Milk Bread,Slightly-Sweet|Buttery,Soft,Japan
+Hokkaido Milk Bread,Sweet|Buttery,Soft,Japan
+Pain de Campagne,Earthy|Yeasty,Crusty,France
+Pain au Levain,Tangy|Yeasty,Crusty,France
+Kaiser Roll,Slightly-Sweet|Toasty,Crusty,Austria
+French Bread,Neutral|Yeasty,Crusty,France
+Italian Bread,Slightly-Sweet|Toasty,Crusty,Italy
+Vienna Bread,Slightly-Sweet|Buttery,Crusty,Austria
+Turkish Pide,Slightly-Sweet|Buttery,Soft,Turkey
+Persian Barbari,Slightly-Salty|Toasty,Chewy,Iran
+Afghan Naan,Neutral|Slightly-Salty,Soft,Afghanistan
+Chappati,Neutral|Nutty,Soft,India
+Paratha,Buttery|Toasty,Flaky,India
+Tortilla,Neutral|Slightly-Sweet,Soft,Central America
+Arepa,Corny|Slightly-Sweet,Dense,Venezuela|Colombia
+Injera,Sour|Earthy,Spongy,Ethiopia|Eritrea
+Soda Bread,Slightly-Sweet|Buttery,Dense,Ireland
+Irish Brown Bread,Earthy|Nutty,Dense,Ireland
+Barmbrack,Fruity|Slightly-Sweet,Moist,Ireland
+Tea Loaf,Fruity|Sweet,Moist,United Kingdom
+Khorasan Bread,Nutty|Slightly-Sweet,Chewy,Middle East
+Spelt Bread,Nutty|Earthy,Dense,Europe
+Durum Bread,Nutty|Earthy,Crusty,Mediterranean
+Raisin Bread,Fruity|Sweet,Soft,Global
+Coconut Bread,Sweet|Coconutty,Moist,Caribbean
+Parker House Roll,Buttery|Slightly-Sweet,Soft,United States
+Hawaiian Sweet Bread,Sweet|Buttery,Soft,United States
+Cuban Bread,Neutral|Yeasty,Crusty,Cuba
+Pan de Cristal,Neutral|Slightly-Salty,Airy,Spain
+Pan de Mallorca,Sweet|Buttery,Soft,Puerto Rico
+Panettone,Fruity|Sweet,Fluffy,Italy
+Stollen,Fruity|Nutty,Dense,Germany
+Kulich,Sweet|Eggy,Fluffy,Russia
+Tsoureki,Slightly-Sweet|Eggy,Fluffy,Greece
+Malt Loaf,Malty|Sweet,Chewy,United Kingdom
+Borodinsky Bread,Malty|Slightly-Sour,Dense,Russia
+Marraqueta,Slightly-Salty|Toasty,Crusty,Chile
+Bannock,Nutty|Earthy,Dense,Scotland|Canada
+Lefse,Slightly-Sweet|Buttery,Soft,Norway
+Jalapeño Cheddar Bread,Spicy|Cheesy,Dense,United States
+Tomato Basil Bread,Herbaceous|Slightly-Sweet,Soft,Global
+Cheese Bread,Cheesy|Buttery,Soft,Brazil
+Simit,Slightly-Sweet|Toasty,Chewy,Turkey
+Obwarzanek Krakowski,Slightly-Salty|Malty,Chewy,Poland
+Pandoro,Sweet|Buttery,Fluffy,Italy
+Rosca de Reyes,Sweet|Fruity,Fluffy,Spain|Mexico
+Pan Dulce,Sweet|Slightly-Eggy,Soft,Mexico
+Concha,Sweet|Vanilla,Soft,Mexico
+Semla,Sweet|Cardamom,Fluffy,Sweden
+Choreg,Slightly-Sweet|Eggy,Soft,Armenia
+Melonpan,Slightly-Sweet|Vanilla,Soft,Japan
+Anpan,Sweet|Bean-Paste,Soft,Japan
+Yudane Bread,Slightly-Sweet|Buttery,Soft,Japan
+Graham Bread,Nutty|Slightly-Sweet,Dense,United States
+Tiger Bread,Slightly-Sweet|Toasty,Crunchy,Netherlands
+Cranberry Walnut Bread,Fruity|Nutty,Chewy,United States
+Danish Rugbrød,Earthy|Slightly-Sour,Dense,Denmark
+Pulla,Slightly-Sweet|Cardamom,Soft,Finland
+Vörtbröd,Slightly-Sweet|Spiced,Dense,Sweden
+Ali Nazik Bread,Neutral|Yeasty,Soft,Turkey
+Piadina,Neutral|Slightly-Sweet,Thin,Italy
+Manakish,Herbaceous|Slightly-Salty,Chewy,Middle East
+Balep Korkun,Neutral|Slightly-Sweet,Chewy,Tibet
+Himbasha,Slightly-Sweet|Cardamom,Soft,Eritrea
+Fougasse,Herbaceous|Toasty,Chewy,France
+Cozonac,Sweet|Nutty,Fluffy,Romania
+Kifli,Slightly-Sweet|Buttery,Flaky,Hungary
+Kubaneh,Buttery|Slightly-Sweet,Fluffy,Yemen
+Malawach,Buttery|Slightly-Sweet,Flaky,Yemen
+Msemen,Buttery|Nutty,Flaky,North Africa
+Roti Canai,Buttery|Slightly-Sweet,Flaky,Malaysia
+Tandoori Roti,Neutral|Slightly-Salty,Chewy,India
+Shoti,Neutral|Yeasty,Chewy,Georgia
+Himbasha,Slightly-Sweet|Cardamom,Soft,Eritrea
