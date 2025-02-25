@@ -10,9 +10,9 @@ export default class extends Controller {
   }
 
   add(event) {
+    event.preventDefault()
     console.log(this.selectTarget.value)
     const ingredientID = this.selectTarget.value
-    event.preventDefault()
     const template = document.getElementById("ingredient-template-" + ingredientID);
     this.containerTarget.appendChild(template.content.cloneNode(true));
   }

@@ -1,7 +1,6 @@
 <div class="sandwich-new-page">
   <h1>The Lab</h1>
 </div>
-
 <% if @sandwich.errors.any? %>
   <div class="alert alert-danger">
     <h4>There were some errors with your submission:</h4>
@@ -12,13 +11,11 @@
     </ul>
   </div>
 <% end %>
-
 <div class="background">
   <%= simple_form_for @sandwich, html: { multipart: true } do |f| %>
     <div class="mb-3">
       <%= f.input :name, label: "Sandwich Name", input_html: { class: 'form-control' } %>
     </div>
-
     <div data-controller="ingredients" class="mb-3 ingredient-container mb-2">
       <h3>Select Ingredients:</h3>
       <!-- Sortable Ingredient List -->
@@ -28,7 +25,6 @@
             <% if ingredient.image_url.present? %>
               <%= image_tag(Cloudinary::Utils.cloudinary_url(ingredient.image_url), alt: ingredient.name, width: "100", height: "100") %>
             <% end %>
-
             <%= label_tag "ingredient_#{ingredient.id}", class: "ingredient-label" do %>
               <%= check_box_tag "sandwich[ingredient_ids][]", ingredient.id,
                 @sandwich.ingredient_ids.include?(ingredient.id),
@@ -43,48 +39,43 @@
           </li>
         <% end %>
       </ul>
-      <%= form_with do |f| %>
-        <%= f.collection_select(:ingredient_id, @ingredients, :id, :name, {prompt: "Select an ingredient"}, {data: {ingredients_target: "select", controller: "tom-select", tom_select_options_value: {tags: true}}}) %>
-        <%= f.submit "add", data: { action: "click->ingredients#add" } %>
-      <% end %>
-
+      <select data-controller="tom-select" data-ingredients-target="select" data-tom-select-options-value="{&quot;tags&quot;: true}">
+        <% @ingredients.each do |ingredient| %>
+          <option value="<%= ingredient.id %>"> <%= ingredient.name  %> </option>
+        <% end %>
+      </select>
+      <button data-action="click->ingredients#add">add</button>
       <% @ingredients.each do |ingredient| %>
-      <template id="ingredient-template-<%= ingredient.id %>">
-        <li data-ingredients-target="listItem">
-          <% if ingredient.image_url.present? %>
-            <%= image_tag(Cloudinary::Utils.cloudinary_url(ingredient.image_url), alt: ingredient.name, width: "100", height: "100") %>
-          <% end %>
-
-          <%= label_tag "ingredient_#{ingredient.id}", class: "ingredient-label" do %>
-            <%= check_box_tag "sandwich[ingredient_ids][]", ingredient.id,
+        <template id="ingredient-template-<%= ingredient.id %>">
+          <li data-ingredients-target="listItem">
+            <% if ingredient.image_url.present? %>
+              <%= image_tag(Cloudinary::Utils.cloudinary_url(ingredient.image_url), alt: ingredient.name, width: "100", height: "100") %>
+            <% end %>
+            <%= label_tag "ingredient_#{ingredient.id}", class: "ingredient-label" do %>
+              <%= check_box_tag "sandwich[ingredient_ids][]", ingredient.id,
               @sandwich.ingredient_ids.include?(ingredient.id),
               id: "ingredient_#{ingredient.id}", class: 'form-check-input' %>
-            <span class="ingredient-name"><%= ingredient.name %></span>
-            <div>
-              <%= number_field_tag "sandwich[ingredient_quantities][#{ingredient.id}]", 1, min: 1, class: 'quantity-input', size: 2 %>
-              <span class="ingredient-unit"><%= ingredient.unit_of_measure %></span>
-            </div>
-          <% end %>
-          <button data-action="click->ingredients#remove" data-ingredients-target="remove">Remove</button>
-        </li>
-      </template>
+              <span class="ingredient-name"><%= ingredient.name %></span>
+              <div>
+                <%= number_field_tag "sandwich[ingredient_quantities][#{ingredient.id}]", 1, min: 1, class: 'quantity-input', size: 2 %>
+                <span class="ingredient-unit"><%= ingredient.unit_of_measure %></span>
+              </div>
+            <% end %>
+            <button data-action="click->ingredients#remove" data-ingredients-target="remove">Remove</button>
+          </li>
+        </template>
       <% end %>
     </div>
-
-
     <div class="mb-3">
       <%= f.input :description, as: :text, label: "Sandwich Description:", input_html: { class: 'form-control', rows: 4 } %>
     </div>
-
     <div class="mb-3">
       <h3>Upload a Sandwich Photo:</h3>
       <%= f.input :photo, as: :file, label: "Choose an image" %>
     </div>
-
     <div class="mb-3">
       <%= f.submit "Create Sandwich", class: "btn btn-primary w-100" %>
     </div>
   <% end %>
 </div>
-
 <div class="p-3 mb-3 empty-card-create"></div>
