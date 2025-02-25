@@ -1,38 +1,38 @@
-<nav class="navbar fixed-bottom navbar-light bg-light">
+<nav class="navbar fixed-bottom custom-footer">
   <div class="container">
-    <!-- Use d-flex to arrange buttons horizontally -->
     <ul class="navbar-nav w-100 d-flex flex-row justify-content-between">
       <li class="nav-item w-20 text-center">
-        <a class="nav-link btn btn-light w-100" href="#">
-          <i class="fas fa-home"></i><br />
-          Home
-        </a>
+        <%= link_to sandwiches_path, class: "nav-link btn home-btn" do %>
+          <i class="fas fa-home"></i>
+        <% end %>
       </li>
       <li class="nav-item w-20 text-center">
-        <a class="nav-link btn btn-light w-100" href="#">
-          <i class="fas fa-book"></i><br />
-          Recipe
+        <a class="nav-link btn recipe-btn" href="#">
+          <i class="fas fa-book"></i>
         </a>
       </li>
 
-      <!-- Circular button in the middle -->
       <li class="nav-item w-20 text-center">
-        <%= link_to new_sandwich_path, class: "nav-link btn btn-primary rounded-circle w-75" do %>
+        <%= link_to new_sandwich_path, class: "nav-link btn create-sandwich-btn" do %>
           <i class="fas fa-plus"></i>
         <% end %>
       </li>
 
       <li class="nav-item w-20 text-center">
-        <a class="nav-link btn btn-light w-100" href="#">
-          <i class="fas fa-question-circle"></i><br />
-          Help
+        <a class="nav-link btn help-btn" href="#">
+          <i class="fas fa-question-circle"></i>
         </a>
       </li>
-      <li class="nav-item w-20 text-center">
-        <a class="nav-link btn btn-light w-100" href="#">
-          <i class="fas fa-user"></i><br />
-          Profile
-        </a>
+      <li class="nav-item w-20 text-center" data-controller="popup_menu">
+        <button class="nav-link btn profile-btn" type="button"
+                data-action="click->popup_menu#toggle">
+          <i class="fas fa-user"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-end" data-popup_menu-target="menu">
+          <%= link_to "Action", "#", class: "dropdown-item" %>
+          <%= link_to "Another action", "#", class: "dropdown-item" %>
+          <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+        </div>
       </li>
     </ul>
   </div>

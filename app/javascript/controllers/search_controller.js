@@ -2,32 +2,24 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="search"
 export default class extends Controller {
-  static targets = ["input", "results", "form"];
+  static targets = ["input", "results"];
 
   fire(event) {
     event.preventDefault();
+    this.resultsTarget.classList.add("loading"); // Fade out slightly
 
-    // Ensure inputTarget is defined
-    // if (!this.hasFormTarget) {
-    //   console.error("Input target not found.");
-    //   return;
-    // }
-    console.log(this.formTarget)
-    const query = this.inputTarget.value
-    const url = this.formTarget.action + "?query=" + query
-    console.log(url)
+    const query = this.inputTarget.value.trim();
+    const url = query === "" ? "/sandwiches" : `/sandwiches?query=${encodeURIComponent(query)}`;
 
     fetch(url, {
       method: "GET",
-      headers: { "Accept": "text/plain" },
-      // body: new FormData(this.inputTarget)
+      headers: { "Accept": "text/vnd.turbo-stream.html" }
     })
-      .then(response => response.text())
-      .then((data) => {
-        console.log("got a result")
-        // console.log(data)
-        console.log(this.resultsTarget)
-        this.resultsTarget.innerHTML = data
-      })
-}
+    .then(response => response.text())
+    .then((data) => {
+      this.resultsTarget.innerHTML = data;
+      this.resultsTarget.classList.remove("loading"); // Remove fade effect
+    })
+    .catch(error => console.error("Search error:", error));
+  }
 }

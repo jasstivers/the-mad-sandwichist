@@ -4,7 +4,7 @@
 }
 
 .background {
-  background-image: url("https://res.cloudinary.com/dadymzua9/image/upload/v1672532514/Background_qugogt.jpg");
+  background: transparent;
   color: rgb(255, 191, 0);
   border-radius: 8px;
   padding: 20px;
@@ -12,7 +12,7 @@
   width: 100%;
   overflow-y: auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  margin: 0 10px;
+  margin: 10px 0px;
 }
 
 @media (max-width: 768px) {
@@ -68,9 +68,9 @@
 }
 
 .ingredient-container {
-  border: 2px dotted #ffbf00;
-  padding: 5px;
-  margin: 10px 0;
+  border: 2px solid #86613d;
+  padding: 10px;
+  margin: 10px 0px;
   border-radius: 5px;
 }
 
@@ -78,7 +78,43 @@
   border-radius: 5px;
 }
 
+.ingredient-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ingredient-container li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  border: 2px dotted #86613d;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.ingredient-container li:last-child {
+  margin-bottom: 0;
+}
+
 .ingredient-name {
-  border-bottom: 1px solid #ffbf00; /* Amber underline */
+  border-bottom: 2px solid #86613d; /* Amber underline */
   padding-bottom: 2px; /* Adjust this value to control the space */
+}
+
+.description-box {
+  border: 2px solid #86613d;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 14px;
+  color: #333;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+}
+
+.description-box:focus {
+  border-color: #ffbf00;
+  outline: none;
 }

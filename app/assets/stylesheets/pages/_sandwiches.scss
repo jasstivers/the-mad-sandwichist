@@ -1,283 +1,319 @@
-.sandwich-container {
-  padding: 15px;
-}
-
-.card {
-  margin: 10px 15px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-}
-
-.sandwich-image {
-  width: 100%;
-  height: auto;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  object-fit: cover;
-}
-
-.sandwich-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-top: 10px;
-  text-align: left;
-}
-
-.category-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 10px;
-  text-align: center;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
-
-.category {
-  flex: 1;
-  padding: 15px;
-  border-right: 1px solid #ddd;
-  text-align: center;
-  font-size: 1rem;
-  font-weight: bold;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  border-right: none;
-}
-
-.category.flavor .flavors-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-}
-
-.category:last-child {
-  border-right: none;
-}
-
-.category.single-item {
-  justify-content: center;
-  align-items: center;
-  min-height: 80px;
-  text-align: center;
-}
-
-.description {
-  text-align: left;
-  padding: 0 10px;
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-top: 10px;
-}
-
-.p-3.mb-3 + .empty-card {
-  margin-top: 45px;
-}
-
-.notes-header {
-  text-align: center;
-}
-
-.flavors-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.flavor-box {
-  padding: 6px 12px;
-  border-radius: 12px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: white;
-  display: inline-block;
-  text-transform: capitalize;
-}
-
-.flavor-sweet {
-  background-color: #ffcc00; // Yellow
-}
-
-.flavor-savory {
-  background-color: #ff5733; // Orange-Red
-}
-
-.flavor-sour {
-  background-color: #33cc33; // Green
-}
-
-.flavor-bitter {
-  background-color: #8b4513; // Brown
-}
-
-.flavor-umami {
-  background-color: #800080; // Purple
-}
-
-.flavor-spicy {
-  background-color: #ff0000; // Red
-}
-
-.flavor-box:not([class*="flavor-"]) {
-  background-color: #777; // Gray for unknown flavors
-}
-
-.textures-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  margin-top: 10px;
-}
-
-.textures-list.single-item {
-  justify-content: center;
-  align-items: center;
-  min-height: 80px;
-}
-
-.texture-box {
-  padding: 6px 12px;
-  border-radius: 12px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: white;
-  display: block;
-  text-transform: capitalize;
-  text-align: center;
-}
-
-.texture-crunchy {
-  background-color: #ff6600; // Orange
-}
-
-.texture-creamy {
-  background-color: #ffcc99; // Light Cream
-}
-
-.texture-crispy {
-  background-color: #b5651d; // Brown
-}
-
-.texture-soft {
-  background-color: #f1c6d3; // Light Pink
-}
-
-.texture-chewy {
-  background-color: #6c3e1f; // Dark Brown
-}
-
-.texture-spongy {
-  background-color: #f4a300; // Yellow
-}
-
-.texture-viscous {
-  background-color: #00f4f4; // Light Blue
-}
-
-.texture-box:not([class*="texture-"]) {
-  background-color: #777; // Gray for unknown textures
-}
-
-.cuisine-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-  min-height: 80px;
-}
-
-.cuisine-list.single-item {
-  justify-content: center;
-}
-
-.flag-icon {
-  font-size: 40px;
-  margin: 5px;
-}
-
-.pirate-flag {
-  font-size: 40px;
-}
-
-.sandwich-card.ingredients-card {
-  background: transparent;
-  color: rgb(255, 191, 0);
-  border-radius: 12px;
-  padding: 20px;
-  width: 100%;
-  max-width: 400px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 10px 15px;
-}
-
-.sandwich-card.ingredients-card h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-align: center;
-  color: rgb(255, 191, 0);
-  margin-bottom: 15px;
-  text-transform: uppercase;
-}
-
-.sandwich-card.ingredients-card .ingredients-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.ingredient-item {
-  border: 2px dotted rgb(255, 191, 0);
-  border-radius: 8px;
-  padding: 10px 15px;
-  font-size: 1.1rem;
-  font-family: inherit;
-  color: rgb(255, 191, 0);
-  text-align: center;
-  text-transform: capitalize;
-  min-width: 250px;
-  width: 300px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  white-space: nowrap;
-}
-
-.sandwich-card.empty-card {
-  height: 50px;
-  background-color: transparent;
-  border: none;
-}
-
-.rating {
-  text-align: left;
-  font-size: 1rem;
-  color: #333;
-  margin-top: 10px;
-}
-
-.stars {
-  font-size: 1rem;
-  color: #f0ad4e;
-}
-
-@media (max-width: 768px) {
-  .sandwich-card.ingredients-card h2 {
-    font-size: 1.3rem;
+.sandwich-show-page {
+  .sandwich-container {
+    padding: 15px;
   }
 
-  .sandwich-card.ingredients-card .ingredients-container .ingredient-item {
+  .card {
+    margin: 10px 15px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1);
+    padding: 20px;
+  }
+
+  .sandwich-image {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    object-fit: cover;
+  }
+
+  .sandwich-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: left;
+  }
+
+  .category-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    text-align: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .category {
+    flex: 1;
+    padding: 15px;
+    border-right: 1px solid #ddd;
+    text-align: center;
     font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-right: none;
+  }
+
+  .category.flavor .flavors-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .category:last-child {
+    border-right: none;
+  }
+
+  .category.single-item {
+    justify-content: center;
+    align-items: center;
+    min-height: 80px;
+    text-align: center;
+  }
+
+  .description {
+    text-align: left;
+    padding: 0 10px;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 10px;
+  }
+
+  .p-3.mb-3 + .empty-card {
+    margin-top: 45px;
+  }
+
+  .notes-header {
+    text-align: center;
+  }
+
+  .flavors-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .flavor-box {
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: white;
+    display: inline-block;
+    text-transform: capitalize;
+  }
+
+  .flavor-sweet {
+    background-color: #ffcc00;
+  }
+
+  .flavor-savory {
+    background-color: #ff5733;
+  }
+
+  .flavor-sour {
+    background-color: #33cc33;
+  }
+
+  .flavor-bitter {
+    background-color: #8b4513;
+  }
+
+  .flavor-umami {
+    background-color: #800080;
+  }
+
+  .flavor-spicy {
+    background-color: #ff0000;
+  }
+
+  .flavor-box:not([class*="flavor-"]) {
+    background-color: #777;
+  }
+
+  .textures-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+  }
+
+  .textures-list.single-item {
+    justify-content: center;
+    align-items: center;
+    min-height: 80px;
+  }
+
+  .texture-box {
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: white;
+    display: block;
+    text-transform: capitalize;
+    text-align: center;
+  }
+
+  .texture-crunchy {
+    background-color: #ff6600;
+  }
+
+  .texture-creamy {
+    background-color: #ffcc99;
+  }
+
+  .texture-crispy {
+    background-color: #b5651d;
+  }
+
+  .texture-soft {
+    background-color: #f1c6d3;
+  }
+
+  .texture-chewy {
+    background-color: #6c3e1f;
+  }
+
+  .texture-spongy {
+    background-color: #f4a300;
+  }
+
+  .texture-viscous {
+    background-color: #00f4f4;
+  }
+
+  .texture-box:not([class*="texture-"]) {
+    background-color: #777;
+  }
+
+  .cuisine-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    min-height: 80px;
+  }
+
+  .cuisine-list.single-item {
+    justify-content: center;
+  }
+
+  .flag-icon {
+    font-size: 40px;
+    margin: 5px;
+  }
+
+  .pirate-flag {
+    font-size: 40px;
+  }
+
+  .sandwich-card.ingredients-card {
+    background: transparent;
+    color: rgb(255, 191, 0);
+    border: 3px solid #86613d;
+    border-radius: 0px;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px auto;
+  }
+
+  .sandwich-card.ingredients-card h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(255, 191, 0);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+
+  .sandwich-card.ingredients-card .ingredients-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .ingredient-item {
+    border: 2px dotted #86613d;
+    border-radius: 0px;
+    padding: 10px 15px;
+    font-size: 1.1rem;
+    font-family: inherit;
+    color: rgb(255, 191, 0);
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    min-width: 250px;
+    width: 350px;
+    height: auto;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+
+  .ingredient-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .ingredient-details {
+    flex-grow: 1;
+    font-size: 1.1rem;
+    font-family: inherit;
+  }
+
+  .ingredient-name {
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    background: none !important;
+  }
+
+  .ingredient-divider {
+    border-top: 1px solid #86613d;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  .ingredient-unit {
+    font-size: 1rem;
+    display: block;
+  }
+
+  .sandwich-card.empty-card {
+    height: 50px;
+    background-color: transparent;
+    border: none;
+  }
+
+  .rating {
+    text-align: left;
+    font-size: 1rem;
+    color: #333;
+    margin-top: 10px;
+  }
+
+  .stars {
+    font-size: 1rem;
+    color: #f0ad4e;
+  }
+
+  @media (max-width: 768px) {
+    .sandwich-card.ingredients-card h2 {
+      font-size: 1.3rem;
+    }
+
+    .sandwich-card.ingredients-card .ingredients-container .ingredient-item {
+      font-size: 1rem;
+    }
   }
 }

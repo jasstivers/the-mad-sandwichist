@@ -1,68 +1,84 @@
-<div class="card p-3 mb-3 text-center sandwich-card">
-  <%= image_tag 'burger.jpg', alt: 'Burger Image', class: 'img-fluid sandwich-image' %>
-  <h1 class="sandwich-title"><%= @sandwich.name %></h1>
-
-<div class="rating">
-  <span class="stars">⭐⭐⭐⭐⭐</span>
-</div>
-
-
-  <p class="description"><%= @sandwich.description %></p>
-</div>
-
-<div class="card p-3 mb-3 sandwich-card">
-  <h2 class="notes-header">Tasting Notes</h2>
-  <div class="d-flex justify-content-between text-center category-container">
-    <div class="category flavor">
-      <h2>Flavor</h2>
-      <div class="flavors-list">
-        <% if @flavors.uniq.any? %>
-          <% @flavors.uniq.each do |flavor| %>
-            <span class="flavor-box flavor-<%= flavor.downcase.gsub(' ', '-') %>"><%= flavor %></span>
-          <% end %>
-        <% else %>
-          <p>None</p>
-        <% end %>
-      </div>
-    </div>
-
-    <div class="category texture">
-      <h2>Texture</h2>
-      <div class="textures-list <%= 'single-item' if @textures.uniq.size == 1 %>">
-        <% if @textures.uniq.any? %>
-          <% @textures.uniq.each do |texture| %>
-            <span class="texture-box texture-<%= texture.downcase.gsub(' ', '-') %>"><%= texture %></span>
-          <% end %>
-        <% else %>
-          <p>None</p>
-        <% end %>
-      </div>
-    </div>
-
-    <div class="category cuisine">
-      <h2>Cuisine</h2>
-      <div class="cuisine-list <%= 'single-item' if @cuisines.uniq.size == 1 %>">
-        <% if @cuisines.uniq.any? %>
-          <% @cuisines.uniq.each do |cuisine| %>
-            <%= render 'shared/flag_icon', country: cuisine %>
-          <% end %>
-        <% else %>
-          <%= render 'shared/flag_icon', country: 'pirate' %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="card p-3 mb-3 sandwich-card ingredients-card">
-  <h2>Ingredients:</h2>
-  <div class="ingredients-container">
-    <% @sandwich.ingredients.each do |ingredient| %>
-      <div class="ingredient-item">
-        <strong><%= "#{ingredient.name} - #{ingredient.unit_of_measure}" %></strong>
-      </div>
+<div class="sandwich-show-page">
+  <div class="card p-3 mb-3 sandwich-card">
+    <% if @sandwich.photo.attached? %>
+      <%= cl_image_tag @sandwich.photo.key, alt: 'Burger Image', class: 'img-fluid sandwich-image' %>
+    <% else %>
+      <%= image_tag 'burger.jpg', alt: 'Burger Image', class: 'img-fluid sandwich-image' %>
     <% end %>
-  </div>
-</div>
 
-<div class="p-3 mb-3 empty-card"></div>
+    <h1 class="sandwich-title"><%= @sandwich.name %></h1>
+
+    <div class="rating">
+      <span class="stars">⭐⭐⭐⭐⭐</span>
+    </div>
+
+    <p class="description"><%= @sandwich.description %></p>
+  </div>
+
+  <div class="card p-3 mb-3 sandwich-card">
+    <h2 class="notes-header">Tasting Notes</h2>
+    <div class="d-flex justify-content-between text-center category-container">
+      <div class="category flavor">
+        <h2>Flavor</h2>
+        <div class="flavors-list">
+          <% if @flavors.uniq.any? %>
+            <% @flavors.uniq.each do |flavor| %>
+              <span class="flavor-box flavor-<%= flavor.downcase.gsub(' ', '-') %>"><%= flavor %></span>
+            <% end %>
+          <% else %>
+            <p>None</p>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="category texture">
+        <h2>Texture</h2>
+        <div class="textures-list <%= 'single-item' if @textures.uniq.size == 1 %>">
+          <% if @textures.uniq.any? %>
+            <% @textures.uniq.each do |texture| %>
+              <span class="texture-box texture-<%= texture.downcase.gsub(' ', '-') %>"><%= texture %></span>
+            <% end %>
+          <% else %>
+            <p>None</p>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="category cuisine">
+        <h2>Cuisine</h2>
+        <div class="cuisine-list <%= 'single-item' if @cuisines.uniq.size == 1 %>">
+          <% if @cuisines.uniq.any? %>
+            <% @cuisines.uniq.each do |cuisine| %>
+              <%= render 'shared/flag_icon', country: cuisine %>
+            <% end %>
+          <% else %>
+            <%= render 'shared/flag_icon', country: 'pirate' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card p-3 mb-3 sandwich-card ingredients-card">
+    <div class="ingredients-container">
+      <% @sandwich.sandwich_ingredients.order(:ingredient_position).each do |item| %>
+        <div class="ingredient-item">
+          <div class="ingredient-image">
+            <%= image_tag(Cloudinary::Utils.cloudinary_url(item.ingredient.image_url), alt: item.ingredient.name, width: "100", height: "100") %>
+          </div>
+          <div class="ingredient-details">
+            <div class="ingredient-name">
+              <%= item.ingredient.name %>
+            </div>
+            <div class="ingredient-divider"></div>
+            <span class="ingredient-unit">
+              <%= "#{item.ingredient_qty.to_i} #{item.ingredient.unit_of_measure}" %>
+            </span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="p-3 mb-3 empty-card"></div>
+</div>

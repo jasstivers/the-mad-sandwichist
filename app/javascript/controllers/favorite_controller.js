@@ -1,5 +1,4 @@
 import { Controller } from "@hotwired/stimulus";
-import axios from "axios";
 
 export default class extends Controller {
   static targets = ["icon"];
@@ -11,20 +10,35 @@ export default class extends Controller {
   async toggle(event) {
     event.preventDefault();
     const sandwichId = this.element.dataset.favoriteId;
-    const isFavorited = this.element.dataset.favoriteState === "true";
+    const isFavorited = this.element.dataset.favoriteState === "true"; // Ensure it's read as a boolean
 
     try {
-      // 发送 AJAX 请求
       let response;
       if (isFavorited) {
-        response = await axios.delete(`/favorites/${sandwichId}`);
+        response = await fetch(`/favorites/${sandwichId}`, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            "X-CSRF-Token": document.querySelector("[name='csrf-token']").content, // Ensure CSRF token is passed
+          },
+        });
       } else {
-        response = await axios.post(`/favorites`, { sandwich_id: sandwichId });
+        response = await fetch("/favorites", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-CSRF-Token": document.querySelector("[name='csrf-token']").content, // Ensure CSRF token is passed
+          },
+          body: JSON.stringify({ sandwich_id: sandwichId }),
+        });
       }
 
-      if (response.status === 200) {
-        this.element.dataset.favoriteState = !isFavorited;
+      if (response.ok) {
+        // Toggle favorite state
+        this.element.dataset.favoriteState = (!isFavorited).toString();
         this.updateHeart();
+      } else {
+        console.error("Failed to toggle favorite", response.statusText);
       }
     } catch (error) {
       console.error("Failed to toggle favorite", error);
@@ -32,10 +46,10 @@ export default class extends Controller {
   }
 
   updateHeart() {
-    if (this.element.dataset.favoriteState === "true") {
-      this.element.innerHTML = `<i class="fa-solid fa-heart text-danger"></i>`; // 实心
-    } else {
-      this.element.innerHTML = `<i class="fa-regular fa-heart"></i>`; // 空心
-    }
+    const isFavorited = this.element.dataset.favoriteState === "true";
+
+    this.element.innerHTML = isFavorited
+      ? '<i class="fa-solid fa-heart text-danger"></i>' // Favorited: Solid red heart
+      : '<i class="fa-regular fa-heart"></i>'; // Unfavorited: Regular black heart
   }
 }

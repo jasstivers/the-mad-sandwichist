@@ -1,20 +1,23 @@
 body {
-  background-color: black;
-  color: white;
+  background-image: url('https://res.cloudinary.com/dadymzua9/image/upload/v1672532514/bg_amber_scan_qhsj1a.jpg');
+  background-repeat: repeat;
+  background-position: top left;
+  background-size: auto;
 }
- .input-group {
-  background-color:white;
- }
 
- .btn-outline-secondary {
-  border-color:white
- }
-
- .form-control {
+.input-group {
   background-color: white;
- }
+}
 
- .card-link {
+.btn-outline-secondary {
+  border-color: white;
+}
+
+.form-control {
+  background-color: white;
+}
+
+.card-link {
   text-decoration: none;
   color: inherit;
 }
@@ -22,4 +25,44 @@ body {
 .card-link:hover {
   text-decoration: none;
   color: inherit;
+}
+
+.sandwiches.index .sandwich-card {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between image and text */
+  padding: 10px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sandwiches.index .sandwich-image {
+  width: 33vw; /* 33% of the viewport width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.sandwiches.index .sandwich-content {
+  flex: 1; /* Allow text and button to fill remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sandwiches.index .sandwich-text {
+  margin-bottom: 10px;
+  color: black;
+}
+
+.sandwiches.index .favorite-button {
+  align-self: start;
+}
+
+#sandwiches-container {
+  transition: opacity 0.4s ease-in-out;
+}
+.loading {
+  opacity: 0.5;
 }
