@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'favorites/create'
   get 'favorites/destroy'
   devise_for :users
+  resources :users, :only => [:show]
   root to: "landing#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
