@@ -1,10 +1,14 @@
-<div class="background d-flex justify-content-center align-items-center flex-column">
+<div class="profile-background d-flex justify-content-center align-items-center flex-column">
   <div class="profile-header">
-    <div class="inner-banner">
-      <h1>User Show Page</h1>
-    </div>
+    <%= image_tag "top-bar-profile", alt: "No Restrictions Applied", class: "profile-header-image" %>
+    <%# <div class="inner-banner"> %>
+      <%# <h1>User Show Page</h1> %>
+    <%# </div> %>
   </div>
   <div class="license-card">
+    <div class="d-flex justify-content-center">
+      <h1 class="profile-card-header">Mad Sandwichist License</h1>
+    </div>
     <div class="diet-name d-flex flex-row">
       <div class="dietary">
         <%= image_tag "dietary-stamp", alt: "No Restrictions Applied", class: "restriction-image" %>
