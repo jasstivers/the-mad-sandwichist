@@ -1,11 +1,13 @@
 <div class="background d-flex justify-content-center align-items-center flex-column">
   <div class="profile-header">
-    <h1>User Show Page</h1>
+    <div class="inner-banner">
+      <h1>User Show Page</h1>
+    </div>
   </div>
   <div class="license-card">
-    <div class="diet-name">
+    <div class="diet-name d-flex flex-row">
       <div class="dietary">
-        <p>What do I eat?</p>
+        <%= image_tag "dietary-stamp", alt: "No Restrictions Applied", class: "restriction-image" %>
       </div>
       <p>My Email is <%= @user.email %></p>
     </div>
