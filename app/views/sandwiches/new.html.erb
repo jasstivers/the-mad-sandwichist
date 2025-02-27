@@ -39,7 +39,9 @@
 
 <div class="growing-footer" data-controller="panel-pop-up" data-action="click->panel-pop-up#popup">
   <p class="hover-text" style="color: #6c757d; font-weight: bold; text-align: left; padding-left: 20px;">Document Description: <span style="color: black;">Sandwich Patent</span></p>
-  <p class="hover-text" style="color: #6c757d; font-weight: bold; text-align: left; padding-left: 20px;">Doc Code: P2801.RFS</p>
+  <p class="hover-text" style="color: #6c757d; font-weight: bold; text-align: left; padding-left: 20px;" data-controller="doc-code">
+  Doc Code: <span data-doc-code-target="docCode"></span>
+  </p>
   <div class="hidden-content">
     <%= simple_form_for @sandwich, html: { multipart: true } do |f| %>
       <div style="border-radius: 10px; border: 3px solid #343a40; margin-bottom: 15px;">
@@ -62,7 +64,7 @@
                 </td>
               </tr>
               <tr>
-                <td class="px-2 border-dark border-2 border-start-0 text-end" style="color: black; font-weight: bold;">Date</td>
+                <td class="px-2 border-dark border-2 border-start-0 border-bottom-0 text-end" style="color: black; font-weight: bold;">Date</td>
                 <td class="px-2 border-dark border-2 border-end-0">
                   <input type="date" id="dateField" class="border-0 w-100 bg-transparent" readonly>
                 </td>
@@ -82,13 +84,15 @@
       </div>
 
       <div style="border-radius: 0px; border: 3px solid #343a40; margin-bottom: 15px;">
-        <div class="row ms-0">
-          <!-- Left Section (Smaller Box for "Upload Image") -->
+        <div class="row ms-0" data-controller="image-preview">
           <div class="col-4 p-2" style="display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start;">
-            <div class="p-2" style="border: 2px dotted #343a40; width: 100%; text-align: center; height: 110px;">
-              <h5>Upload Image</h5>
+            <div class="p-2" style="border: 2px dotted #343a40; width: 100%; text-align: center; height: 110px; position: relative;">
+              <h5 style="margin-top: 30px; font-size: 0.8rem; color: #6c757d; font-weight: bold;">Attach image here</h5>
+              <div id="imagePreviewContainer" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; justify-content: center; align-items: center;">
+                <img id="imagePreview" src="" alt="Image preview" style="max-width: 110px; max-height: 105px; object-fit: contain; display: none; border: 2px solid #343a40; border-radius: 5px;" data-target="image-preview.previewImage" />
+              </div>
             </div>
-            <%= f.input :photo, as: :file, label: "Choose an image", input_html: { class: 'form-control' } %>
+            <%= f.input :photo, as: :file, label: "Choose an image", input_html: { class: 'form-control', id: 'imageInput', data: { action: 'change->image-preview#showPreview' } } %>
           </div>
 
           <div class="col-8 p-2">
@@ -98,9 +102,9 @@
           </div>
         </div>
 
-        <!-- Create Sandwich Button at the Bottom -->
+        <!-- Submit Button -->
         <div class="mb-3" style="display: flex; justify-content: center;">
-          <%= f.submit "Create Sandwich", class: "btn btn-primary w-100" %>
+          <%= f.submit "Create Sandwich", class: "btn btn-primary w-80" %>
         </div>
       </div>
     <% end %>

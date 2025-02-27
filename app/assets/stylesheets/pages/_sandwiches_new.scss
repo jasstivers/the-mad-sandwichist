@@ -83,7 +83,9 @@
   height: 70px;
   position: fixed;
   bottom: 65px;
-  background: #c9af94;
+  background: url('bg_paper.png') no-repeat center center;
+  background-size: cover; /* Default background size */
+  background-position: center center; /* Ensuring the background is centered */
   text-align: center;
   color: white;
   transition: height 0.5s ease-in-out;
@@ -101,17 +103,20 @@
 .growing-footer .hidden-content {
   opacity: 0;
   max-height: 0;
+  overflow-y: auto;
   transition: opacity 0.3s ease-in-out, max-height 0.5s ease-in-out;
   padding: 15px 20px;
 }
 
 .growing-footer.active {
   height: 465px;
-
+  overflow-y: auto;
+  background-size: cover !important; /* Ensure background size is 'cover' even when expanded */
+  background-position: center center !important; /* Keep the background centered */
 
   .hidden-content {
-  opacity: 1;
-  max-height: 100%;
+    opacity: 1;
+    max-height: 100%;
   }
 }
 
