@@ -1,4 +1,4 @@
-Vegetable,Flavors,Texture,Cuisine
+name,flavor,texture,origin
 Lettuce,grassy|mild|slightly sweet,crisp,Global
 Spinach,earthy|slightly bitter|iron-rich,tender,Global
 Arugula,peppery|spicy|nutty,tender,Europe|Mediterranean
