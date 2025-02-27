@@ -26,16 +26,17 @@
               <%= image_tag(Cloudinary::Utils.cloudinary_url(ingredient.image_url), alt: ingredient.name, width: "100", height: "100") %>
             <% end %>
             <%= label_tag "ingredient_#{ingredient.id}", class: "ingredient-label" do %>
-              <%= check_box_tag "sandwich[ingredient_ids][]", ingredient.id,
-                @sandwich.ingredient_ids.include?(ingredient.id),
-                id: "ingredient_#{ingredient.id}", class: 'form-check-input' %>
+              <!-- Instead of a checkbox, use a hidden field to send the ingredient ID -->
+              <%= hidden_field_tag "sandwich[ingredient_ids][]", ingredient.id, value: ingredient.id %>
               <span class="ingredient-name"><%= ingredient.name %></span>
               <div>
                 <%= number_field_tag "sandwich[ingredient_quantities][#{ingredient.id}]", 1, min: 1, class: 'quantity-input', size: 2 %>
                 <span class="ingredient-unit"><%= ingredient.unit_of_measure %></span>
               </div>
             <% end %>
-            <button data-action="click->ingredients#remove" data-ingredients-target="remove">Remove</button>
+            <div class="parent-container">
+              <button class="remove-ingredient-btn" data-action="click->ingredients#remove" data-ingredients-target="remove">−</button>
+            </div>
           </li>
         <% end %>
       </ul>
@@ -44,7 +45,7 @@
           <option value="<%= ingredient.id %>"> <%= ingredient.name  %> </option>
         <% end %>
       </select>
-      <button data-action="click->ingredients#add">add</button>
+      <button class="add-ingredient-btn" data-action="click->ingredients#add">+</button>
       <% @ingredients.each do |ingredient| %>
         <template id="ingredient-template-<%= ingredient.id %>">
           <li data-ingredients-target="listItem">
@@ -61,7 +62,9 @@
                 <span class="ingredient-unit"><%= ingredient.unit_of_measure %></span>
               </div>
             <% end %>
-            <button data-action="click->ingredients#remove" data-ingredients-target="remove">Remove</button>
+            <div class="parent-container">
+              <button class="remove-ingredient-btn" data-action="click->ingredients#remove" data-ingredients-target="remove">−</button>
+            </div>
           </li>
         </template>
       <% end %>
