@@ -1,0 +1,82 @@
+name,flavor,texture,origin
+Brie,buttery|mild|earthy|nutty,soft,France
+Camembert,earthy|mushroomy|buttery,soft,France
+Roquefort,salty|sharp|pungent|spicy,crumbly,France
+Gorgonzola,tangy|creamy|spicy|pungent,crumbly,Italy
+Stilton,rich|nutty|spicy|fruity,crumbly,United Kingdom
+Cheddar,sharp|nutty|savory|tangy,firm,United Kingdom
+Parmesan,umami|nutty|salty|savory,hard,Italy
+Gouda,sweet|caramel|buttery|nutty,semi-hard,Netherlands
+Edam,mild|buttery|nutty|slightly salty,semi-hard,Netherlands
+Gruyère,fruity|nutty|savory|caramelized,firm,Switzerland
+Emmental,fruity|nutty|buttery|mild,semi-hard,Switzerland
+Comté,fruity|savory|nutty|buttery,firm,France
+Reblochon,creamy|earthy|nutty|mild,soft,France
+Tomme de Savoie,earthy|grassy|nutty|buttery,semi-soft,France
+Munster,pungent|savory|spicy|buttery,soft,France
+Maroilles,earthy|strong|pungent|savory,soft,France
+Pont-l'Évêque,earthy|buttery|mushroomy|mild,soft,France
+Livarot,pungent|savory|earthy|spicy,soft,France
+Epoisses,strong|pungent|savory|nutty,soft,France
+Langres,earthy|tangy|fruity|pungent,soft,France
+Brillat-Savarin,creamy|buttery|mild|rich,soft,France
+Coulommiers,creamy|buttery|mild|nutty,soft,France
+Chabichou,tangy|goaty|nutty|citrusy,semi-soft,France
+Crottin de Chavignol,earthy|tangy|nutty|goaty,semi-soft,France
+Valençay,earthy|goaty|nutty|citrusy,semi-soft,France
+Bleu d'Auvergne,spicy|pungent|buttery|salty,crumbly,France
+Fourme d'Ambert,mild|pungent|nutty|buttery,crumbly,France
+Bleu de Gex,sharp|spicy|savory|nutty,crumbly,France
+Saint-Nectaire,earthy|nutty|buttery|mushroomy,semi-soft,France
+Cantal,tangy|nutty|buttery|savory,firm,France
+Salers,grassy|nutty|buttery|earthy,firm,France
+Pélardon,tangy|goaty|nutty|herbal,semi-soft,France
+Selles-sur-Cher,goaty|nutty|citrusy|earthy,semi-soft,France
+Banon,earthy|nutty|tangy|herbal,soft,France
+Feta,salty|tangy|briny|crumbly,crumbly,Greece
+Halloumi,salty|milky|grilled|chewy,firm,Cyprus
+Kefalotyri,salty|tangy|nutty|sharp,hard,Greece
+Graviera,fruity|nutty|caramelized|mild,firm,Greece
+Pecorino Romano,salty|sharp|umami|nutty,hard,Italy
+Pecorino Toscano,fruity|nutty|mild|buttery,firm,Italy
+Pecorino Sardo,earthy|nutty|savory|sharp,hard,Italy
+Pecorino Siciliano,strong|spicy|sharp|savory,hard,Italy
+Ricotta,mild|milky|sweet|creamy,soft,Italy
+Mozzarella,milky|mild|creamy|buttery,soft,Italy
+Burrata,rich|milky|buttery|creamy,soft,Italy
+Scamorza,smoky|milky|buttery|savory,semi-soft,Italy
+Provolone,sharp|nutty|savory|buttery,semi-hard,Italy
+Fontina,earthy|nutty|buttery|fruity,semi-soft,Italy
+Asiago,savory|nutty|buttery|sharp,firm,Italy
+Taleggio,earthy|pungent|buttery|savory,soft,Italy
+Stracchino,mild|milky|buttery|tangy,soft,Italy
+Caciocavallo,sharp|nutty|earthy|savory,semi-hard,Italy
+Raclette,fruity|nutty|savory|buttery,semi-soft,Switzerland
+Tête de Moine,earthy|nutty|fruity|savory,firm,Switzerland
+Vacherin Mont d'Or,earthy|creamy|buttery|nutty,soft,Switzerland
+Appenzeller,spicy|savory|nutty|buttery,firm,Switzerland
+Sbrinz,strong|nutty|sharp|savory,hard,Switzerland
+Beaufort,fruity|nutty|buttery|savory,firm,France
+Manchego,tangy|nutty|buttery|savory,firm,Spain
+Idiazabal,smoky|nutty|earthy|savory,firm,Spain
+Mahon,sharp|buttery|nutty|salty,firm,Spain
+Roncal,earthy|nutty|buttery|savory,firm,Spain
+Tetilla,mild|buttery|milky|sweet,soft,Spain
+Cabrales,strong|spicy|pungent|savory,crumbly,Spain
+Queso de Valdeón,spicy|pungent|nutty|savory,crumbly,Spain
+Añejo Enchilado,spicy|sharp|nutty|savory,firm,Mexico
+Panela,mild|milky|buttery|fresh,soft,Mexico
+Cotija,salty|sharp|crumbly|umami,hard,Mexico
+Oaxaca,mild|buttery|milky|stringy,semi-soft,Mexico
+Queso Blanco,mild|buttery|milky|fresh,soft,Mexico
+Queso Fresco,mild|milky|tangy|crumbly,soft,Mexico
+Edam,nutty|savory|buttery|slightly sweet,semi-hard,Netherlands
+Wensleydale,mild|fruity|tangy|crumbly,crumbly,United Kingdom
+Red Leicester,nutty|buttery|savory|sharp,firm,United Kingdom
+Double Gloucester,buttery|nutty|savory|mild,firm,United Kingdom
+Cheshire,tangy|savory|buttery|crumbly,crumbly,United Kingdom
+Caerphilly,tangy|buttery|savory|crumbly,crumbly,United Kingdom
+Lancashire,crumbly|buttery|tangy|savory,crumbly,United Kingdom
+Dorset Blue Vinny,spicy|pungent|savory|nutty,crumbly,United Kingdom
+Shropshire Blue,strong|spicy|savory|nutty,crumbly,United Kingdom
+Yarg,mild|earthy|buttery|tangy,semi-soft,United Kingdom
