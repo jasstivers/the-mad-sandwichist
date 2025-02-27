@@ -13,8 +13,10 @@
       <div class="dietary">
         <%= image_tag "dietary-stamp", alt: "No Restrictions Applied", class: "restriction-image" %>
       </div>
-      <p>My Email is <%= @user.email %></p>
-    </div>
+      <div class="name-field">
+        <span class="label">Name</span>
+        <span class="user-name"><%= @user.email %></span>
+      </div>    </div>
     <div class="allergy-list">
       <p>I have allergies!</p>
     </div>

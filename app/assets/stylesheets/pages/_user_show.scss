@@ -66,6 +66,43 @@
   // flex-direction: row;
 }
 
+.name-field {
+  position: relative;
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  color: #8A8A8A;
+  display: inline-block;
+  width: 250px;
+  padding-bottom: 5px;
+}
+
+.label {
+  position: absolute;
+  left: 0;
+  bottom: 70%;
+}
+
+.name-field::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px; /* Thickness of the underline */
+  background-color: #8A8A8A;
+  position: absolute;
+  bottom: 70%;
+  left: 0;
+}
+
+.user-name {
+  position: absolute;
+  left: 60px;
+  bottom: 70%;
+  font-weight: bold;
+  font-size: 20px;
+  color: #000;
+  font-family: 'Pacifico', cursive;
+}
+
 .restriction-image {
   margin-right: 10px;
 }
