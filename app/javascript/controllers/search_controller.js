@@ -6,21 +6,19 @@ export default class extends Controller {
 
   fire(event) {
     event.preventDefault();
+    this.resultsTarget.classList.add("loading"); // Fade out slightly
 
-    const query = encodeURIComponent(this.inputTarget.value.trim());  // Encode search query
-    if (query === "") return; // Prevent empty searches
-
-    const url = "/sandwiches?query=" + query; // Update with correct endpoint if necessary
-    console.log("Fetching:", url);
+    const query = this.inputTarget.value.trim();
+    const url = query === "" ? "/sandwiches" : `/sandwiches?query=${encodeURIComponent(query)}`;
 
     fetch(url, {
       method: "GET",
-      headers: { "Accept": "text/plain" }
+      headers: { "Accept": "text/vnd.turbo-stream.html" }
     })
     .then(response => response.text())
     .then((data) => {
-      console.log("Search results updated");
       this.resultsTarget.innerHTML = data;
+      this.resultsTarget.classList.remove("loading"); // Remove fade effect
     })
     .catch(error => console.error("Search error:", error));
   }

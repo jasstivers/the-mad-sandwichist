@@ -76,6 +76,46 @@
   outline: none;
 }
 
+.parent-container {
+  display: flex;
+  justify-content: flex-end; /* Pushes button to the right */
+  width: 100px; /* Adjust width to control positioning */
+}
+
+.remove-ingredient-btn {
+  background-color: rgb(255, 191, 0);
+  color: black; /* Text color */
+  border: 1px solid black;
+  border-radius: 50%; /* Makes it circular */
+  width: 32px; /* Set a fixed width */
+  height: 32px; /* Set a fixed height */
+  font-size: 18px; /* Make the minus sign visible */
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin-left: auto; /* This pushes the button to the right */
+}
+
+.add-ingredient-btn {
+  background-color: rgb(255, 191, 0);
+  color: black;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin-left: auto; /* This pushes the button to the right */
+}
+
 .growing-footer {
   width: 100%;
   height: 70px;

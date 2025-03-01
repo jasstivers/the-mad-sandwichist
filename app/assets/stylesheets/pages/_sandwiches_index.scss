@@ -59,3 +59,10 @@ body {
 .sandwiches.index .favorite-button {
   align-self: start;
 }
+
+#sandwiches-container {
+  transition: opacity 0.4s ease-in-out;
+}
+.loading {
+  opacity: 0.5;
+}

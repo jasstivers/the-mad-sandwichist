@@ -10,3 +10,21 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar .dropdown-menu {
+  position: absolute; /* Prevents it from shifting other elements */
+  bottom: 80%; /* Ensures the menu opens above the button */
+  left: 80%;
+  transform: translateX(-50%) translateY(10px); /* Centers it and animates up */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+  z-index: 1050; /* Ensures it appears above other elements */
+}
+
+.navbar .dropdown-menu.show {
+  transform: translateX(-50%) translateY(0); /* Moves it into place */
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}

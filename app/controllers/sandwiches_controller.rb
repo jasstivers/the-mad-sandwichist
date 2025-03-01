@@ -5,31 +5,51 @@ class SandwichesController < ApplicationController
   before_action :set_user, only: %i[create]  # Set the current user
 
   def toggle_favorite
-    # @sandwiches = Sandwich.all
-    @sandwich = Sandwich.find_by(id: params[:id])
+    @sandwich = Sandwich.find(params[:id])
+
     if current_user.favorited?(@sandwich)
       current_user.unfavorite(@sandwich)
     else
       current_user.favorite(@sandwich)
     end
-    redirect_to sandwiches_path
+
+    respond_to do |format|
+      format.turbo_stream do
+        turbo_streams = [
+          turbo_stream.replace("sandwich_#{@sandwich.id}", partial: "sandwiches/sandwich_card", locals: { sandwich: @sandwich })
+        ]
+
+        # Conditionally update the sandwich list only if filtering is active
+        if params[:filter] == "favorites"
+          turbo_streams << turbo_stream.replace("sandwiches_list", partial: "sandwiches/list", locals: { sandwiches: current_user.favorited_sandwiches })
+        end
+
+        render turbo_stream: turbo_streams
+      end
+      format.html { redirect_to sandwiches_path }
+    end
   end
 
-    def index
-      if params[:query].present?
-        @sandwiches = Sandwich.where("name ILIKE ?", "%#{params[:query]}%")
-      else
-        @sandwiches = Sandwich.all
-      end
+  def index
+    @sandwiches = if params[:filter] == "favorites"
+                    current_user.favorited_sandwiches
+                  else
+                    Sandwich.all
+                  end
 
-      respond_to do |format|
-        format.html
-        format.text { render partial: "sandwiches/sandwich_cards", locals: { sandwiches: @sandwiches }, formats: [:html] }
+    @sandwiches = @sandwiches.where("name ILIKE ?", "%#{params[:query]}%") if params[:query].present?
+
+    respond_to do |format|
+      format.html
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace("search-results", partial: "sandwiches/sandwich_cards", locals: { sandwiches: @sandwiches })
       end
     end
+  end
 
   def new
     @sandwich = Sandwich.new
+    @ingredients = Ingredient.all
     @default_ingredients = [
       "Pretzel Bun",
       "Beef Patty",
