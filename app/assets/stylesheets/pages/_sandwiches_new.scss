@@ -187,7 +187,47 @@ select[data-controller="tom-select"] {
 }
 
 
+// Slider
+/* Custom styling for the range input */
+.quantity-slider {
+  -webkit-appearance: none;  /* Removes default styling in Webkit browsers */
+  -moz-appearance: none;     /* Removes default styling in Firefox */
+  appearance: none;          /* Removes default styling in all browsers */
+  width: 100%;               /* Full width of the container */
+  height: 8px;               /* Slider track height */
+  background: black;
+  border-radius: 5px;        /* Rounded corners for the track */
+  border: 0.5px solid rgb(255, 191, 0); /* Thinner yellow border around the track */
+}
 
+.quantity-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;  /* Removes default thumb styling in Webkit browsers */
+  appearance: none;          /* Removes default thumb styling in all browsers */
+  width: 20px;
+  height: 20px;
+  background: rgb(255, 191, 0);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.quantity-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: rgb(255, 191, 0);
+  border-radius: 50%;        /* Make thumb round */
+  cursor: pointer;           /* Pointer cursor when hovering */
+}
+
+.quantity-slider::-ms-thumb {
+  width: 20px;
+  height: 20px;
+  background: rgb(255, 191, 0);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+// footer
 .growing-footer {
   width: 100%;
   height: 70px;

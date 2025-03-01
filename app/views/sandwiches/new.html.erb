@@ -27,9 +27,18 @@
               <%= hidden_field_tag "sandwich[ingredient_ids][]", ingredient.id, value: ingredient.id %>
               <span class="ingredient-name"><%= ingredient.name %></span>
               <div>
-                <%= number_field_tag "sandwich[ingredient_quantities][#{ingredient.id}]", 1, min: 1, class: 'quantity-input', size: 2 %>
-                <span class="ingredient-unit"><%= ingredient.unit_of_measure %></span>
+                <label for="ingredient-<%= ingredient.id %>">Quantity:</label>
+                <input data-unit="<%= ingredient.unit_of_measure%>" type="range" id="ingredient-<%= ingredient.id %>" name="sandwich[ingredient_quantities][<%= ingredient.id %>]" min="1" max="10" value="1" class="quantity-slider">
+                <span class="ingredient-quantity-display">1 <%= ingredient.unit_of_measure %></span>
               </div>
+              <script>
+                document.querySelectorAll('.quantity-slider').forEach(slider => {
+                  slider.addEventListener('input', function() {
+                    const display = slider.closest('div').querySelector('.ingredient-quantity-display');
+                    display.textContent = `${slider.value} ${slider.dataset.unit}`;
+                  });
+                });
+              </script>
             <% end %>
             <div class="parent-container">
               <button class="remove-ingredient-btn" data-action="click->ingredients#remove" data-ingredients-target="remove">−</button>
@@ -54,9 +63,18 @@
               <%= hidden_field_tag "sandwich[ingredient_ids][]", ingredient.id, value: ingredient.id %>
               <span class="ingredient-name"><%= ingredient.name %></span>
               <div>
-                <%= number_field_tag "sandwich[ingredient_quantities][#{ingredient.id}]", 1, min: 1, class: 'quantity-input', size: 2 %>
-                <span class="ingredient-unit"><%= ingredient.unit_of_measure %></span>
+                <label for="ingredient-<%= ingredient.id %>">Quantity:</label>
+                <input type="range" id="ingredient-<%= ingredient.id %>" name="sandwich[ingredient_quantities][<%= ingredient.id %>]" min="1" max="10" value="1" class="quantity-slider">
+                <span class="ingredient-quantity-display">1 <%= ingredient.unit_of_measure %></span>
               </div>
+              <script>
+                document.querySelectorAll('.quantity-slider').forEach(slider => {
+                  slider.addEventListener('input', function() {
+                    const display = slider.closest('div').querySelector('.ingredient-quantity-display');
+                    display.textContent = `${slider.value} ${slider.dataset.unit}`;
+                  });
+                });
+              </script>
             <% end %>
             <div class="parent-container">
               <button class="remove-ingredient-btn" data-action="click->ingredients#remove" data-ingredients-target="remove">−</button>
