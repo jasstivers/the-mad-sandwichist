@@ -9,8 +9,16 @@
     <h1 class="sandwich-title"><%= @sandwich.name %></h1>
 
     <div class="rating">
-      <span class="stars" data-review-target="displayStars">⭐⭐⭐⭐⭐</span>
-      <span class="craziness" data-review-target="displayCraziness">⚡⚡⚡⚡⚡</span>
+      <div class="stars" data-review-target="displayStars">
+        <% 5.times do %>
+          <i class="fas fa-star empty"></i>
+        <% end %>
+      </div>
+      <div class="craziness" data-review-target="displayCraziness">
+        <% 5.times do %>
+          <i class="fas fa-bolt empty"></i>
+        <% end %>
+      </div>
     </div>
 
     <p class="description"><%= @sandwich.description %></p>
