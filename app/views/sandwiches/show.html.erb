@@ -9,7 +9,8 @@
     <h1 class="sandwich-title"><%= @sandwich.name %></h1>
 
     <div class="rating">
-      <span class="stars">⭐⭐⭐⭐⭐</span>
+      <span class="stars" data-review-target="displayStars">⭐⭐⭐⭐⭐</span>
+      <span class="craziness" data-review-target="displayCraziness">⚡⚡⚡⚡⚡</span>
     </div>
 
     <p class="description"><%= @sandwich.description %></p>
@@ -80,5 +81,60 @@
     </div>
   </div>
 
+<div class="card p-3 mb-3 reviews-container" data-controller="review" data-review-sandwich-id="<%= @sandwich.id %>">
+  <!-- Reviews Display -->
+  <div class="card p-3 mb-3 reviews-list" data-review-target="reviewsList">
+    <h2>Reviews</h2>
+    <div class="no-reviews" data-review-target="noReviewsMessage">No reviews yet. Be the first to review!</div>
+  </div>
+
+  <!-- Review Section -->
+  <div class="card p-3 mb-3 review-section">
+    <h2 class="text-center">Leave a Review</h2>
+
+    <input type="hidden" value="<%= current_user.username %>" data-review-target="username">
+
+    <div class="ratings-container d-flex justify-content-between">
+      <div class="rating-group">
+        <label>How much did you like it?</label>
+        <div class="star-rating" data-review-target="starRating">
+          <% 5.times do |i| %>
+            <i class="fas fa-star" data-value="<%= i + 1 %>" data-action="click->review#selectRating"></i>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="rating-group">
+        <label>How crazy is it?</label>
+        <div class="crazy-rating" data-review-target="crazyRating">
+          <% 5.times do |i| %>
+            <i class="fas fa-bolt" data-value="<%= i + 1 %>" data-action="click->review#selectCraziness"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <textarea class="form-control my-3" data-review-target="commentBox" placeholder="Write your review..."></textarea>
+    <button class="btn btn-primary w-100" data-action="click->review#submitReview">Submit Review</button>
+  </div>
+
+  <!-- Empty Card for Layout Spacing -->
   <div class="p-3 mb-3 empty-card"></div>
 </div>
+
+<!-- Template for a Review -->
+<template id="review-template">
+  <div class="review-item p-2 border-bottom" data-review-id="">
+    <div class="d-flex justify-content-between">
+      <div>
+        <strong>User:</strong> <span class="review-username"></span>
+      </div>
+      <div>
+        <span class="stars"></span>
+        <span class="craziness"></span>
+      </div>
+    </div>
+    <p class="review-text"></p>
+    <button class="btn btn-sm btn-danger delete-btn" data-action="click->review#deleteReview">Delete</button>
+  </div>
+</template>
