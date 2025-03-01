@@ -116,6 +116,118 @@
   margin-left: auto; /* This pushes the button to the right */
 }
 
+
+select[data-controller="tom-select"] {
+  background-color: black;
+  color: rgb(255, 191, 0);
+  padding: 8px;
+  border-radius: 5px;
+  width: 100%; // Ensures the select box is full width
+  appearance: none; // Removes default arrow
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+}
+
+// Normal state (before selecting) with border
+.ts-control {
+  background-color: black !important;
+  color: rgb(255, 191, 0) !important;
+  display: flex !important; // Ensures child items (selected ingredients) stretch
+  width: 100% !important; // Full width for the selected area
+  border: 2px solid rgba(255, 191, 0, 0.6) !important; // Semi-transparent yellow border
+  border-radius: 5px !important; // Smooth corners
+  position: relative; // Needed for custom arrow positioning
+}
+
+// Custom dropdown arrow (Yellow)
+.ts-control::after {
+  content: "▼"; // Unicode arrow symbol
+  font-size: 14px;
+  color: rgb(255, 191, 0);
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%); // Centers vertically
+  pointer-events: none; // Prevents interaction issues
+}
+
+// Text color inside the input field
+.ts-control input {
+  color: rgb(255, 191, 0) !important; // Make the typed text visible
+  caret-color: rgb(255, 191, 0) !important; // Makes the cursor match the text color
+  background: black !important; // Ensure no background overrides
+  border: none !important; // Remove any default borders
+  outline: none !important; // Remove the outline when focused
+}
+
+// Selected option styling (Fix full-width issue)
+.ts-control .item {
+  color: rgb(255, 191, 0)  !important;
+  border-radius: 5px;
+  padding: 4px 8px;
+  flex-grow: 1 !important; // Makes sure it stretches full width
+  width: 100% !important; // Force full width
+}
+
+// Dropdown options (before selecting) with semi-transparent border
+.ts-dropdown {
+  background-color: black !important;
+  color: rgb(255, 191, 0) !important;
+  border: 1px solid rgba(255, 191, 0, 0.6) !important;
+  border-radius: 5px !important; // Smooth corners
+  max-height: 300px !important; // Adjust height as needed
+  overflow-y: auto !important; // Enables scrolling if the options exceed the max height
+}
+
+// Highlight option on hover
+.ts-dropdown .ts-dropdown-content .option.active {
+  background-color: rgb(255, 191, 0) !important; // Yellow hover background
+  color: black !important;
+}
+
+
+// Slider
+/* Custom styling for the range input */
+.quantity-slider {
+  -webkit-appearance: none;  /* Removes default styling in Webkit browsers */
+  -moz-appearance: none;     /* Removes default styling in Firefox */
+  appearance: none;          /* Removes default styling in all browsers */
+  width: 100%;               /* Full width of the container */
+  height: 8px;               /* Slider track height */
+  background: black;
+  border-radius: 5px;        /* Rounded corners for the track */
+  border: 0.5px solid rgb(255, 191, 0); /* Thinner yellow border around the track */
+}
+
+.quantity-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;  /* Removes default thumb styling in Webkit browsers */
+  appearance: none;          /* Removes default thumb styling in all browsers */
+  width: 20px;
+  height: 20px;
+  background: rgb(255, 191, 0);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.quantity-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: rgb(255, 191, 0);
+  border-radius: 50%;        /* Make thumb round */
+  cursor: pointer;           /* Pointer cursor when hovering */
+}
+
+.quantity-slider::-ms-thumb {
+  width: 20px;
+  height: 20px;
+  background: rgb(255, 191, 0);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+// footer
 .growing-footer {
   width: 100%;
   height: 70px;

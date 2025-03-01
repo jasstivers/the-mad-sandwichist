@@ -52,10 +52,7 @@ class SandwichesController < ApplicationController
     @ingredients = Ingredient.all
     @default_ingredients = [
       "Pretzel Bun",
-      "Beef Patty",
-      "Sliced Cheddar Cheese",
-      "Ketchup",
-      "Pretzel Bun (bottom)"
+      "Ciabatta"
     ]
 
     @visible_ingredients = Ingredient.where(name: @default_ingredients)
