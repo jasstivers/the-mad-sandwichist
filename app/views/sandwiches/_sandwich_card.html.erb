@@ -1,8 +1,13 @@
 <turbo-frame id="sandwich_<%= sandwich.id %>">
   <div class="col-12 mb-3">
-    <%= link_to sandwich_path(sandwich), data: {turbo_frame: "_top"}, class: 'card-link' do %>
+    <%= link_to sandwich_path(sandwich), data: { turbo_frame: "_top" }, class: 'card-link' do %>
       <div class="sandwich-card" data-sandwich-id="<%= sandwich.id %>" data-favorite-toggle-target="unliked" data-id="<%= sandwich.id %>">
-        <%= image_tag 'burger.jpg', alt: 'Burger Image', class: 'sandwich-image' %>
+
+        <% if sandwich.photo.present? %>
+          <%= cl_image_tag sandwich.photo.key, alt: "#{sandwich.name} Image", class: 'sandwich-image' %>
+        <% else %>
+          <%= image_tag 'burger.jpg', alt: 'Default Burger Image', class: 'sandwich-image' %>
+        <% end %>
 
         <div class="sandwich-content">
           <div class="sandwich-text">
