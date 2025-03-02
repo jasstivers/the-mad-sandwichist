@@ -24,11 +24,12 @@
             <% end %>
             <!-- Add popup for ingredient descriptions -->
             <%= label_tag "ingredient_#{ingredient.id}", class: "ingredient-label" do %>
-              <%= ingredient.name %>
-              <!-- Button trigger modal -->
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ingredientModal-<%= ingredient.id %>">
-                Details
-              </button>
+              <span
+                class="ingredient-name"
+                data-bs-toggle="modal"
+                data-bs-target="#ingredientModal-<%= ingredient.id %>">
+                <%= ingredient.name %>
+              </span>
               <!-- Modal -->
               <div class="modal fade" id="ingredientModal-<%= ingredient.id %>" tabindex="-1" aria-labelledby="ingredientModalLabel-<%= ingredient.id %>" aria-hidden="true">
                 <div class="modal-dialog">
