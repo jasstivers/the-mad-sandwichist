@@ -52,7 +52,6 @@
               </div>
               <!-- Instead of a checkbox, use a hidden field to send the ingredient ID -->
               <%= hidden_field_tag "sandwich[ingredient_ids][]", ingredient.id, value: ingredient.id %>
-              <span class="ingredient-name"><%= ingredient.name %></span>
               <div>
                 <label for="ingredient-<%= ingredient.id %>">Quantity:</label>
                 <input data-unit="<%= ingredient.unit_of_measure%>" type="range" id="ingredient-<%= ingredient.id %>" name="sandwich[ingredient_quantities][<%= ingredient.id %>]" min="1" max="10" value="1" class="quantity-slider">
@@ -89,7 +88,6 @@
             <%= label_tag "ingredient_#{ingredient.id}", class: "ingredient-label" do %>
               <!-- Instead of a checkbox, use a hidden field to send the ingredient ID -->
               <%= hidden_field_tag "sandwich[ingredient_ids][]", ingredient.id, value: ingredient.id %>
-              <span class="ingredient-name"><%= ingredient.name %></span>
               <div>
                 <label for="ingredient-<%= ingredient.id %>">Quantity:</label>
                 <input type="range" id="ingredient-<%= ingredient.id %>" name="sandwich[ingredient_quantities][<%= ingredient.id %>]" min="1" max="10" value="1" class="quantity-slider">
