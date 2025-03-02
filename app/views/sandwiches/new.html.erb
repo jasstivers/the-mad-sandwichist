@@ -22,10 +22,32 @@
             <% if ingredient.image_url.present? %>
               <%= image_tag(Cloudinary::Utils.cloudinary_url(ingredient.image_url), alt: ingredient.name, width: "100", height: "100") %>
             <% end %>
+            <!-- Add popup for ingredient descriptions -->
             <%= label_tag "ingredient_#{ingredient.id}", class: "ingredient-label" do %>
+              <span
+              class="ingredient-name"
+              data-bs-toggle="modal"
+              data-bs-target="#ingredientModal-<%= ingredient.id %>">
+                <%= ingredient.name %>
+              </span>
+              <!-- Modal -->
+              <div class="modal fade" id="ingredientModal-<%= ingredient.id %>" tabindex="-1" aria-labelledby="ingredientModalLabel-<%= ingredient.id %>" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="ingredientModalLabel-<%= ingredient.id %>">
+                        <%= ingredient.name %>
+                      </h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p><strong>Description:</strong> <%= ingredient.description %></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <!-- Instead of a checkbox, use a hidden field to send the ingredient ID -->
               <%= hidden_field_tag "sandwich[ingredient_ids][]", ingredient.id, value: ingredient.id %>
-              <span class="ingredient-name"><%= ingredient.name %></span>
               <div>
                 <label for="ingredient-<%= ingredient.id %>">Quantity:</label>
                 <input data-unit="<%= ingredient.unit_of_measure%>" type="range" id="ingredient-<%= ingredient.id %>" name="sandwich[ingredient_quantities][<%= ingredient.id %>]" min="1" max="10" value="1" class="quantity-slider">
@@ -58,10 +80,32 @@
             <% if ingredient.image_url.present? %>
               <%= image_tag(Cloudinary::Utils.cloudinary_url(ingredient.image_url), alt: ingredient.name, width: "100", height: "100") %>
             <% end %>
+            <!-- Add popup for ingredient descriptions -->
             <%= label_tag "ingredient_#{ingredient.id}", class: "ingredient-label" do %>
+              <span
+              class="ingredient-name"
+              data-bs-toggle="modal"
+              data-bs-target="#ingredientModal-<%= ingredient.id %>">
+                <%= ingredient.name %>
+              </span>
+              <!-- Modal -->
+              <div class="modal fade" id="ingredientModal-<%= ingredient.id %>" tabindex="-1" aria-labelledby="ingredientModalLabel-<%= ingredient.id %>" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="ingredientModalLabel-<%= ingredient.id %>">
+                        <%= ingredient.name %>
+                      </h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p><strong>Description:</strong> <%= ingredient.description %></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <!-- Instead of a checkbox, use a hidden field to send the ingredient ID -->
               <%= hidden_field_tag "sandwich[ingredient_ids][]", ingredient.id, value: ingredient.id %>
-              <span class="ingredient-name"><%= ingredient.name %></span>
               <div>
                 <label for="ingredient-<%= ingredient.id %>">Quantity:</label>
                 <input type="range" id="ingredient-<%= ingredient.id %>" name="sandwich[ingredient_quantities][<%= ingredient.id %>]" min="1" max="10" value="1" class="quantity-slider">
