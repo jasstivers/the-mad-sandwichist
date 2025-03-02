@@ -25,9 +25,9 @@
             <!-- Add popup for ingredient descriptions -->
             <%= label_tag "ingredient_#{ingredient.id}", class: "ingredient-label" do %>
               <span
-                class="ingredient-name"
-                data-bs-toggle="modal"
-                data-bs-target="#ingredientModal-<%= ingredient.id %>">
+              class="ingredient-name"
+              data-bs-toggle="modal"
+              data-bs-target="#ingredientModal-<%= ingredient.id %>">
                 <%= ingredient.name %>
               </span>
               <!-- Modal -->

@@ -226,6 +226,30 @@ select[data-controller="tom-select"] {
   cursor: pointer;
 }
 
+// Modal
+/* Ingredient Name Style */
+.ingredient-name {
+  color: rgb(255, 191, 0);
+  background-color: black;
+  cursor: pointer;
+  padding: 0.2em;
+  border-radius: 5px;
+}
+
+.ingredient-name:hover {
+  opacity: 0.8; /* Optional: Adding a hover effect */
+}
+
+/* Modal Style */
+.modal-content {
+  background-color: black;
+  color: rgb(255, 191, 0);
+}
+
+.modal-header .btn-close {
+  color: rgb(255, 191, 0);
+  font-weight: bold;
+}
 
 // footer
 .growing-footer {
