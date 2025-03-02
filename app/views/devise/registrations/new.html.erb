@@ -7,6 +7,10 @@
                 autofocus: true,
                 input_html: { autocomplete: "email", class: "login-input" },
                 label_html: { class: "login-label" } %>
+    <%= f.input :username,  # Added username field
+                required: true,
+                input_html: { class: "login-input" },
+                label_html: { class: "login-label" } %>
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
