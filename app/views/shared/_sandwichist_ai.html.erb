@@ -1,0 +1,26 @@
+<div class="modal fade" id="aiModal" tabindex="-1" aria-labelledby="aiModalLabel" aria-hidden="true">
+  <div class="modal-dialog d-flex justify-content-center">
+    <div class="modal-content w-75">
+      <div class="modal-header">
+        <h5 class="modal-title" id="aiModalLabel">AI Modal</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-4">
+        <form>
+          <!-- Num of Ingredients -->
+          <div data-mdb-input-init class="form-outline mb-4">
+            <label for="ai_quantity">Add <em id="rangeValLabel" style="font-style: normal;">1</em> ingredients:</label>
+            <input type="range" id="ai_quantity" oninput="document.getElementById('rangeValLabel').innerHTML = this.value;" name="ai_quantity" min="1" max="10" value="1">
+          </div>
+          <!-- Inspiration Word -->
+          <div data-mdb-input-init class="form-outline mb-4">
+            <label for="keyword">Give the sandwichist a theme:</label>
+            <input type="text" id="keyword" class="form-control" placeholder="Lasagna, Portugal, Mickey Mouse, etc..." />
+          </div>
+          <!-- Submit button -->
+          <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block">Get Crazy!</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
