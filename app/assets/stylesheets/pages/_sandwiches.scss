@@ -316,18 +316,12 @@
       font-size: 1rem;
     }
   }
-}
 
-/* Set the default stars and bolts to be empty (gray) */
-.empty {
-  color: #ccc; /* Empty stars and bolts are gray */
-}
+    .empty {
+    color: #ccc;
+  }
 
-.filled {
-  color: #ffcc00; /* Filled stars and bolts are yellow */
-}
-
-/* Make sure the active class gets applied to the icons when filled */
-.filled.fa-star, .filled.fa-bolt {
-  color: #ffcc00;
+  .filled {
+    color: #ffcc00;
+  }
 }
