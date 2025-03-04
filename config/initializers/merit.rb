@@ -61,4 +61,16 @@ Rails.application.reloader.to_prepare do
     name: "Bun to be Wild",
     description: "Created a sandwich with a only bread!",
   )
+
+  Merit::Badge.create!(
+    id: 6,
+    name: "Spread the Love",
+    description: "Created a sandwich with 5 or more condiments!",
+  )
+
+  Merit::Badge.create!(
+    id: 7,
+    name: "What hath God Wrought",
+    description: "Created a sandwich with over 10 listed flavors!",
+  )
 end

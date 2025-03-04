@@ -44,16 +44,41 @@ module Merit
       #
       #   user.name.length > 4
       # end
+
       grant_on 'sandwiches#create', badge_id: 1, to: :user do |sandwich|
-      sandwich.user.sandwiches.count >= 1
+        sandwich.user.sandwiches.count >= 1
       end
 
       grant_on 'sandwiches#create', badge_id: 2, to: :user do |sandwich|
-      sandwich.user.sandwiches.count >= 10
+        sandwich.user.sandwiches.count >= 10
+      end
+# This needs reviews before it will work
+      # grant_on 'reviews#create', badge_id: 3, to: :user do |review|
+      #   sandwich = review.sandwich
+      #   sandwich.reviews.count >= 50 && sandwich.reviews.average(:rating) >= 4
+      # end
+# These won't work unless we add ingredients to the sandwich model with a migration
+      # grant_on 'sandwiches#create', badge_id: 4, to: :user do |sandwich|
+      #   ingredients = sandwich.ingredients.map(&:downcase)
+      #   %w[bacon lettuce tomato].all? { |ingredient| ingredients.include?(ingredient) }
+      # end
+
+      # grant_on 'sandwich#create', badge_id: 5, to: :user do |sandwich|
+      #   ingredients = sandwich.ingredients.map(&:downcase)
+      #   ingredients.all? { |ingredient| ingredient.include?('bread') }
+      # end
+
+# Place holder trophy earn methods
+      grant_on 'sandwiches#create', badge_id: 4, to: :user do |sandwich|
+        sandwich.user.sandwiches.count >= 2
       end
 
-      grant_on 'sandwich#create', badge_id: 5, to: :user do |sandwich|
+      grant_on 'sandwiches#create', badge_id: 5, to: :user do |sandwich|
+        sandwich.user.sandwiches.count >= 3
+      end
 
+      grant_on 'sandwiches#create', badge_id: 6, to: :user do |sandwich|
+        sandwich.user.sandwiches.count >= 4
       end
     end
   end

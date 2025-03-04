@@ -22,6 +22,9 @@
     </div>
   </div>
   <div class="trophy-case">
+    <div class="trophy-header">
+      <h1>Trophy Case</h1>
+    </div>
     <ul>
       <% current_user.badges.each do |badge| %>
         <li><%= badge.name %></li>
