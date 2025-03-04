@@ -15,13 +15,17 @@
       </div>
       <div class="name-field">
         <span class="label">Name</span>
-        <span class="user-name"><%= @user.email %></span>
+        <span class="user-name"><%= @user.username.present? ? @user.username : @user.email %></span>
       </div>    </div>
     <div class="allergy-list">
       <p>I have allergies!</p>
     </div>
   </div>
   <div class="trophy-case">
-    <p>This is where I'd put my trophies</p>
+    <ul>
+      <% current_user.badges.each do |badge| %>
+        <li><%= badge.name %></li>
+      <% end %>
+    </ul>
   </div>
 </div>

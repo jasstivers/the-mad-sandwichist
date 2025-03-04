@@ -96,6 +96,7 @@ GEM
       activesupport (>= 6.1)
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
+    ambry (1.0.0)
     autoprefixer-rails (10.4.19.0)
       execjs (~> 2)
     base64 (0.2.0)
@@ -193,6 +194,9 @@ GEM
       net-smtp
     marcel (1.0.4)
     matrix (0.4.2)
+    merit (4.0.3)
+      ambry (~> 1.0.0)
+      zeitwerk
     mini_mime (1.1.5)
     minitest (5.25.4)
     msgpack (1.8.0)
@@ -365,6 +369,7 @@ DEPENDENCIES
   font-awesome-sass (~> 6.1)
   importmap-rails
   jbuilder
+  merit
   pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.1.5, >= 7.1.5.1)
