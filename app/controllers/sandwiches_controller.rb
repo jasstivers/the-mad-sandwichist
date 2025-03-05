@@ -52,10 +52,7 @@ class SandwichesController < ApplicationController
     @ingredients = Ingredient.all
     @default_ingredients = [
       "Pretzel Bun",
-      "Beef Patty",
-      "Sliced Cheddar Cheese",
-      "Ketchup",
-      "Pretzel Bun (bottom)"
+      "Ciabatta"
     ]
 
     @visible_ingredients = Ingredient.where(name: @default_ingredients)
@@ -88,6 +85,26 @@ class SandwichesController < ApplicationController
     @flavors = @sandwich_ingredients.flat_map { |sandwich_ingredient| sandwich_ingredient.ingredient.traits.where(trait_type: "flavor").pluck(:name) }
     @textures = @sandwich_ingredients.flat_map { |sandwich_ingredient| sandwich_ingredient.ingredient.traits.where(trait_type: "texture").pluck(:name) }
     @cuisines = @sandwich_ingredients.flat_map { |sandwich_ingredient| sandwich_ingredient.ingredient.traits.where(trait_type: "cuisine").pluck(:name) }
+
+    flavor_counts = @flavors.each_with_object(Hash.new(0)) { |flavor, counts| counts[flavor.capitalize] += 1 }
+
+    @chart_data = {
+      labels: flavor_counts.keys,
+      datasets: [{
+        label: 'My First dataset',
+        backgroundColor: 'transparent',
+        borderColor: '#3B82F6',
+        data: flavor_counts.values.map{ |count| count/flavor_counts.values.sum.to_f*100 }
+      }]
+    }
+
+    @chart_options = {
+      scales: {
+        r: {
+            beginAtZero: true
+        }
+      }
+    }
   end
 
   private

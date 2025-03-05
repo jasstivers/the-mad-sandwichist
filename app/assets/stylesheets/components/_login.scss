@@ -1,0 +1,37 @@
+.login-heading {
+  color: rgb(255, 191, 0);
+}
+
+.login-label {
+  color: rgb(255, 191, 0);
+  font-weight: bold;
+}
+
+.login-input {
+  background-color: transparent;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.login-input::placeholder {
+  color: rgba(255, 191, 0, 0.7);
+}
+
+.login-input:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgb(255, 191, 0);
+}
+
+.auth-link {
+  color: rgb(255, 191, 0);
+}
+
+.auth-button {
+  color: rgb(255, 191, 0);
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.auth-button:hover {
+  background-color: rgba(255, 191, 0, 0.8);
+}

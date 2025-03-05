@@ -6,7 +6,8 @@ body {
 }
 
 .input-group {
-  background-color: white;
+  background-color: black;
+  color: #FFBF00;
 }
 
 .btn-outline-secondary {
@@ -65,4 +66,44 @@ body {
 }
 .loading {
   opacity: 0.5;
+}
+
+.search-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-image: url("/assets/top_bar_generic.png");
+  background-position: center;
+  padding: 20px 0;
+}
+
+#search-results {
+  margin-top: 85px;
+padding-bottom: 37px;
+}
+
+.search-icons {
+  color: #FFBF00;
+}
+
+.search-input {
+  background-color: black;
+  color: #FFBF00 !important;
+  border: 0px;
+}
+
+.search-input::placeholder {
+  color: #FFBF00 !important;
+  opacity: 1;
+}
+
+.search-input:focus {
+  background-color: black !important;
+  color: #FFBF00 !important;
+  outline: none;
+}
+
+.search-container {
+  border-radius: 50px;
 }

@@ -29,6 +29,14 @@
     <div class="d-flex justify-content-between text-center category-container">
       <div class="category flavor">
         <h2>Flavor</h2>
+
+        <canvas
+  data-controller="chartjs"
+  data-chartjs-data-value="<%= @chart_data.to_json %>"
+  data-chartjs-options-value="<%= @chart_options.to_json %>"
+  data-chartjs-type-value="radar"
+></canvas>
+
         <div class="flavors-list">
           <% if @flavors.uniq.any? %>
             <% @flavors.uniq.each do |flavor| %>
