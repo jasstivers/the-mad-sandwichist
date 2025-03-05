@@ -26,8 +26,8 @@
       <h1>Trophy Case</h1>
     </div>
     <div class="trophy-list">
-      <% current_user.badges.each do |badge| %>
-        <div class="trophy-box <%= 'earned' if current_user.has_badge?(badge) %>">
+      <% @allbadges.each do |badge| %>
+        <div class="trophy-box <%= "earned" if current_user.has_badge?(badge.name) %>">
           <div class="trophy-container">
             <%= image_tag "trophy-icon", alt: badge.name, class: "trophy-image" %>
           </div>
@@ -36,8 +36,7 @@
             <div class="trophy-requirements"><%= badge.description %></div>
           </div>
           <div class="check-container">
-            <%= image_tag "check", alt: "Earned", class: "checkmark" %>
-            <%# '✔️' if current_user.has_badge?(badge) %>
+            <%= image_tag "check", alt: "Earned", class: "checkmark" if current_user.has_badge?(badge.name) %>
           </div>
         </div>
       <% end %>

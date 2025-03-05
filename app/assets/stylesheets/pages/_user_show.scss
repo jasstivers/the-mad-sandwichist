@@ -149,16 +149,12 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  // opacity: 1;
   transition: opacity 0.3s ease-in-out;
+  opacity: 0.6; /* Faded for unearned trophies */
 }
 
-.trophy-box.earned {
-  // opacity: 1;
-}
-
-.trophy-box:not(.earned) {
-  // opacity: 0.6; /* Faded for unearned trophies */
+.earned {
+  opacity: 1 !important;
 }
 
 .trophy-container {
