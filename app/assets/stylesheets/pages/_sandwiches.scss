@@ -459,7 +459,7 @@
     font-size: 1rem;
     color: #ffbf00;
     line-height: 1.5;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
 
   .delete-btn {
@@ -529,8 +529,13 @@
     }
   }
 
-  .text-warning {
-  --bs-warning-rgb: 255, 191, 0 !important;
-  color: rgb(255, 191, 0) !important;
-}
+    .text-warning {
+    --bs-warning-rgb: 255, 191, 0 !important;
+    color: rgb(255, 191, 0) !important;
+  }
+
+  .icon-container {
+    text-align: right;
+    width: 120px;
+  }
 }
