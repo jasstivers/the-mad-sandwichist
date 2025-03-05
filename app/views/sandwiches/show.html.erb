@@ -90,13 +90,11 @@
   </div>
 
 <div class="card p-3 mb-3 reviews-container" data-controller="review" data-review-sandwich-id="<%= @sandwich.id %>">
-  <!-- Reviews Display -->
   <div class="card p-3 mb-3 reviews-list" data-review-target="reviewsList">
     <h2>Reviews</h2>
     <div class="no-reviews" data-review-target="noReviewsMessage">No reviews yet. Be the first to review!</div>
   </div>
 
-  <!-- Review Section -->
   <div class="card p-3 mb-3 review-section">
     <h2 class="text-center">Leave a Review</h2>
 
@@ -126,11 +124,9 @@
     <button class="btn btn-primary w-100" data-action="click->review#submitReview">Submit Review</button>
   </div>
 
-  <!-- Empty Card for Layout Spacing -->
   <div class="p-3 mb-3 empty-card"></div>
 </div>
 
-<!-- Template for a Review -->
 <template id="review-template">
   <div class="review-item p-2" data-review-id="">
     <div class="d-flex justify-content-between">
