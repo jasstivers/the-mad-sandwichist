@@ -25,10 +25,22 @@
     <div class="trophy-header">
       <h1>Trophy Case</h1>
     </div>
-    <ul>
+    <div class="trophy-list">
       <% current_user.badges.each do |badge| %>
-        <li><%= badge.name %></li>
+        <div class="trophy-box <%= 'earned' if current_user.has_badge?(badge) %>">
+          <div class="trophy-container">
+            <%= image_tag "trophy-icon", alt: badge.name, class: "trophy-image" %>
+          </div>
+          <div class="trophy-info">
+            <div class="trophy-name"><%= badge.name %></div>
+            <div class="trophy-requirements"><%= badge.description %></div>
+          </div>
+          <div class="check-container">
+            <%= image_tag "check", alt: "Earned", class: "checkmark" %>
+            <%# '✔️' if current_user.has_badge?(badge) %>
+          </div>
+        </div>
       <% end %>
-    </ul>
+    </div>
   </div>
 </div>

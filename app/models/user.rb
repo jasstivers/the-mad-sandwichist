@@ -8,4 +8,8 @@ class User < ApplicationRecord
   acts_as_favoritor
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  def has_badge?(badge_name)
+    badges.any? { |badge| badge.name == badge_name }
+  end
 end
