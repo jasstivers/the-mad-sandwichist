@@ -46,12 +46,20 @@
       }
     }
 
-    .create-sandwich-btn {
-      background-color: rgb(255, 191, 0);
-      border: 2px solid black;
-      width: 70px;
-      height: 70px;
-      margin-top: -10px;
+    .ai-active-btn {
+      background: url('btn_sandwichist_open') no-repeat center center;
+      background-size: contain;
+      width: 100px;
+      height: 100px;
+      margin-top: -40px;
+    }
+
+    .ai-inactive-btn {
+      background: url('btn_sandwichist_closed') no-repeat center center;
+      background-size: contain;
+      width: 100px;
+      height: 100px;
+      margin-top: -40px;
     }
   }
 }
