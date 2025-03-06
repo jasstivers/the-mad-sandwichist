@@ -16,7 +16,7 @@
     <div data-controller="ingredients" class="mb-3 ingredient-container mb-2">
       <h3>Select Ingredients:</h3>
       <!-- Sortable Ingredient List -->
-      <ul data-controller="sortable" data-ingredients-target="container">
+      <ul data-controller="sortable" data-ingredients-target="container" data-sandwichist-ai-target="container">
         <% @visible_ingredients.each_with_index do |ingredient, index| %>
           <li data-ingredients-target="listItem">
             <% if ingredient.image_url.present? %>

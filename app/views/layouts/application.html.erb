@@ -13,7 +13,7 @@
     <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
     <%= render 'shared/ios_pwa_links' %>
   </head>
-  <body>
+  <body data-controller="sandwichist-ai">
     <% unless controller_name == "landing" && action_name == "home" %>
       <%#= render "shared/navbar" %>
       <%= render "shared/bottom_navbar" %>
