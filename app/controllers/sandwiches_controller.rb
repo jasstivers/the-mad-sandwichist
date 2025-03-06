@@ -107,6 +107,23 @@ class SandwichesController < ApplicationController
     }
   end
 
+  def generate_suggestion
+    #debugger
+    #puts "The quantity is #{params[:quantity]} and the keyword is #{params[:keyword]}."
+    client = OpenAI::Client.new
+    chatgpt_response = client.chat(parameters: {
+      model: "gpt-4o-mini",
+      messages: [{role: "user", content: "This is an array of arrays containing an ingredient name and its ID:
+         #{Ingredient.pluck(:name, :id)}" }, { role: "user", content: "Output an array of arrays containing an ingredient name and its ID that could be added to a sandwich to make it
+        crazy but delicious. Please theme your selected ingredients around the keyphrase: #{params[:keyword]}. If a keyphrase was not
+        provided or you do not understand it, then please choose a replacement keyphrase on your own. Your array must
+        contain exactly #{params[:quantity]} ingredient(s). Return an array of arrays, in the form
+        [[\"apple\", 3000], [\"pear\", 3001], [\"banana\", 3002]]. Do not return any other information or provide additional formatting."}]
+    })
+    @content = chatgpt_response["choices"][0]["message"]["content"]
+    render json: { result: @content }
+  end
+
   private
 
   # Set the current user
@@ -117,6 +134,10 @@ class SandwichesController < ApplicationController
   # Find a specific sandwich based on its ID
   def set_sandwich
     @sandwich = Sandwich.find(params[:id])
+  end
+
+  def suggestion_params
+    params.permit(:quantity, :keyword)
   end
 
   # Define permitted parameters for the sandwich form
