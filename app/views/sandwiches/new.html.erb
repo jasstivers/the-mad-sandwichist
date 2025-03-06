@@ -51,7 +51,7 @@
               <div data-controller="quantity">
                 <label for="ingredient-<%= ingredient.id %>">Quantity:</label>
                 <input
-                  data-target="quantity.slider"
+                  data-quantity-target="slider"
                   data-unit="<%= ingredient.unit_of_measure %>"
                   type="range"
                   id="ingredient-<%= ingredient.id %>"
@@ -84,10 +84,10 @@
             </li>
           <% end %>
         </ul>
-        <select data-controller="tom-select" data-ingredients-target="select" data-tom-select-options-value="{&quot;tags&quot;: true}">
-          <% @ingredients.each do |ingredient| %>
-            <option value="<%= ingredient.id %>"> <%= ingredient.name  %> </option>
-          <% end %>
+        <select
+          data-controller="tom-select"
+          data-ingredients-target="select"
+          data-tom-select-data-value='<%= @ingredients_data.to_json %>'>
         </select>
         <button class="add-ingredient-btn" data-action="click->ingredients#add">+</button>
         <% @ingredients.each do |ingredient| %>
@@ -125,7 +125,7 @@
                 <div data-controller="quantity">
                   <label for="ingredient-<%= ingredient.id %>">Quantity:</label>
                   <input
-                  data-target="quantity.slider"
+                  data-quantity-target="slider"
                   data-unit="<%= ingredient.unit_of_measure %>"
                   type="range"
                   id="ingredient-<%= ingredient.id %>"
