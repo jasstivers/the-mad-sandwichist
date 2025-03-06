@@ -89,9 +89,11 @@ body {
 }
 
 .sandwich-card-title {
-  font-size: 24px;
+  font-size: clamp(14px, 5vw, 24px);
   font-weight: 900;
-  word-break: break-all;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .sandwich-card-content {
