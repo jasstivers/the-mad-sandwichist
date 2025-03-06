@@ -20,6 +20,8 @@
   visibility: hidden;
   transition: opacity 0.2s ease-out, transform 0.2s ease-out;
   z-index: 1050; /* Ensures it appears above other elements */
+  background: black;
+  color: #FFBF00;
 }
 
 .navbar .dropdown-menu.show {
@@ -27,4 +29,9 @@
   opacity: 1;
   visibility: visible;
   display: block;
+}
+
+.navbar .dropdown-menu a {
+  background: black;
+  color: #FFBF00;
 }
