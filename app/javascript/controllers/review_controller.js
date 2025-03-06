@@ -89,6 +89,13 @@ export default class extends Controller {
     reviewElement.querySelector(".delete-btn").dataset.id = review.id;
     reviewElement.querySelector(".delete-btn").dataset.userId = review.user_id;
 
+    const currentUserId = document.querySelector('meta[name="current-user-id"]').content;
+    const deleteButton = reviewElement.querySelector(".delete-btn");
+
+    if (review.user_id == currentUserId) {
+      deleteButton.style.display = "inline-block";
+    }
+
     this.reviewsListTarget.appendChild(reviewElement);
 
     if (this.reviewsListTarget.children.length > 0) {
@@ -98,6 +105,8 @@ export default class extends Controller {
 
   async deleteReview(event) {
     const reviewId = event.currentTarget.dataset.id;
+    const userId = event.currentTarget.dataset.userId;
+    const currentUserId = document.querySelector('meta[name="current-user-id"]').content;
     const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
 
     try {

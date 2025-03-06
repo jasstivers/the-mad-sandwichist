@@ -8,18 +8,18 @@
 
     <h1 class="sandwich-title"><%= @sandwich.name %></h1>
 
-    <div class="rating">
-      <div class="stars" data-review-target="displayStars">
-        <% 5.times do %>
-          <i class="fas fa-star empty"></i>
-        <% end %>
-      </div>
-      <div class="craziness" data-review-target="displayCraziness">
-        <% 5.times do %>
-          <i class="fas fa-bolt empty"></i>
-        <% end %>
-      </div>
+  <div class="rating">
+    <div class="stars" data-review-target="displayStars">
+      <% @sandwich.average_crazyness.times do %>
+        <i class="fas fa-star empty"></i>
+      <% end %>
     </div>
+    <div class="craziness" data-review-target="displayCraziness">
+      <% @sandwich.average_starness.times do %>
+        <i class="fas fa-bolt empty"></i>
+      <% end %>
+    </div>
+  </div>
 
     <p class="description"><%= @sandwich.description %></p>
   </div>

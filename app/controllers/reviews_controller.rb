@@ -7,13 +7,13 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    @sandwich = Sandwich.find(params[:sandwich_id])
     @review = @sandwich.reviews.build(review_params)
-    @review.username ||= current_user.username
 
     if @review.save
       render json: @review, status: :created
     else
-      render json: { error: "Failed to save review" }, status: :unprocessable_entity
+      render json: @review.errors, status: :unprocessable_entity
     end
   end
 
