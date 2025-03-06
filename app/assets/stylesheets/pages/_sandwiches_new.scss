@@ -8,9 +8,10 @@
   color: rgb(255, 191, 0);
   border-radius: 8px;
   padding: 20px;
-  max-height: 82vh;
+  //max-height: 82vh;
   width: 100%;
-  overflow-y: auto;
+  overflow-y: scroll;
+  height: 800px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -176,8 +177,8 @@ select[data-controller="tom-select"] {
   color: rgb(255, 191, 0) !important;
   border: 1px solid rgba(255, 191, 0, 0.6) !important;
   border-radius: 5px !important; // Smooth corners
-  max-height: 300px !important; // Adjust height as needed
-  overflow-y: auto !important; // Enables scrolling if the options exceed the max height
+  //max-height: 300px !important; // Adjust height as needed
+  //overflow-y: auto !important; // Enables scrolling if the options exceed the max height
 }
 
 // Highlight option on hover
@@ -186,6 +187,15 @@ select[data-controller="tom-select"] {
   color: black !important;
 }
 
+.ts-dropdown .ts-dropdown-content {
+    overflow-y:initial;
+    max-height: 500px;
+}
+
+.ts-dropdown.single {
+  overflow-y: scroll;
+  max-height: 350px;
+}
 
 // Slider
 /* Custom styling for the range input */

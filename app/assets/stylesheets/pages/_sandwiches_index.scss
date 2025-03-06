@@ -30,19 +30,31 @@ body {
 
 .sandwiches.index .sandwich-card {
   display: flex;
-  align-items: center;
-  gap: 10px; /* Space between image and text */
+  align-items: flex-start;
+  // gap: 10px;
   padding: 10px;
-  background: #fff;
+  // background: #fff;
+  background-image: url("https://res.cloudinary.com/dadymzua9/image/upload/v1699999999/bg_card_index_fpggpf");
+  background-size: 100% 100%;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+}
+
+.sandwiches.index .sandwich-image-box {
+  width: 36vw;
+  height: 30vw;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-left: 27px;
 }
 
 .sandwiches.index .sandwich-image {
-  width: 33vw; /* 33% of the viewport width */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover;
-  border-radius: 8px;
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  width: auto;
+  object-fit: contain;
 }
 
 .sandwiches.index .sandwich-content {
@@ -50,6 +62,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 20px;
+  align-self: center;
 }
 
 .sandwiches.index .sandwich-text {
@@ -58,12 +72,30 @@ body {
 }
 
 .sandwiches.index .favorite-button {
-  align-self: start;
+  align-self: end;
 }
 
 #sandwiches-container {
   transition: opacity 0.4s ease-in-out;
 }
+
+.sandwich-user {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: -2px;
+}
+
+.sandwich-card-title {
+  font-size: 27px;
+  font-weight: 900;
+}
+
+.sandwich-card-content {
+  display: flex;
+  flex-direction: row;
+  margin-top: -28px;
+}
+
 .loading {
   opacity: 0.5;
 }
@@ -71,16 +103,18 @@ body {
 .search-top {
   position: fixed;
   top: 0;
-  width: 100%;
-  z-index: 1000;
-  background-image: url("/assets/top_bar_generic.png");
+  width: 105%;
+  z-index: 1001;
+  background-image: asset_url("top_bar_generic.png");
   background-position: center;
-  padding: 20px 0;
+  padding: 20px 10px;
+  background-size: 102%;
 }
 
 #search-results {
   margin-top: 85px;
-padding-bottom: 37px;
+  padding-bottom: 37px;
+  // padding-top: 50px;
 }
 
 .search-icons {
@@ -106,4 +140,22 @@ padding-bottom: 37px;
 
 .search-container {
   border-radius: 50px;
+}
+
+#search-results {
+  width: 100%;
+}
+
+.toggle-container {
+  width: 100%;
+}
+
+.sandwiches.index .dropdown-menu {
+  background: black;
+  color: #FFBF00;
+}
+
+.sandwiches.index .dropdown-menu a {
+  background: black;
+  color: #FFBF00;
 }

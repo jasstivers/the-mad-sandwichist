@@ -77,6 +77,8 @@ group :test do
   gem "selenium-webdriver"
 end
 
+gem "ruby-openai"
 gem 'acts_as_favoritor'
 gem 'acts-as-taggable-on'
 gem 'faker'
+gem 'merit'

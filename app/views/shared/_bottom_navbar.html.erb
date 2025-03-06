@@ -1,28 +1,39 @@
+<%= render "shared/sandwichist_ai" %>
+<!-- navbar -->
 <nav class="navbar fixed-bottom custom-footer">
   <div class="container">
     <ul class="navbar-nav w-100 d-flex flex-row justify-content-between">
+      <!-- Index Button -->
       <li class="nav-item w-20 text-center">
         <%= link_to sandwiches_path, class: "nav-link btn home-btn" do %>
           <i class="fas fa-home"></i>
         <% end %>
       </li>
+      <!-- Button 2 -->
       <li class="nav-item w-20 text-center">
         <a class="nav-link btn recipe-btn" href="#">
           <i class="fas fa-book"></i>
         </a>
       </li>
-
+      <!-- Center Big Button -->
       <li class="nav-item w-20 text-center">
         <%= link_to new_sandwich_path, class: "nav-link btn create-sandwich-btn" do %>
           <i class="fas fa-plus"></i>
         <% end %>
       </li>
-
+      <!-- Button 4 -->
       <li class="nav-item w-20 text-center">
-        <a class="nav-link btn help-btn" href="#">
-          <i class="fas fa-question-circle"></i>
-        </a>
+        <% if params[:action] == "new"%>
+          <button class="nav-link btn help-btn" data-bs-toggle="modal" data-bs-target="#aiModal">
+            <i class="fa fa-android"></i>
+          </button>
+        <%else%>
+          <button class="nav-link btn help-btn" href="#">
+            <i class="fa fa-ban"></i>
+          </button>
+        <%end%>
       </li>
+      <!-- Profile Button -->
       <li class="nav-item w-20 text-center" data-controller="popup_menu">
         <button class="nav-link btn profile-btn" type="button"
                 data-action="click->popup_menu#toggle">
@@ -30,7 +41,7 @@
         </button>
         <div class="dropdown-menu dropdown-menu-end" data-popup_menu-target="menu">
           <%= link_to "My Profile", current_user, class: "dropdown-item" %>
-          <%= link_to "Action", "#", class: "dropdown-item" %>
+          <%#= link_to "Action", "#", class: "dropdown-item" %>
           <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
         </div>
       </li>
