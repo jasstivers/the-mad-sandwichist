@@ -11,6 +11,7 @@ User.destroy_all
 def ingredients_from_csv(csv_text)
   csv = CSV.parse(csv_text, headers: true, encoding: 'ISO-8859-1')
   csv.each do |row|
+
     ### Init Ingredient
     ingredient = Ingredient.create!(name: row['name'], description: row['description'],
                                     ingr_type: row['ingr_type'], unit_of_measure: row['unit_of_measure'],

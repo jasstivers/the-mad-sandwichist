@@ -32,19 +32,19 @@ Yellow bell pepper,placeholder,vegetable (batonnet),gram,wire_vegetable_batonne_
 Orange bell pepper,placeholder,vegetable (batonnet),gram,wire_vegetable_batonne_am_zc6gsx,sweet|fruity|tangy,crisp,Global
 Green bell pepper,placeholder,vegetable (batonnet),gram,wire_vegetable_batonne_am_zc6gsx,grassy|slightly bitter|mild,crisp,Global
 Banana pepper,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e7,tangy|mildly spicy|fruity,crisp,Global
-Jalapeno,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e8,spicy|grassy|slightly sweet,crisp,Central America
-Poblano pepper,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e9,earthy|mildly spicy|smoky,crisp,Central America
+Jalapeno,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e7,spicy|grassy|slightly sweet,crisp,Central America
+Poblano pepper,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e7,earthy|mildly spicy|smoky,crisp,Central America
 Sweet mini peppers,placeholder,vegetable (whole),gram,wire_vegetable_cubed_am_e1uugv,sweet|fruity|mild,crisp,Global
 Onion,placeholder,vegetable (batonnet),gram,wire_vegetable_batonne_am_zc6gsx,pungent|sweet|sharp,crisp,Global
 Red onion,placeholder,vegetable (batonnet),gram,wire_vegetable_batonne_am_zc6gsx,sharp|sweet|pungent,crisp,Global
 White onion,placeholder,vegetable (batonnet),gram,wire_vegetable_batonne_am_zc6gsx,mild|pungent|sweet,crisp,Global
-Green onion,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e9,mild|oniony|grassy,tender,Global
-Shallot,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e10,sweet|mild|savory,crisp,Global
-Chives,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e11,oniony|mild|grassy,tender,Global
+Green onion,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e7,mild|oniony|grassy,tender,Global
+Shallot,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e7,sweet|mild|savory,crisp,Global
+Chives,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e7,oniony|mild|grassy,tender,Global
 Garlic,placeholder,vegetable (cubed),gram,wire_vegetable_cubed_am_e1uugv,pungent|spicy|sharp,crisp,Global
-Avocado,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e8,buttery|nutty|creamy,creamy,Central America
-Zucchini,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e9,mild|slightly sweet|grassy,tender,Global
-Yellow squash,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e10,mild|slightly sweet|buttery,tender,Global
+Avocado,placeholder,vegetable (slice),slice,wire_vegetable_slice_am_fc8a6l,buttery|nutty|creamy,creamy,Central America
+Zucchini,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e7,mild|slightly sweet|grassy,tender,Global
+Yellow squash,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e7,mild|slightly sweet|buttery,tender,Global
 Snow pea,placeholder,vegetable (cubed),gram,wire_vegetable_cubed_am_e1uugv,sweet|grassy|mild,crisp,Asia
 Sugar snap pea,placeholder,vegetable (cubed),gram,wire_vegetable_cubed_am_e1uugv,sweet|grassy|juicy,crisp,Global
 Green pea,placeholder,vegetable (cubed),gram,wire_vegetable_cubed_am_e1uugv,sweet|earthy|mild,tender,Global
@@ -66,7 +66,7 @@ Beet,placeholder,vegetable (slice),slice,wire_vegetable_slice_am_fc8a6l,earthy|s
 Golden beet,placeholder,vegetable (slice),slice,wire_vegetable_slice_am_fc8a6l,sweet|mild|earthy,crunchy,Global
 Jicama,placeholder,vegetable (batonnet),gram,wire_vegetable_batonne_am_zc6gsx,sweet|starchy|mild,crisp,Central America
 Rutabaga,placeholder,vegetable (slice),slice,wire_vegetable_slice_am_fc8a6l,earthy|slightly bitter|sweet,crunchy,Europe
-Okra,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e8,grassy|slightly sweet|mild,slimy,Global
+Okra,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e7,grassy|slightly sweet|mild,slimy,Global
 Bok choy,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,mild|slightly peppery|sweet,crunchy,Asia
 Chard,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,earthy|slightly bitter|savory,tender,Global
 Mustard greens,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,spicy|peppery|bitter,tender,Global
@@ -88,8 +88,8 @@ Lemon balm,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,citru
 Marjoram,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,sweet|mild|earthy,tender,Europe
 Lovage,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,celery-like|peppery|savory,tender,Europe
 Cress,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,peppery|spicy|earthy,tender,Global
-Scallion,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e8,mild|oniony|grassy,tender,Global
-Leek,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e9,sweet|oniony|mild,crisp,Europe
+Scallion,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e7,mild|oniony|grassy,tender,Global
+Leek,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e7,sweet|oniony|mild,crisp,Europe
 Escarole,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,bitter|earthy|mild,crunchy,Europe
 Mizuna,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,peppery|mild|grassy,tender,Asia
 Tatsoi,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,mild|peppery|earthy,tender,Asia
