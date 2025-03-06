@@ -4,6 +4,7 @@
   font-size: 24px;
   transition: transform 0.2s ease-in-out;
   align-self: end;
+  z-index: 1000;
 }
 
 .favorite-button:hover {

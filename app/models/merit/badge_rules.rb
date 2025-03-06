@@ -50,7 +50,7 @@ module Merit
       end
 
       grant_on 'sandwiches#create', badge_id: 2, to: :user do |sandwich|
-        sandwich.user.sandwiches.count >= 10
+        sandwich.user.sandwiches.count >= 5
       end
 # This needs reviews before it will work
       # grant_on 'reviews#create', badge_id: 3, to: :user do |review|
@@ -69,17 +69,17 @@ module Merit
       # end
 
 # Place holder trophy earn methods
-      grant_on 'sandwiches#create', badge_id: 4, to: :user do |sandwich|
-        sandwich.user.sandwiches.count >= 2
-      end
+      # grant_on 'sandwiches#create', badge_id: 4, to: :user do |sandwich|
+      #   sandwich.user.sandwiches.count >= 2
+      # end
 
-      grant_on 'sandwiches#create', badge_id: 5, to: :user do |sandwich|
-        sandwich.user.sandwiches.count >= 3
-      end
+      # grant_on 'sandwiches#create', badge_id: 5, to: :user do |sandwich|
+      #   sandwich.user.sandwiches.count >= 3
+      # end
 
-      grant_on 'sandwiches#create', badge_id: 6, to: :user do |sandwich|
-        sandwich.user.sandwiches.count >= 4
-      end
+      # grant_on 'sandwiches#create', badge_id: 6, to: :user do |sandwich|
+      #   sandwich.user.sandwiches.count >= 4
+      # end
     end
   end
 end

@@ -34,7 +34,7 @@ body {
   // gap: 10px;
   padding: 10px;
   // background: #fff;
-  background-image: url("/assets/bg_card_index.png");
+  background-image: asset_url("bg_card_index.png");
   background-size: 100% 100%;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -93,6 +93,7 @@ body {
 .sandwich-card-content {
   display: flex;
   flex-direction: row;
+  margin-top: -28px;
 }
 
 .loading {
@@ -102,9 +103,9 @@ body {
 .search-top {
   position: fixed;
   top: 0;
-  width: 100%;
-  z-index: 1000;
-  background-image: url("/assets/top_bar_generic.png");
+  width: 105%;
+  z-index: 1001;
+  background-image: asset_url("top_bar_generic.png");
   background-position: center;
   padding: 20px 10px;
   background-size: 102%;
@@ -112,7 +113,8 @@ body {
 
 #search-results {
   margin-top: 85px;
-padding-bottom: 37px;
+  padding-bottom: 37px;
+  // padding-top: 50px;
 }
 
 .search-icons {
