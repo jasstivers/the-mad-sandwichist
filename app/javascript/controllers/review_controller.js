@@ -31,7 +31,7 @@ export default class extends Controller {
     });
   }
 
-  submitReview() {
+  async submitReview() {
     const reviewText = this.commentBoxTarget.value.trim();
     const username = this.usernameTarget.value;
 
@@ -41,20 +41,37 @@ export default class extends Controller {
     }
 
     const review = {
-      id: Date.now(),
       username: username,
-      starRating: this.selectedStarRating,
-      crazyRating: this.selectedCrazyRating,
-      reviewText: reviewText
+      review_text: reviewText,
+      star_rating: this.selectedStarRating,
+      crazy_rating: this.selectedCrazyRating,
+      sandwich_id: this.sandwichIdValue
     };
 
-    this.saveReview(review);
-    this.addReviewToList(review);
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
 
-    this.selectedStarRating = 0;
-    this.selectedCrazyRating = 0;
-    this.commentBoxTarget.value = "";
-    this.resetRatings();
+    try {
+      const response = await fetch(`/sandwiches/${this.sandwichIdValue}/reviews`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRF-Token": csrfToken
+        },
+        body: JSON.stringify({ review })
+      });
+
+      if (!response.ok) {
+        const errorResponse = await response.json();
+        console.error("Error response:", errorResponse);
+        throw new Error("Failed to submit review");
+      }
+
+      const newReview = await response.json();
+      this.addReviewToList(newReview);
+      this.resetReviewForm();
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   addReviewToList(review) {
@@ -63,13 +80,14 @@ export default class extends Controller {
 
     const reviewElement = template.content.cloneNode(true);
     reviewElement.querySelector(".review-username").textContent = review.username;
-    reviewElement.querySelector(".stars").textContent = "⭐".repeat(review.starRating);
-    reviewElement.querySelector(".craziness").textContent = "⚡".repeat(review.crazyRating);
-    reviewElement.querySelector(".review-text").textContent = review.reviewText;
+    reviewElement.querySelector(".stars").textContent = "⭐".repeat(review.star_rating);
+    reviewElement.querySelector(".craziness").textContent = "⚡".repeat(review.crazy_rating);
+    reviewElement.querySelector(".review-text").textContent = review.review_text;
 
     const reviewContainer = reviewElement.querySelector(".review-item");
     reviewContainer.dataset.reviewId = review.id;
     reviewElement.querySelector(".delete-btn").dataset.id = review.id;
+    reviewElement.querySelector(".delete-btn").dataset.userId = review.user_id;
 
     this.reviewsListTarget.appendChild(reviewElement);
 
@@ -78,40 +96,52 @@ export default class extends Controller {
     }
   }
 
-  deleteReview(event) {
-    const reviewId = Number(event.currentTarget.dataset.id);
-    this.removeReviewFromStorage(reviewId);
-    const reviewToDelete = this.reviewsListTarget.querySelector(`[data-review-id='${reviewId}']`);
-    if (reviewToDelete) {
-      reviewToDelete.remove();
-    }
+  async deleteReview(event) {
+    const reviewId = event.currentTarget.dataset.id;
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
 
-    if (this.reviewsListTarget.children.length === 0) {
-      this.noReviewsMessageTarget.style.display = "block";
-    }
-  }
+    try {
+      const response = await fetch(`/sandwiches/${this.sandwichIdValue}/reviews/${reviewId}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRF-Token": csrfToken
+        }
+      });
+      if (!response.ok) throw new Error("Failed to delete review");
 
-  saveReview(review) {
-    let reviews = JSON.parse(localStorage.getItem(`reviews_${this.sandwichIdValue}`)) || [];
-    reviews.push(review);
-    localStorage.setItem(`reviews_${this.sandwichIdValue}`, JSON.stringify(reviews));
-  }
+      const reviewToDelete = this.reviewsListTarget.querySelector(`[data-review-id='${reviewId}']`);
+      if (reviewToDelete) reviewToDelete.remove();
 
-  removeReviewFromStorage(reviewId) {
-    let reviews = JSON.parse(localStorage.getItem(`reviews_${this.sandwichIdValue}`)) || [];
-    reviews = reviews.filter(review => review.id !== reviewId);
-    localStorage.setItem(`reviews_${this.sandwichIdValue}`, JSON.stringify(reviews));
-  }
-
-  loadReviews() {
-    let reviews = JSON.parse(localStorage.getItem(`reviews_${this.sandwichIdValue}`)) || [];
-    if (reviews.length > 0) {
-      this.noReviewsMessageTarget.style.display = "none";
-      reviews.forEach(review => this.addReviewToList(review));
+      if (this.reviewsListTarget.children.length === 0) {
+        this.noReviewsMessageTarget.style.display = "block";
+      }
+    } catch (error) {
+      console.error(error);
     }
   }
 
-  resetRatings() {
+  async loadReviews() {
+    try {
+      const response = await fetch(`/sandwiches/${this.sandwichIdValue}/reviews`);
+      if (!response.ok) throw new Error("Failed to load reviews");
+
+      const reviews = await response.json();
+      if (reviews.length === 0) {
+        this.noReviewsMessageTarget.style.display = "block";
+      } else {
+        reviews.forEach(review => this.addReviewToList(review));
+        this.noReviewsMessageTarget.style.display = "none";
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  resetReviewForm() {
+    this.commentBoxTarget.value = "";
+    this.selectedStarRating = 0;
+    this.selectedCrazyRating = 0;
     this.updateRatingDisplay(this.starRatingTarget, 0, "fa-star");
     this.updateRatingDisplay(this.crazyRatingTarget, 0, "fa-bolt");
   }
