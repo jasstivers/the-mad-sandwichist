@@ -89,16 +89,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_06_135816) do
     t.string "image_url"
   end
 
-  create_table "reviews", force: :cascade do |t|
-    t.string "username"
-    t.text "review_text"
-    t.integer "star_rating"
-    t.integer "crazy_rating"
-    t.integer "sandwich_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "merit_actions", force: :cascade do |t|
     t.integer "user_id"
     t.string "action_method"
@@ -133,6 +123,16 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_06_135816) do
     t.bigint "sash_id"
     t.string "category", default: "default"
     t.index ["sash_id"], name: "index_merit_scores_on_sash_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "username"
+    t.text "review_text"
+    t.integer "star_rating"
+    t.integer "crazy_rating"
+    t.integer "sandwich_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "sandwich_ingredients", force: :cascade do |t|
