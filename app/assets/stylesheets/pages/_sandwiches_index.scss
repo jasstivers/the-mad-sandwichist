@@ -69,6 +69,9 @@ body {
 .sandwiches.index .sandwich-text {
   margin-bottom: 10px;
   color: black;
+  max-height: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .sandwiches.index .favorite-button {
@@ -86,8 +89,9 @@ body {
 }
 
 .sandwich-card-title {
-  font-size: 27px;
+  font-size: 24px;
   font-weight: 900;
+  word-break: break-all;
 }
 
 .sandwich-card-content {
