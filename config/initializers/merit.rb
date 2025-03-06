@@ -41,7 +41,7 @@ Rails.application.reloader.to_prepare do
   Merit::Badge.create!(
     id: 2,
     name: "Earl of Sandwich",
-    description: "Created 10 sandwiches!",
+    description: "Created 5 sandwiches!",
   )
 
   Merit::Badge.create!(

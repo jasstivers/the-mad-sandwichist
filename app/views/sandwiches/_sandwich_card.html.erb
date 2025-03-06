@@ -1,10 +1,10 @@
 <turbo-frame id="sandwich_<%= sandwich.id %>">
   <div class="col-12 mb-3">
-    <%= link_to sandwich_path(sandwich), data: { turbo_frame: "_top" }, class: 'card-link' do %>
       <div class="sandwich-card" data-sandwich-id="<%= sandwich.id %>" data-favorite-toggle-target="unliked" data-id="<%= sandwich.id %>">
         <%= link_to toggle_favorite_sandwich_path(sandwich), data: { turbo_method: :post }, class: 'favorite-button' do %>
           <%= render 'sandwiches/like_button', sandwich: sandwich %>
         <% end %>
+    <%= link_to sandwich_path(sandwich), data: { turbo_frame: "_top" }, class: 'card-link' do %>
         <div class="sandwich-card-content">
           <div class="sandwich-image-box">
             <% if sandwich.photo.present? %>
