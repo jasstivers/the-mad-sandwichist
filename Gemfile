@@ -80,3 +80,4 @@ end
 gem 'acts_as_favoritor'
 gem 'acts-as-taggable-on'
 gem 'faker'
+gem 'merit'

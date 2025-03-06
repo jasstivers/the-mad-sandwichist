@@ -15,13 +15,31 @@
       </div>
       <div class="name-field">
         <span class="label">Name</span>
-        <span class="user-name"><%= @user.email %></span>
+        <span class="user-name"><%= @user.username.present? ? @user.username : @user.email %></span>
       </div>    </div>
     <div class="allergy-list">
       <p>I have allergies!</p>
     </div>
   </div>
   <div class="trophy-case">
-    <p>This is where I'd put my trophies</p>
+    <div class="trophy-header">
+      <h1>Trophy Case</h1>
+    </div>
+    <div class="trophy-list">
+      <% @allbadges.each do |badge| %>
+        <div class="trophy-box <%= "earned" if current_user.has_badge?(badge.name) %>">
+          <div class="trophy-container">
+            <%= image_tag "trophy-icon", alt: badge.name, class: "trophy-image" %>
+          </div>
+          <div class="trophy-info">
+            <div class="trophy-name"><%= badge.name %></div>
+            <div class="trophy-requirements"><%= badge.description %></div>
+          </div>
+          <div class="check-container">
+            <%= image_tag "check", alt: "Earned", class: "checkmark" if current_user.has_badge?(badge.name) %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
