@@ -1,100 +1,100 @@
-name,flavor,texture,origin
-Lettuce,grassy|mild|slightly sweet,crisp,Global
-Spinach,earthy|slightly bitter|iron-rich,tender,Global
-Arugula,peppery|spicy|nutty,tender,Europe|Mediterranean
-Kale,earthy|slightly bitter|savory,chewy,Global
-Romaine,grassy|slightly bitter|mild,crisp,Global
-Iceberg lettuce,mild|watery|slightly sweet,crisp,Global
-Butter lettuce,mild|buttery|slightly sweet,tender,Global
-Red leaf lettuce,mild|slightly bitter|grassy,crisp,Global
-Green leaf lettuce,mild|slightly sweet|earthy,crisp,Global
-Endive,bitter|nutty|slightly sweet,crunchy,Europe
-Radicchio,bitter|peppery|nutty,crisp,Italy|Mediterranean
-Watercress,peppery|spicy|slightly bitter,tender,Global
-Cabbage,earthy|sweet|slightly bitter,crunchy,Global
-Red cabbage,earthy|sweet|slightly peppery,crunchy,Global
-Napa cabbage,mild|sweet|slightly peppery,tender,Asia
-Carrot,sweet|earthy|mild,crunchy,Global
-Cherry tomato,sweet|juicy|tangy,juicy,Global
-Grape tomato,sweet|tangy|mild,juicy,Global
-Heirloom tomato,sweet|rich|tangy,juicy,Global
-Roma tomato,tangy|savory|mild,juicy,Global
-Beefsteak tomato,mild|sweet|juicy,juicy,Global
-Cucumber,watery|mild|refreshing,crisp,Global
-English cucumber,watery|mild|sweet,crisp,Global
-Persian cucumber,slightly sweet|mild|refreshing,crisp,Middle East
-Radish,peppery|spicy|earthy,crisp,Global
-Daikon radish,mild|peppery|slightly sweet,crisp,Asia
-Celery,grassy|savory|slightly bitter,crisp,Global
-Bell pepper,sweet|mild|grassy,crisp,Global
-Red bell pepper,sweet|mild|slightly fruity,crisp,Global
-Yellow bell pepper,sweet|fruity|mild,crisp,Global
-Orange bell pepper,sweet|fruity|tangy,crisp,Global
-Green bell pepper,grassy|slightly bitter|mild,crisp,Global
-Banana pepper,tangy|mildly spicy|fruity,crisp,Global
-Jalapeño,spicy|grassy|slightly sweet,crisp,Central America
-Poblano pepper,earthy|mildly spicy|smoky,crisp,Central America
-Sweet mini peppers,sweet|fruity|mild,crisp,Global
-Onion,pungent|sweet|sharp,crisp,Global
-Red onion,sharp|sweet|pungent,crisp,Global
-White onion,mild|pungent|sweet,crisp,Global
-Green onion,mild|oniony|grassy,tender,Global
-Shallot,sweet|mild|savory,crisp,Global
-Chives,oniony|mild|grassy,tender,Global
-Garlic (minced),pungent|spicy|sharp,crisp,Global
-Avocado,buttery|nutty|creamy,creamy,Central America
-Zucchini,mild|slightly sweet|grassy,tender,Global
-Yellow squash,mild|slightly sweet|buttery,tender,Global
-Snow pea,sweet|grassy|mild,crisp,Asia
-Sugar snap pea,sweet|grassy|juicy,crisp,Global
-Green pea,sweet|earthy|mild,tender,Global
-Microgreens,peppery|earthy|nutty,tender,Global
-Sprouts,nutty|grassy|earthy,crisp,Global
-Alfalfa sprouts,mild|nutty|grassy,crisp,Global
-Broccoli sprouts,earthy|spicy|nutty,crisp,Global
-Sunflower sprouts,nutty|mild|earthy,tender,Global
-Mung bean sprouts,earthy|nutty|mild,crisp,Asia
-Clover sprouts,grassy|mild|nutty,tender,Global
-Broccoli,earthy|slightly bitter|sweet,crunchy,Global
-Broccolini,earthy|mildly sweet|nutty,crunchy,Global
-Cauliflower,mild|nutty|slightly sweet,crunchy,Global
-Fennel,licorice|sweet|mild,crisp,Europe
-Kohlrabi,sweet|peppery|mild,crunchy,Europe
-Parsnip,sweet|earthy|nutty,crunchy,Global
-Turnip,peppery|slightly bitter|sweet,crisp,Global
-Beet,earthy|sweet|mild,crunchy,Global
-Golden beet,sweet|mild|earthy,crunchy,Global
-Jicama,sweet|starchy|mild,crisp,Central America
-Rutabaga,earthy|slightly bitter|sweet,crunchy,Europe
-Okra,grassy|slightly sweet|mild,slimy,Global
-Bok choy,mild|slightly peppery|sweet,crunchy,Asia
-Chard,earthy|slightly bitter|savory,tender,Global
-Mustard greens,spicy|peppery|bitter,tender,Global
-Collard greens,earthy|slightly bitter|mild,chewy,Global
-Purslane,tangy|citrusy|earthy,juicy,Global
-Dandelion greens,bitter|earthy|peppery,tender,Global
-Sorrel,sour|citrusy|tangy,tender,Europe
-Chicory,bitter|earthy|slightly nutty,crisp,Europe
-Basil,sweet|peppery|aromatic,tender,Global
-Cilantro,citrusy|peppery|herbaceous,tender,Global
-Parsley,fresh|earthy|mild,tender,Global
-Dill,grassy|anise-like|fresh,tender,Europe
-Mint,cooling|sweet|peppery,tender,Global
-Tarragon,licorice|anise|bitter,tender,Europe
-Thyme,earthy|herbaceous|savory,tender,Europe
-Oregano,earthy|peppery|savory,tender,Europe|Mediterranean
-Sage,earthy|savory|piney,tender,Europe
-Lemon balm,citrusy|sweet|minty,tender,Europe
-Marjoram,sweet|mild|earthy,tender,Europe
-Lovage,celery-like|peppery|savory,tender,Europe
-Cress,peppery|spicy|earthy,tender,Global
-Scallion,mild|oniony|grassy,tender,Global
-Leek,sweet|oniony|mild,crisp,Europe
-Escarole,bitter|earthy|mild,crunchy,Europe
-Mizuna,peppery|mild|grassy,tender,Asia
-Tatsoi,mild|peppery|earthy,tender,Asia
-Epazote,earthy|medicinal|pungent,tender,Central America
-Seaweed,briny|umami|savory,chewy,Asia
-Nasturtium leaves,peppery|spicy|mild,tender,Global
-Grape leaves,tangy|earthy|savory,chewy,Mediterranean
-Cactus (nopales),tangy|slightly sour|grassy,slimy,Central America
+name,description,ingr_type,unit_of_measure,image_url,flavor,texture,origin
+Lettuce,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,grassy|mild|slightly sweet,crisp,Global
+Spinach,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,earthy|slightly bitter|iron-rich,tender,Global
+Arugula,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,peppery|spicy|nutty,tender,Europe|Mediterranean
+Kale,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,earthy|slightly bitter|savory,chewy,Global
+Romaine,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,grassy|slightly bitter|mild,crisp,Global
+Iceberg lettuce,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,mild|watery|slightly sweet,crisp,Global
+Butter lettuce,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,mild|buttery|slightly sweet,tender,Global
+Red leaf lettuce,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,mild|slightly bitter|grassy,crisp,Global
+Green leaf lettuce,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,mild|slightly sweet|earthy,crisp,Global
+Endive,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,bitter|nutty|slightly sweet,crunchy,Europe
+Radicchio,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,bitter|peppery|nutty,crisp,Italy|Mediterranean
+Watercress,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,peppery|spicy|slightly bitter,tender,Global
+Cabbage,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,earthy|sweet|slightly bitter,crunchy,Global
+Red cabbage,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,earthy|sweet|slightly peppery,crunchy,Global
+Napa cabbage,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,mild|sweet|slightly peppery,tender,Asia
+Carrot,placeholder,vegetable (slice),slice,wire_vegetable_slice_am_fc8a6l,sweet|earthy|mild,crunchy,Global
+Cherry tomato,placeholder,vegetable (slice),slice,wire_vegetable_slice_am_fc8a6l,sweet|juicy|tangy,juicy,Global
+Grape tomato,placeholder,vegetable (slice),slice,wire_vegetable_slice_am_fc8a6l,sweet|tangy|mild,juicy,Global
+Heirloom tomato,placeholder,vegetable (slice),slice,wire_vegetable_slice_am_fc8a6l,sweet|rich|tangy,juicy,Global
+Roma tomato,placeholder,vegetable (slice),slice,wire_vegetable_slice_am_fc8a6l,tangy|savory|mild,juicy,Global
+Beefsteak tomato,placeholder,vegetable (slice),slice,wire_vegetable_slice_am_fc8a6l,mild|sweet|juicy,juicy,Global
+Cucumber,placeholder,vegetable (slice),slice,wire_vegetable_slice_am_fc8a6l,watery|mild|refreshing,crisp,Global
+English cucumber,placeholder,vegetable (slice),slice,wire_vegetable_slice_am_fc8a6l,watery|mild|sweet,crisp,Global
+Persian cucumber,placeholder,vegetable (slice),slice,wire_vegetable_slice_am_fc8a6l,slightly sweet|mild|refreshing,crisp,Middle East
+Radish,placeholder,vegetable (slice),slice,wire_vegetable_slice_am_fc8a6l,peppery|spicy|earthy,crisp,Global
+Daikon radish,placeholder,vegetable (slice),slice,wire_vegetable_slice_am_fc8a6l,mild|peppery|slightly sweet,crisp,Asia
+Celery,placeholder,vegetable (batonnet),gram,wire_vegetable_batonne_am_zc6gsx,grassy|savory|slightly bitter,crisp,Global
+Bell pepper,placeholder,vegetable (batonnet),gram,wire_vegetable_batonne_am_zc6gsx,sweet|mild|grassy,crisp,Global
+Red bell pepper,placeholder,vegetable (batonnet),gram,wire_vegetable_batonne_am_zc6gsx,sweet|mild|slightly fruity,crisp,Global
+Yellow bell pepper,placeholder,vegetable (batonnet),gram,wire_vegetable_batonne_am_zc6gsx,sweet|fruity|mild,crisp,Global
+Orange bell pepper,placeholder,vegetable (batonnet),gram,wire_vegetable_batonne_am_zc6gsx,sweet|fruity|tangy,crisp,Global
+Green bell pepper,placeholder,vegetable (batonnet),gram,wire_vegetable_batonne_am_zc6gsx,grassy|slightly bitter|mild,crisp,Global
+Banana pepper,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e7,tangy|mildly spicy|fruity,crisp,Global
+Jalapeno,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e8,spicy|grassy|slightly sweet,crisp,Central America
+Poblano pepper,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e9,earthy|mildly spicy|smoky,crisp,Central America
+Sweet mini peppers,placeholder,vegetable (whole),gram,wire_vegetable_cubed_am_e1uugv,sweet|fruity|mild,crisp,Global
+Onion,placeholder,vegetable (batonnet),gram,wire_vegetable_batonne_am_zc6gsx,pungent|sweet|sharp,crisp,Global
+Red onion,placeholder,vegetable (batonnet),gram,wire_vegetable_batonne_am_zc6gsx,sharp|sweet|pungent,crisp,Global
+White onion,placeholder,vegetable (batonnet),gram,wire_vegetable_batonne_am_zc6gsx,mild|pungent|sweet,crisp,Global
+Green onion,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e9,mild|oniony|grassy,tender,Global
+Shallot,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e10,sweet|mild|savory,crisp,Global
+Chives,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e11,oniony|mild|grassy,tender,Global
+Garlic,placeholder,vegetable (cubed),gram,wire_vegetable_cubed_am_e1uugv,pungent|spicy|sharp,crisp,Global
+Avocado,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e8,buttery|nutty|creamy,creamy,Central America
+Zucchini,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e9,mild|slightly sweet|grassy,tender,Global
+Yellow squash,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e10,mild|slightly sweet|buttery,tender,Global
+Snow pea,placeholder,vegetable (cubed),gram,wire_vegetable_cubed_am_e1uugv,sweet|grassy|mild,crisp,Asia
+Sugar snap pea,placeholder,vegetable (cubed),gram,wire_vegetable_cubed_am_e1uugv,sweet|grassy|juicy,crisp,Global
+Green pea,placeholder,vegetable (cubed),gram,wire_vegetable_cubed_am_e1uugv,sweet|earthy|mild,tender,Global
+Microgreens,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,peppery|earthy|nutty,tender,Global
+Sprouts,placeholder,vegetable (batonnet),gram,wire_vegetable_batonne_am_zc6gsx,nutty|grassy|earthy,crisp,Global
+Alfalfa sprouts,placeholder,vegetable (batonnet),gram,wire_vegetable_batonne_am_zc6gsx,mild|nutty|grassy,crisp,Global
+Broccoli sprouts,placeholder,vegetable (batonnet),gram,wire_vegetable_batonne_am_zc6gsx,earthy|spicy|nutty,crisp,Global
+Sunflower sprouts,placeholder,vegetable (batonnet),gram,wire_vegetable_batonne_am_zc6gsx,nutty|mild|earthy,tender,Global
+Mung bean sprouts,placeholder,vegetable (batonnet),gram,wire_vegetable_batonne_am_zc6gsx,earthy|nutty|mild,crisp,Asia
+Clover sprouts,placeholder,vegetable (batonnet),gram,wire_vegetable_batonne_am_zc6gsx,grassy|mild|nutty,tender,Global
+Broccoli,placeholder,vegetable (whole),gram,wire_vegetable_cubed_am_e1uugv,earthy|slightly bitter|sweet,crunchy,Global
+Broccolini,placeholder,vegetable (whole),gram,wire_vegetable_cubed_am_e1uugv,earthy|mildly sweet|nutty,crunchy,Global
+Cauliflower,placeholder,vegetable (whole),gram,wire_vegetable_cubed_am_e1uugv,mild|nutty|slightly sweet,crunchy,Global
+Fennel,placeholder,vegetable (slice),slice,wire_vegetable_slice_am_fc8a6l,licorice|sweet|mild,crisp,Europe
+Kohlrabi,placeholder,vegetable (slice),slice,wire_vegetable_slice_am_fc8a6l,sweet|peppery|mild,crunchy,Europe
+Parsnip,placeholder,vegetable (slice),slice,wire_vegetable_slice_am_fc8a6l,sweet|earthy|nutty,crunchy,Global
+Turnip,placeholder,vegetable (slice),slice,wire_vegetable_slice_am_fc8a6l,peppery|slightly bitter|sweet,crisp,Global
+Beet,placeholder,vegetable (slice),slice,wire_vegetable_slice_am_fc8a6l,earthy|sweet|mild,crunchy,Global
+Golden beet,placeholder,vegetable (slice),slice,wire_vegetable_slice_am_fc8a6l,sweet|mild|earthy,crunchy,Global
+Jicama,placeholder,vegetable (batonnet),gram,wire_vegetable_batonne_am_zc6gsx,sweet|starchy|mild,crisp,Central America
+Rutabaga,placeholder,vegetable (slice),slice,wire_vegetable_slice_am_fc8a6l,earthy|slightly bitter|sweet,crunchy,Europe
+Okra,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e8,grassy|slightly sweet|mild,slimy,Global
+Bok choy,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,mild|slightly peppery|sweet,crunchy,Asia
+Chard,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,earthy|slightly bitter|savory,tender,Global
+Mustard greens,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,spicy|peppery|bitter,tender,Global
+Collard greens,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,earthy|slightly bitter|mild,chewy,Global
+Purslane,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,tangy|citrusy|earthy,juicy,Global
+Dandelion greens,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,bitter|earthy|peppery,tender,Global
+Sorrel,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,sour|citrusy|tangy,tender,Europe
+Chicory,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,bitter|earthy|slightly nutty,crisp,Europe
+Basil,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,sweet|peppery|aromatic,tender,Global
+Cilantro,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,citrusy|peppery|herbaceous,tender,Global
+Parsley,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,fresh|earthy|mild,tender,Global
+Dill,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,grassy|anise-like|fresh,tender,Europe
+Mint,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,cooling|sweet|peppery,tender,Global
+Tarragon,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,licorice|anise|bitter,tender,Europe
+Thyme,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,earthy|herbaceous|savory,tender,Europe
+Oregano,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,earthy|peppery|savory,tender,Europe|Mediterranean
+Sage,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,earthy|savory|piney,tender,Europe
+Lemon balm,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,citrusy|sweet|minty,tender,Europe
+Marjoram,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,sweet|mild|earthy,tender,Europe
+Lovage,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,celery-like|peppery|savory,tender,Europe
+Cress,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,peppery|spicy|earthy,tender,Global
+Scallion,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e8,mild|oniony|grassy,tender,Global
+Leek,placeholder,vegetable (rounds),gram,wire_vegetable_rounds_am_t1f7e9,sweet|oniony|mild,crisp,Europe
+Escarole,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,bitter|earthy|mild,crunchy,Europe
+Mizuna,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,peppery|mild|grassy,tender,Asia
+Tatsoi,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,mild|peppery|earthy,tender,Asia
+Epazote,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,earthy|medicinal|pungent,tender,Central America
+Seaweed,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,briny|umami|savory,chewy,Asia
+Nasturtium leaves,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,peppery|spicy|mild,tender,Global
+Grape leaves,placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,tangy|earthy|savory,chewy,Mediterranean
+Cactus (nopales),placeholder,vegetable (leaf),leaf,wire_vegetable_leaf_am_ojf2pa,tangy|slightly sour|grassy,slimy,Central America
