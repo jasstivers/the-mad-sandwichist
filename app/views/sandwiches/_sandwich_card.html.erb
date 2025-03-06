@@ -11,7 +11,8 @@
         </div>
         <div class="sandwich-content">
           <div class="sandwich-text">
-            <h5 class="card-title"><%= sandwich.name %></h5>
+            <h5 class="sandwich-user"> <%= sandwich.user.username %>'s</h5>
+            <h2 class="sandwich-card-title"><%= sandwich.name %></h2>
           </div>
 
           <%= link_to toggle_favorite_sandwich_path(sandwich), data: { turbo_method: :post }, class: 'favorite-button' do %>
