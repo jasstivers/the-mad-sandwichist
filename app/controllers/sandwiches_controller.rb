@@ -57,6 +57,16 @@ class SandwichesController < ApplicationController
 
     @visible_ingredients = Ingredient.where(name: @default_ingredients)
       .sort_by { |ing| @default_ingredients.index(ing.name) }
+
+    # Create an array of hashes containing the ingredient data
+    @ingredients_data = @ingredients.map do |ingredient|
+      {
+        id: ingredient.id,
+        name: ingredient.name,
+        type: ingredient.ingr_type,
+        traits: ingredient.traits.map(&:name).join(", ") # Short for: ingredient.traits.map {|trait| trait.name}.join(", ")
+      }
+    end
   end
 
   def create
