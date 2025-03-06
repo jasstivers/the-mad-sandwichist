@@ -1,6 +1,6 @@
 <div class="profile-background d-flex justify-content-center align-items-center flex-column">
   <div class="profile-header">
-    <%= image_tag "top-bar-profile", alt: "No Restrictions Applied", class: "profile-header-image" %>
+    <img src=<%= asset_path("top-bar-profile") %> alt="No Restrictions Applied" class="profile-header-image">
     <%# <div class="inner-banner"> %>
       <%# <h1>User Show Page</h1> %>
     <%# </div> %>
@@ -11,7 +11,7 @@
     </div>
     <div class="diet-name d-flex flex-row">
       <div class="dietary">
-        <%= image_tag "dietary-stamp", alt: "No Restrictions Applied", class: "restriction-image" %>
+        <img src=<%= asset_path("dietary-stamp") %> alt="No Restrictions Applied" class="restriction-image">
       </div>
       <div class="name-field">
         <span class="label">Name</span>
