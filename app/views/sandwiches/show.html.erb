@@ -1,5 +1,5 @@
 <div class="sandwich-show-page">
-  <div class="card p-3 mb-3 sandwich-card">
+  <div class="card p-3 sandwich-card">
     <% if @sandwich.photo.attached? %>
       <%= cl_image_tag @sandwich.photo.key, alt: 'Burger Image', class: 'img-fluid sandwich-image' %>
     <% else %>
@@ -8,60 +8,60 @@
 
     <h1 class="sandwich-title"><%= @sandwich.name %></h1>
 
-    <div class="rating">
-      <span class="stars">⭐⭐⭐⭐⭐</span>
+  <div class="rating">
+    <div class="stars" data-review-target="displayStars">
+      <% @sandwich.average_crazyness.times do %>
+        <i class="fas fa-star empty"></i>
+      <% end %>
     </div>
+    <div class="craziness" data-review-target="displayCraziness">
+      <% @sandwich.average_starness.times do %>
+        <i class="fas fa-bolt empty"></i>
+      <% end %>
+    </div>
+  </div>
 
     <p class="description"><%= @sandwich.description %></p>
   </div>
 
-  <div class="card p-3 mb-3 sandwich-card">
-    <h2 class="notes-header">Tasting Notes</h2>
-    <div class="d-flex justify-content-between text-center category-container">
-      <div class="category flavor">
-        <h2>Flavor</h2>
-
-        <canvas
-  data-controller="chartjs"
-  data-chartjs-data-value="<%= @chart_data.to_json %>"
-  data-chartjs-options-value="<%= @chart_options.to_json %>"
-  data-chartjs-type-value="radar"
-></canvas>
-
-        <div class="flavors-list">
-          <% if @flavors.uniq.any? %>
-            <% @flavors.uniq.each do |flavor| %>
-              <span class="flavor-box flavor-<%= flavor.downcase.gsub(' ', '-') %>"><%= flavor %></span>
-            <% end %>
-          <% else %>
-            <p>None</p>
-          <% end %>
+  <div class="card p-3 mb-3 sandwich-card tasting-notes-card">
+    <div class="inner-box-tasting-notes">
+      <h2 class="notes-header">Tasting Notes</h2>
+      <div class="d-flex justify-content-between text-center category-container">
+        <div class="category flavor">
+          <h2>Flavor</h2>
+          <canvas
+            data-controller="chartjs"
+            data-chartjs-data-value="<%= @chart_data.to_json %>"
+            data-chartjs-options-value="<%= @chart_options.to_json %>"
+            data-chartjs-type-value="radar"
+          ></canvas>
         </div>
-      </div>
 
-      <div class="category texture">
-        <h2>Texture</h2>
-        <div class="textures-list <%= 'single-item' if @textures.uniq.size == 1 %>">
-          <% if @textures.uniq.any? %>
-            <% @textures.uniq.each do |texture| %>
-              <span class="texture-box texture-<%= texture.downcase.gsub(' ', '-') %>"><%= texture %></span>
+        <div class="category texture">
+          <h2>Texture</h2>
+          <div class="textures-list <%= 'single-item' if @textures.uniq.size == 1 %>">
+            <% if @textures.uniq.any? %>
+              <% @textures.uniq.each do |texture| %>
+                <span class="texture-box texture-<%= texture.downcase.gsub(' ', '-') %>"><%= texture %></span>
+              <% end %>
+            <% else %>
+              <p>None</p>
             <% end %>
-          <% else %>
-            <p>None</p>
-          <% end %>
+          </div>
         </div>
-      </div>
 
-      <div class="category cuisine">
-        <h2>Cuisine</h2>
-        <div class="cuisine-list <%= 'single-item' if @cuisines.uniq.size == 1 %>">
-          <% if @cuisines.uniq.any? %>
-            <% @cuisines.uniq.each do |cuisine| %>
-              <%= render 'shared/flag_icon', country: cuisine %>
+        <div class="category cuisine">
+          <h2>Cuisine</h2>
+          <div class="cuisine-list <%= 'single-item' if @cuisines.uniq.size == 1 %>">
+            <% if @cuisines.uniq.any? %>
+              <% @cuisines.uniq.each do |cuisine| %>
+                <%= render 'shared/flag_icon', country: cuisine %>
+              <% end %>
+            <% else %>
+              <%= render 'shared/flag_icon', country: 'pirate' %>
             <% end %>
-          <% else %>
-            <%= render 'shared/flag_icon', country: 'pirate' %>
-          <% end %>
+          </div>
         </div>
       </div>
     </div>
@@ -88,5 +88,56 @@
     </div>
   </div>
 
+<div class="card p-3 mb-3 reviews-container" data-controller="review" data-review-sandwich-id="<%= @sandwich.id %>">
+  <div class="card p-3 mb-3 reviews-list" data-review-target="reviewsList">
+    <h2>Reviews</h2>
+    <div class="no-reviews" data-review-target="noReviewsMessage">No reviews yet. Be the first to review!</div>
+  </div>
+
+  <div class="card p-3 mb-3 review-section">
+    <h2 class="text-center">Leave a Review</h2>
+
+    <input type="hidden" value="<%= current_user.username %>" data-review-target="username">
+
+    <div class="ratings-container d-flex justify-content-between">
+      <div class="rating-group">
+        <label>How much did you like it?</label>
+        <div class="star-rating" data-review-target="starRating">
+          <% 5.times do |i| %>
+            <i class="fas fa-star" data-value="<%= i + 1 %>" data-action="click->review#selectRating"></i>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="rating-group">
+        <label>How crazy is it?</label>
+        <div class="crazy-rating" data-review-target="crazyRating">
+          <% 5.times do |i| %>
+            <i class="fas fa-bolt" data-value="<%= i + 1 %>" data-action="click->review#selectCraziness"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <textarea class="form-control my-3" data-review-target="commentBox" placeholder="Write your review..."></textarea>
+    <button class="btn btn-primary w-100" data-action="click->review#submitReview">Submit Review</button>
+  </div>
+
   <div class="p-3 mb-3 empty-card"></div>
 </div>
+
+<template id="review-template">
+  <div class="review-item p-2" data-review-id="">
+    <div class="d-flex justify-content-between">
+      <div>
+        <strong class="user-text">User:</strong> <span class="review-username"></span>
+      </div>
+      <div class="icon-container">
+        <span class="stars"></span>
+        <span class="craziness"></span>
+      </div>
+    </div>
+    <p class="review-text"></p>
+    <button class="btn btn-sm btn-danger delete-btn" data-action="click->review#deleteReview">Delete</button>
+  </div>
+</template>

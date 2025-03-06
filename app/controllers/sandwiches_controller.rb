@@ -89,6 +89,7 @@ class SandwichesController < ApplicationController
 
   def show
     @sandwich = Sandwich.find(params[:id])
+    @reviews = @sandwich.reviews.includes(:user)
 
     @sandwich_ingredients = SandwichIngredient.where(sandwich_id: @sandwich.id).order(:ingredient_position)
 

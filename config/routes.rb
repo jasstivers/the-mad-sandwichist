@@ -18,5 +18,7 @@ Rails.application.routes.draw do
     member do
       post 'toggle_favorite', to: "sandwiches#toggle_favorite"
     end
+
+    resources :reviews, only: [:index, :create, :destroy]
   end
 end

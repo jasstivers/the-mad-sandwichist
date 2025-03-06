@@ -7,4 +7,14 @@ class Sandwich < ApplicationRecord
 
   validates :name, presence: true
   has_one_attached :photo
+
+  has_many :reviews, dependent: :destroy
+  def average_crazyness
+    reviews.average(:crazy_rating)&.round.to_i || 0
+  end
+
+  def average_starness
+    reviews.average(:star_rating)&.round.to_i || 0
+  end
+
 end
