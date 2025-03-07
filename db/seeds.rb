@@ -13,20 +13,21 @@ def ingredients_from_csv(csv_text)
   csv.each do |row|
 
     ### Init Ingredient
-    ingredient = Ingredient.create!(name: row['name'], description: row['description'],
+    ingredient = Ingredient.create!(name: row['name'].downcase, description: row['description'],
                                     ingr_type: row['ingr_type'], unit_of_measure: row['unit_of_measure'],
                                     image_url: row['image_url'])
+    puts "Creating #{ingredient.name}"
 
     ### Parse Flavors
     flavor = row['flavor'].split('|')
     flavor.each do |f|
-      if Trait.find_by(name: f).nil?
+      if Trait.find_by(name: f.downcase).nil?
         # puts "Not found"
-        trait = Trait.create!(name: f, trait_type: "flavor")
-        puts "Created flavor: #{trait.name}"
+        trait = Trait.create!(name: f.downcase, trait_type: "flavor")
+        # puts "Created flavor: #{trait.name}"
       else
         # puts "Found"
-        trait = Trait.find_by(name: f)
+        trait = Trait.find_by(name: f.downcase)
       end
       IngredientTrait.create!(ingredient_id: ingredient.id, trait_id: trait.id)
     end
@@ -34,11 +35,11 @@ def ingredients_from_csv(csv_text)
     ### Parse Textures
     texture = row['texture'].split('|')
     texture.each do |f|
-      if Trait.find_by(name: f) == nil
-        trait = Trait.create!(name: f, trait_type: "texture")
-        puts "Created texture: #{trait.name}"
+      if Trait.find_by(name: f.downcase).nil?
+        trait = Trait.create!(name: f.downcase, trait_type: "texture")
+        # puts "Created texture: #{trait.name}"
       else
-        trait = Trait.find_by(name: f)
+        trait = Trait.find_by(name: f.downcase)
       end
       IngredientTrait.create!(ingredient_id: ingredient.id, trait_id: trait.id)
     end
@@ -46,11 +47,11 @@ def ingredients_from_csv(csv_text)
     ### Parse Origin
     country = row['origin'].split('|')
     country.each do |f|
-      if Trait.find_by(name: f) == nil
-        trait = Trait.create!(name: f, trait_type: "origin")
-        puts "Created origin: #{trait.name}"
+      if Trait.find_by(name: f.downcase).nil?
+        trait = Trait.create!(name: f.downcase, trait_type: "origin")
+        # puts "Created origin: #{trait.name}"
       else
-        trait = Trait.find_by(name: f)
+        trait = Trait.find_by(name: f.downcase)
       end
       IngredientTrait.create!(ingredient_id: ingredient.id, trait_id: trait.id)
     end
@@ -68,7 +69,8 @@ users = [
   { username: "SandwichKing", email: "sandwichking@example.com", password: "password123"},
   { username: "Ranald_McDougal", email: "ranaldmcdougal@example.com", password: "password123"},
   { username: "THICCWendy", email: "wendythicc@example.com", password: "password123"},
-  { username: "Carl_Senior", email: "carlsenior@example.com", password: "password123"}
+  { username: "Carl_Senior", email: "carlsenior@example.com", password: "password123"},
+  { username: "Ma Creedly", email:"creedly@example.com", password: "password123"}
 ]
 
 users.each do |user_data|
@@ -76,77 +78,22 @@ users.each do |user_data|
   puts "Created user: #{user.username}" # Confirm user creation
 end
 
-puts "Creating Sandwiches..."
-sandwiches = [
-  { user_id: User.first.id, name: "Cheese Burger", description: "placeholder..." },
-  { user_id: User.first.id, name: "Double Cheese Burger", description: "placeholder..." },
-  { user_id: User.first.id, name: "Bacon Crispy Chicken", description: "placeholder..." },
-]
+def sandwiches_from_csv(csv_text)
+  csv = CSV.parse(csv_text, headers: true, encoding: 'ISO-8859-1')
+  csv.each do |row|
+    ### Init Sandwiches ###
+    sandwich = Sandwich.create!(user_id: User.find_by(username: row['username']).id, name: row['name'], description: row['description'])
 
-sandwiches.each do |sandwich_data|
-  sandwich = Sandwich.create!(sandwich_data)
-  puts "Created sandwich: #{sandwich.name}" # Confirm user creation
+    ### Parse Ingredients ###
+    sandwich_ingredients = row['ingredients'].split('|')
+    sandwich_size = 1
+    sandwich_ingredients.each do |f|
+      SandwichIngredient.create!(sandwich_id: sandwich.id, ingredient_id: Ingredient.find_by(name: f.downcase).id,
+                                 ingredient_qty: 1, ingredient_position: sandwich_size)
+      sandwich_size += 1
+    end
+    puts "Created sandwich: #{sandwich.name}"
+  end
 end
 
-puts "Adding ingredients to sandwiches..."
-sandwich_ingr = [
-  { sandwich_id: Sandwich.find_by(name: "Cheese Burger").id,
-    ingredient_id: Ingredient.find_by(name: "Kaiser Roll").id,
-    ingredient_qty: 1, ingredient_position: 4 },
-  { sandwich_id: Sandwich.find_by(name: "Cheese Burger").id,
-    ingredient_id: Ingredient.find_by(name: "Cheddar").id,
-    ingredient_qty: 1, ingredient_position: 3 },
-  { sandwich_id: Sandwich.find_by(name: "Cheese Burger").id,
-    ingredient_id: Ingredient.find_by(name: "Ground Beef Patty").id,
-    ingredient_qty: 1, ingredient_position: 2 },
-  { sandwich_id: Sandwich.find_by(name: "Cheese Burger").id,
-    ingredient_id: Ingredient.find_by(name: "Kaiser Roll").id,
-    ingredient_qty: 1, ingredient_position: 1 },
-  ###
-  { sandwich_id: Sandwich.find_by(name: "Double Cheese Burger").id,
-    ingredient_id: Ingredient.find_by(name: "Kaiser Roll").id,
-    ingredient_qty: 1, ingredient_position: 6 },
-  { sandwich_id: Sandwich.find_by(name: "Double Cheese Burger").id,
-    ingredient_id: Ingredient.find_by(name: "Cheddar").id,
-    ingredient_qty: 1, ingredient_position: 5 },
-  { sandwich_id: Sandwich.find_by(name: "Double Cheese Burger").id,
-    ingredient_id: Ingredient.find_by(name: "Ground Beef Patty").id,
-    ingredient_qty: 1, ingredient_position: 4 },
-  { sandwich_id: Sandwich.find_by(name: "Double Cheese Burger").id,
-    ingredient_id: Ingredient.find_by(name: "Cheddar").id,
-    ingredient_qty: 1, ingredient_position: 3 },
-  { sandwich_id: Sandwich.find_by(name: "Double Cheese Burger").id,
-    ingredient_id: Ingredient.find_by(name: "Ground Beef Patty").id,
-    ingredient_qty: 1, ingredient_position: 2 },
-  { sandwich_id: Sandwich.find_by(name: "Double Cheese Burger").id,
-    ingredient_id: Ingredient.find_by(name: "Kaiser Roll").id,
-    ingredient_qty: 1, ingredient_position: 1 },
-  ###
-  { sandwich_id: Sandwich.find_by(name: "Bacon Crispy Chicken").id,
-    ingredient_id: Ingredient.find_by(name: "Pretzel Bun").id,
-    ingredient_qty: 1, ingredient_position: 7 },
-  { sandwich_id: Sandwich.find_by(name: "Bacon Crispy Chicken").id,
-    ingredient_id: Ingredient.find_by(name: "mustard").id,
-    ingredient_qty: 1, ingredient_position: 6 },
-  { sandwich_id: Sandwich.find_by(name: "Bacon Crispy Chicken").id,
-    ingredient_id: Ingredient.find_by(name: "Lettuce").id,
-    ingredient_qty: 1, ingredient_position: 5 },
-  { sandwich_id: Sandwich.find_by(name: "Bacon Crispy Chicken").id,
-    ingredient_id: Ingredient.find_by(name: "White onion").id,
-    ingredient_qty: 1, ingredient_position: 4 },
-  { sandwich_id: Sandwich.find_by(name: "Bacon Crispy Chicken").id,
-    ingredient_id: Ingredient.find_by(name: "Bacon").id,
-    ingredient_qty: 1, ingredient_position: 3 },
-  { sandwich_id: Sandwich.find_by(name: "Bacon Crispy Chicken").id,
-    ingredient_id: Ingredient.find_by(name: "Fried Chicken").id,
-    ingredient_qty: 1, ingredient_position: 2 },
-  { sandwich_id: Sandwich.find_by(name: "Bacon Crispy Chicken").id,
-    ingredient_id: Ingredient.find_by(name: "Pretzel Bun").id,
-    ingredient_qty: 1, ingredient_position: 1 }
-  ###
-]
-
-sandwich_ingr.each do |sandwich_ingr_data|
-  sandwich_ingr = SandwichIngredient.create!(sandwich_ingr_data)
-  puts "Applied ingredients to sandwich: #{sandwich_ingr.id}" # Confirm user creation
-end
+sandwiches_from_csv(File.read('db/Data/sandwiches.csv'))
