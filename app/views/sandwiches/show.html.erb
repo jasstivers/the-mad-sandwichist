@@ -11,12 +11,12 @@
   <div class="rating">
     <div class="stars" data-review-target="displayStars">
       <% @sandwich.average_crazyness.times do %>
-        <i class="fas fa-star empty"></i>
+        <i class="fas fa-star filled"></i>
       <% end %>
     </div>
     <div class="craziness" data-review-target="displayCraziness">
       <% @sandwich.average_starness.times do %>
-        <i class="fas fa-bolt empty"></i>
+        <i class="fas fa-flask filled"></i>
       <% end %>
     </div>
   </div>
@@ -38,28 +38,15 @@
           ></canvas>
         </div>
 
-        <div class="category texture">
+        <div class="category texture" data-controller="texture-color">
           <h2>Texture</h2>
           <div class="textures-list <%= 'single-item' if @textures.uniq.size == 1 %>">
             <% if @textures.uniq.any? %>
               <% @textures.uniq.each do |texture| %>
-                <span class="texture-box texture-<%= texture.downcase.gsub(' ', '-') %>"><%= texture %></span>
+                <span class="texture-box texture-<%= texture.downcase.gsub(' ', '-') %>" data-texture-color-target="textureBox"><%= texture %></span>
               <% end %>
             <% else %>
               <p>None</p>
-            <% end %>
-          </div>
-        </div>
-
-        <div class="category cuisine">
-          <h2>Cuisine</h2>
-          <div class="cuisine-list <%= 'single-item' if @cuisines.uniq.size == 1 %>">
-            <% if @cuisines.uniq.any? %>
-              <% @cuisines.uniq.each do |cuisine| %>
-                <%= render 'shared/flag_icon', country: cuisine %>
-              <% end %>
-            <% else %>
-              <%= render 'shared/flag_icon', country: 'pirate' %>
             <% end %>
           </div>
         </div>
@@ -113,7 +100,7 @@
         <label>How crazy is it?</label>
         <div class="crazy-rating" data-review-target="crazyRating">
           <% 5.times do |i| %>
-            <i class="fas fa-bolt" data-value="<%= i + 1 %>" data-action="click->review#selectCraziness"></i>
+            <i class="fas fa-flask" data-value="<%= i + 1 %>" data-action="click->review#selectCraziness"></i>
           <% end %>
         </div>
       </div>

@@ -18,7 +18,7 @@ export default class extends Controller {
 
   selectCraziness(event) {
     this.selectedCrazyRating = event.currentTarget.dataset.value;
-    this.updateRatingDisplay(this.crazyRatingTarget, this.selectedCrazyRating, "fa-bolt");
+    this.updateRatingDisplay(this.crazyRatingTarget, this.selectedCrazyRating, "fa-flask");
   }
 
   updateRatingDisplay(parent, rating, iconClass) {
@@ -81,7 +81,8 @@ export default class extends Controller {
     const reviewElement = template.content.cloneNode(true);
     reviewElement.querySelector(".review-username").textContent = review.username;
     reviewElement.querySelector(".stars").textContent = "⭐".repeat(review.star_rating);
-    reviewElement.querySelector(".craziness").textContent = "⚡".repeat(review.crazy_rating);
+    const flaskIcon = '<i class="fas fa-flask"></i>';
+    reviewElement.querySelector(".craziness").innerHTML = flaskIcon.repeat(review.crazy_rating);
     reviewElement.querySelector(".review-text").textContent = review.review_text;
 
     const reviewContainer = reviewElement.querySelector(".review-item");
