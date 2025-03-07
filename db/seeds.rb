@@ -82,17 +82,42 @@ def sandwiches_from_csv(csv_text)
   csv = CSV.parse(csv_text, headers: true, encoding: 'ISO-8859-1')
   csv.each do |row|
     ### Init Sandwiches ###
-    sandwich = Sandwich.create!(user_id: User.find_by(username: row['username']).id, name: row['name'], description: row['description'])
+    sandwich = Sandwich.create!(
+      user_id: User.find_by(username: row['username']).id,
+      name: row['name'],
+      description: row['description']
+    )
+
+    # Attach the photo using the Cloudinary URL in the CSV row
+    if row['image_url'].present?
+      # Check if the URL is a full Cloudinary URL or just an image ID
+      image_url = row['image_url'].start_with?('http') ? row['image_url'] : "https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/#{row['image_url']}"
+
+      begin
+        sandwich.photo.attach(io: URI.open(image_url), filename: "#{row['name']}_photo.jpg", content_type: 'image/jpg')
+      rescue StandardError => e
+        puts "Error attaching image for #{row['name']}: #{e.message}"
+      end
+    end
 
     ### Parse Ingredients ###
     sandwich_ingredients = row['ingredients'].split('|')
     sandwich_size = 1
-    sandwich_ingredients.each do |f|
-      SandwichIngredient.create!(sandwich_id: sandwich.id, ingredient_id: Ingredient.find_by(name: f.downcase).id,
-                                 ingredient_qty: 1, ingredient_position: sandwich_size)
-      sandwich_size += 1
+    sandwich_ingredients.each do |ingredient_name|
+      ingredient = Ingredient.find_by(name: ingredient_name.downcase)
+      if ingredient
+        SandwichIngredient.create!(
+          sandwich_id: sandwich.id,
+          ingredient_id: ingredient.id,
+          ingredient_qty: 1,
+          ingredient_position: sandwich_size
+        )
+        sandwich_size += 1
+      else
+        puts "Ingredient not found: #{ingredient_name}"
+      end
     end
-    puts "Created sandwich: #{sandwich.name}"
+    puts "Created sandwich: #{sandwich.name} (Image: #{sandwich.photo.attached? ? 'Attached' : 'Not Attached'})"
   end
 end
 
