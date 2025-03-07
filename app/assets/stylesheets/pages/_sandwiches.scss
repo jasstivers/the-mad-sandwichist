@@ -162,42 +162,11 @@
     border-radius: 12px;
     font-size: 0.9rem;
     font-weight: bold;
-    color: white;
     display: block;
+    color: black;
     text-transform: capitalize;
     text-align: center;
-  }
-
-  .texture-crunchy {
-    background-color: #ff6600;
-  }
-
-  .texture-creamy {
-    background-color: #ffcc99;
-  }
-
-  .texture-crispy {
-    background-color: #b5651d;
-  }
-
-  .texture-soft {
-    background-color: #f1c6d3;
-  }
-
-  .texture-chewy {
-    background-color: #6c3e1f;
-  }
-
-  .texture-spongy {
-    background-color: #f4a300;
-  }
-
-  .texture-viscous {
-    background-color: #00f4f4;
-  }
-
-  .texture-box:not([class*="texture-"]) {
-    background-color: #777;
+    transition: all 0.3s ease;
   }
 
   .cuisine-list {
@@ -312,7 +281,8 @@
     text-align: left;
     font-size: 1rem;
     color: #333;
-    margin-top: 10px;
+    margin-top: 5px;
+    margin-left: 10px;
   }
 
   .stars {
@@ -330,13 +300,17 @@
     }
   }
 
-    .empty {
-    color: #ccc;
+  .stars .filled {
+    color: #ffbf00;
   }
 
-  .filled {
-    color: #ffcc00;
+  .craziness .filled {
+    color: #6A0DAD;
   }
+
+  .craziness i {
+  margin-right: 5px;
+}
 
   //REVIEW
 .reviews-container {
@@ -470,7 +444,7 @@
     }
 
     .craziness {
-      color: #ff5733;
+      color: #6A0DAD;
     }
   }
 
