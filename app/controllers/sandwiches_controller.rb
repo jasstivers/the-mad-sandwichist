@@ -51,8 +51,8 @@ class SandwichesController < ApplicationController
     @sandwich = Sandwich.new
     @ingredients = Ingredient.all
     @default_ingredients = [
-      "Pretzel Bun",
-      "Ciabatta"
+      "pretzel bun",
+      "ciabatta"
     ]
 
     @visible_ingredients = Ingredient.where(name: @default_ingredients)
