@@ -37,7 +37,8 @@ In this project, I contributed to the following areas:
 - **Backend**: Ruby on Rails  
 - **Database**: PostgreSQL  
 - **Cloud Storage**: Cloudinary  
-
+- Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+  
 ## Running the Project  
 
 ```sh
@@ -53,4 +54,4 @@ bundle install
 # Run the server
 rails s  
 
-### Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+
